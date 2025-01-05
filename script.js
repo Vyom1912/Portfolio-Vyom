@@ -1,16 +1,39 @@
 // Typing effect
-const script = document.createElement("script");
-script.src = "https://cdn.jsdelivr.net/npm/typed.js@2.0.12";
-script.onload = () => {
-  new Typed("#typed", {
-    strings: ["Front end Designer", "Front end Developer"],
-    typeSpeed: 50,
-    backSpeed: 30,
-    loop: true,
-  });
-};
-document.body.appendChild(script);
 
+const lines = ["Front end Designer", "Front end Developer"];
+
+const typingText = document.getElementById("typed");
+let lineIndex = 0; // Tracks the current line
+let charIndex = 0; // Tracks the current character in the line
+const typingSpeed = 100; // Speed of typing each character (in ms)
+const linePause = 1000; // Pause between lines (in ms)
+
+function typeLine() {
+  if (charIndex < lines[lineIndex].length) {
+    // Add the next character to the text
+    typingText.textContent += lines[lineIndex][charIndex];
+    charIndex++;
+    setTimeout(typeLine, typingSpeed);
+  } else {
+    // Pause before starting the next line
+    setTimeout(() => {
+      charIndex = 0; // Reset character index
+      lineIndex++; // Move to the next line
+      if (lineIndex < lines.length) {
+        typingText.textContent = ""; // Clear the current line
+        typeLine(); // Start typing the next line
+      } else {
+        // Reset after all lines are typed
+        lineIndex = 0; // Reset to the first line
+        typingText.textContent = ""; // Clear text
+        setTimeout(typeLine, linePause); // Restart the animation
+      }
+    }, linePause);
+  }
+}
+// Start the typing animation
+typeLine();
+// ------------------------------------------------------------
 // navbar
 burger = document.querySelector(".burger");
 navbar = document.querySelector(".navbar");
