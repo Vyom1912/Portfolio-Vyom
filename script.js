@@ -1,3 +1,16 @@
+// loder
+var myVar;
+
+function loder() {
+  myVar = setTimeout(showPage, 2500);
+}
+
+function showPage() {
+  document.getElementById("loader").style.display = "none";
+  document.getElementById("myDiv").style.display = "block";
+}
+
+// --------------------------------------------------
 // Typing effect
 
 const lines = ["Front end Designer", "Front end Developer"];
