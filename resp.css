@@ -75,7 +75,10 @@
     font-size: 1.8rem;
   }
   .hero-left .main-title .title {
-    font-size: 4.8rem;
+    font-size: 4.5rem;
+  }
+  .hero-left p {
+    font-size: 1.3rem;
   }
   /* ---  navbar --- */
   .navbar {
@@ -93,6 +96,7 @@
     font-size: 97%;
   }
   .header {
+    /* width: fit-content; */
     padding: 10px 0;
   }
   .navbar {
@@ -102,7 +106,7 @@
     position: relative;
   }
   .header .center {
-    width: 100%;
+    /* width: 93%; */
   }
   .navlist {
     flex-direction: column;
@@ -128,8 +132,10 @@
   .h-nav-resp {
     display: flex;
     align-items: center;
+    text-align: center;
     opacity: 1;
     height: 50px;
+    /* overflow-x: hidden; */
     transition: all 0.5s ease;
   }
   .v-class-resp {
@@ -144,24 +150,36 @@
     position: relative;
     left: 50%;
     top: 0%;
+    z-index: 111;
     min-width: 270px;
-    transform: translateX(-56%) translateY(0%);
+    transform: translateX(-48%) translateY(0%);
   }
-  /* portfolio */
-  /* .p-item.visible:nth-child(odd) {
-    transform: translateX(0px);
-    opacity: 1;
+}
+@media only screen and (max-width: 792px) {
+  .hero-left .main-title {
+    font-size: 1.6rem;
   }
-  .p-item:nth-child(odd) {
-    transform: translateX(-150px);
+  .hero-left .main-title .title {
+    font-size: 4rem;
   }
-  .p-item.visible:nth-child(even) {
-    transform: translateX(0px);
-    opacity: 1;
+  .hero-left p {
+    font-size: 1.2rem;
   }
-  .p-item:nth-child(even) {
-    transform: translateX(150px);
-  } */
+}
+@media (max-width: 741px) {
+  .hero-left .main-title {
+    font-size: 1.4rem;
+  }
+  .hero-left .main-title .title {
+    font-size: 3.8rem;
+  }
+  .hero-left p {
+    font-size: 1.1rem;
+  }
+  .hero-right {
+    width: 13rem;
+    height: 13rem;
+  }
 }
 @media (max-width: 768px) {
   .c-right {
@@ -169,11 +187,23 @@
   }
 }
 @media only screen and (max-width: 548px) {
+  .navbar.h-nav-resp {
+    /* gap: 0; */
+  }
   .hero-left {
     width: fit-content;
     margin: auto;
   }
   .hero-left .main-title {
-    display: inline;
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .hero-left .main-title .title {
+    font-size: 3.2rem;
+  }
+  .hero-left #typed {
+    font-size: 1.1rem;
+    width: fit-content;
+    margin: auto;
   }
 }
