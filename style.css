@@ -58,6 +58,12 @@ a {
   justify-content: space-around;
   align-items: center;
 }
+.flex-c {
+  flex-direction: column;
+}
+.align-top {
+  align-items: normal !important;
+}
 .heading {
   margin: 20px auto 50px;
 }
@@ -187,7 +193,38 @@ a {
   white-space: nowrap;
   overflow: hidden;
 }
+.hero .resume-btn {
+  /* margin: auto; */
+  width: fit-content;
+  padding: 0.6rem 2rem;
+  border: 1.5px solid var(--primary-font);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.hero .resume-btn::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  top: 50%;
+  left: 50%;
+  border-radius: 4px;
+  color: var(--white);
+  transition: all 0.3s ease;
+  background-color: var(--primary-font);
+  z-index: -1;
+}
 
+.hero .resume-btn:hover::after {
+  left: 0%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+.hero .resume-btn:hover {
+  color: var(--white);
+}
 .hero-right {
   width: 19.5rem;
   height: 19.5rem;
@@ -196,12 +233,7 @@ a {
   width: 100%;
   height: 100%;
 }
-.flex-c {
-  flex-direction: column;
-}
-.align-top {
-  align-items: normal !important;
-}
+
 .header {
   margin: 50px 0 0;
   padding: 25px 0;
@@ -466,7 +498,7 @@ a {
   width: 30%;
 }
 .about .info-content:nth-child(5) .info .react {
-  width: 10%;
+  width: 50%;
 }
 .about .info-content:nth-child(5) .info .figma {
   width: 70%;
@@ -481,6 +513,10 @@ a {
 .about .info-content:nth-child(6) .info-content:hover {
   box-shadow: none;
 }
+.info {
+  flex-wrap: wrap;
+  gap: 1rem;
+}
 .info .i-item {
   /* margin: 0 0.3rem; */
   border-radius: 5px;
@@ -491,7 +527,7 @@ a {
 .info-content-2 {
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 30px auto 0;
   border-radius: 5px;
   transition: opacity 1s ease, transform 1s ease;
 }
@@ -500,7 +536,7 @@ a {
   /* background-color: #3282b8; */
 }
 .about .info-content:nth-child(6) .info-content-2:nth-child(2) .info {
-  margin-top: -20px;
+  /* margin-top: -20px; */
 }
 /* ******************************** */
 /* Portfolio */

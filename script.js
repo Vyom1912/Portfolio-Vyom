@@ -168,6 +168,7 @@ function reveal() {
 }
 
 window.addEventListener("scroll", reveal);
+// -----------------------------------------------------------------------
 // project filter
 // gallery item filter
 const filterButtons = document.querySelectorAll("#filter-btns li");
