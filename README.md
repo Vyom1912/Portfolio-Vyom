@@ -1,2 +1,1 @@
-# Portfolio-Vyom
-Here is my poerfolio website
+A personal portfolio website built with HTML, CSS, and JavaScript. Showcases projects, skills, and contact information with a clean and responsive design. Perfect for highlighting your work and making a strong professional impression online. Easy to customize and deploy.
