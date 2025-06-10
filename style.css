@@ -416,7 +416,7 @@ a {
   box-shadow: 3px 3px 10px var(--secondary-font);
 }
 .info-box .info-content .info {
-  width: 20rem;
+  width: 19rem;
   /* width: 100%; */
   /* background-color: #bbe1fa; */
 }
@@ -578,7 +578,6 @@ a {
   color: #1b262c;
   font-weight: 500;
   display: inline-block;
-  margin: 0 8px;
   font-size: 1rem;
   padding: 8px 15px;
   border-radius: 4px;
@@ -597,11 +596,15 @@ a {
   transition: all 0.3s ease-in;
 }
 .portfolio .project {
+  /* height: 600px; */
+  /* overflow-y: auto; */
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
 }
 .project .p-item {
+  width: 13.75rem;
+
   border-radius: 8px;
   overflow: hidden;
   gap: 1.5rem;
@@ -627,8 +630,8 @@ a {
   box-shadow: 3px 3px 10px var(--secondary-font);
 }
 .project .p-item .p-img {
-  width: 13.75rem;
-  height: 13.75rem;
+  width: 100%;
+  /* height: width; */
   overflow: hidden;
 }
 .project .p-item .p-img img {
@@ -637,7 +640,7 @@ a {
 }
 .project .p-item .p-name {
   display: block;
-  width: 13.75rem;
+  width: 100%;
   height: 2.75rem;
   line-height: 2.75rem;
   color: var(--white);

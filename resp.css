@@ -66,9 +66,9 @@
   .navlist li a {
     padding: 0.6rem 0.75rem;
   }
-  .navlist li a::after {
-    /* width: 95%; */
-  }
+  /* .navlist li a::after {
+    width: 95%;
+  } */
 }
 @media only screen and (max-width: 885px) {
   .hero-left .main-title {
@@ -105,9 +105,9 @@
     text-align: center;
     position: relative;
   }
-  .header .center {
-    /* width: 93%; */
-  }
+  /* .header .center {
+    width: 93%;
+  } */
   .navlist {
     flex-direction: column;
     z-index: 100;
@@ -180,6 +180,9 @@
     width: 13rem;
     height: 13rem;
   }
+  .portfolio .project .p-item {
+    width: 12rem;
+  }
 }
 @media (max-width: 768px) {
   .c-right {
@@ -187,9 +190,9 @@
   }
 }
 @media only screen and (max-width: 700px) {
-  .navbar.h-nav-resp {
-    /* gap: 0; */
-  }
+  /* .navbar.h-nav-resp {
+    gap: 0; 
+  } */
   .hero-left {
     width: fit-content;
     margin: auto;
@@ -208,5 +211,66 @@
   }
   .hero .resume-btn {
     margin: auto;
+  }
+  .portfolio .project {
+    width: 100%;
+    gap: 16px;
+  }
+  .portfolio .project .p-item {
+    width: 9rem;
+  }
+  .project .p-item .p-name {
+    height: 2rem;
+    line-height: 2rem;
+  }
+  .portfolio .project {
+    gap: 10px;
+  }
+}
+@media only screen and (max-width: 608px) {
+  .container {
+    width: 100%;
+  }
+  .row {
+    width: 90%;
+    /* background-color: black; */
+  }
+  .portfolio .filter-buttons ul {
+    width: 18rem;
+    gap: 0.5rem;
+    margin: auto;
+    justify-content: flex-start;
+  }
+  .portfolio .filter-buttons ul li {
+    font-size: 0.9rem;
+    padding: 8px;
+    transition: all 0.3s ease-in;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .project {
+    width: 100%;
+  }
+
+  .project .p-item {
+    width: 8.5rem !important;
+  }
+
+  .portfolio .project {
+    gap: 9px;
+  }
+  .info-box {
+    gap: 1rem;
+  }
+  .info-box .info-content .info {
+    width: 17rem;
+    gap: 0.5rem;
+  }
+  .info-box .info-content .info p {
+    margin: 0 0 0.5rem;
+  }
+  .info-box .heading {
+    margin: 23px auto 30px;
   }
 }
