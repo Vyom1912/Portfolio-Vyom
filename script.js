@@ -7,6 +7,7 @@ function loder() {
 
 function showPage() {
   document.getElementById("loader").style.display = "none";
+  document.getElementById("loader-box").style.height = "0px";
   document.getElementById("myDiv").style.display = "block";
 }
 
