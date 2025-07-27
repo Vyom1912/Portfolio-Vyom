@@ -164,22 +164,6 @@
   }
 }
 @media (max-width: 825px) {
-  .project .p-item {
-    width: 12rem;
-  }
-}
-@media only screen and (max-width: 792px) {
-  .hero-left .main-title {
-    font-size: 1.6rem;
-  }
-  .hero-left .main-title .title {
-    font-size: 4rem;
-  }
-  .hero-left p {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 741px) {
   .hero-left .main-title {
     font-size: 1.4rem;
   }
