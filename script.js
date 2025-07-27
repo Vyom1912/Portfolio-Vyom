@@ -175,19 +175,18 @@ window.addEventListener("scroll", reveal);
 const filterButtons = document.querySelectorAll("#filter-btns li");
 const pItems = document.querySelectorAll(".project .p-item");
 
+// Show all items on initial load
+showAllItems();
+
 function showAllItems() {
   pItems.forEach((item) => {
     item.classList.add("show");
   });
 }
 
-// Show all items by default
-showAllItems();
 filterButtons.forEach((button) => {
   button.addEventListener("click", function () {
-    // remove active class from all buttons
     filterButtons.forEach((btn) => btn.classList.remove("active"));
-    // add active class to the clicked button
     this.classList.add("active");
 
     const target = this.getAttribute("data-target");
@@ -195,13 +194,14 @@ filterButtons.forEach((button) => {
     pItems.forEach((item) => {
       const itemCategory = item.getAttribute("data-id");
 
-      // Show or hide based on filter selection
-      if (target === "all" || target === itemCategory) {
+      // Show item if it matches or "all"
+      if (target === "all" || itemCategory === target) {
+        // Trigger animation restart
+        item.classList.remove("show");
+        void item.offsetWidth; // This forces reflow
         item.classList.add("show");
-        // item.style.display = "block";
       } else {
         item.classList.remove("show");
-        // item.style.display = "none";
       }
     });
   });

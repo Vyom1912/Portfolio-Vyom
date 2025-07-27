@@ -66,9 +66,9 @@
   .navlist li a {
     padding: 0.6rem 0.75rem;
   }
-  /* .navlist li a::after {
-    width: 95%;
-  } */
+  .row {
+    width: 100%;
+  }
 }
 @media only screen and (max-width: 885px) {
   .hero-left .main-title {
@@ -96,7 +96,6 @@
     font-size: 97%;
   }
   .header {
-    /* width: fit-content; */
     padding: 10px 0;
   }
   .navbar {
@@ -105,9 +104,6 @@
     text-align: center;
     position: relative;
   }
-  /* .header .center {
-    width: 93%;
-  } */
   .navlist {
     flex-direction: column;
     z-index: 100;
@@ -154,6 +150,9 @@
     min-width: 270px;
     transform: translateX(-48%) translateY(0%);
   }
+  .about .row {
+    width: 80%;
+  }
 }
 @media only screen and (max-width: 792px) {
   .hero-left .main-title {
@@ -164,6 +163,9 @@
   }
   .hero-left p {
     font-size: 1.2rem;
+  }
+  .about .row {
+    width: 85%;
   }
 }
 @media (max-width: 741px) {
@@ -190,9 +192,9 @@
   }
 }
 @media only screen and (max-width: 700px) {
-  /* .navbar.h-nav-resp {
-    gap: 0; 
-  } */
+  .container {
+    width: 95%;
+  }
   .hero-left {
     width: fit-content;
     margin: auto;
@@ -212,6 +214,17 @@
   .hero .resume-btn {
     margin: auto;
   }
+  .social-icone {
+    width: fit-content;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .about .row {
+    width: 100%;
+  }
+  .row {
+    width: 100%;
+  }
   .portfolio .project {
     width: 100%;
     gap: 16px;
@@ -223,18 +236,8 @@
     height: 2rem;
     line-height: 2rem;
   }
-  .portfolio .project {
-    gap: 10px;
-  }
 }
 @media only screen and (max-width: 608px) {
-  .container {
-    width: 100%;
-  }
-  .row {
-    width: 90%;
-    /* background-color: black; */
-  }
   .portfolio .filter-buttons ul {
     width: 18rem;
     gap: 0.5rem;
@@ -252,13 +255,11 @@
   .project {
     width: 100%;
   }
-
   .project .p-item {
     width: 8.5rem !important;
   }
-
   .portfolio .project {
-    gap: 9px;
+    gap: 12px;
   }
   .info-box {
     gap: 1rem;
