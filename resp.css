@@ -94,6 +94,7 @@
     width: 10.9rem;
   }
   .portfolio .project {
+    width: 100%;
     gap: 16px;
   }
   .portfolio .project .p-item {
@@ -257,13 +258,15 @@
     gap: 1rem;
   }
   .info-box .info-content .info {
-    width: 17rem;
+    /*width: 17rem;*/
+    padding: 0 1rem;
     gap: 0.5rem;
   }
   .info-box .info-content .info p {
     margin: 0 0 0.5rem;
   }
   .info-box .heading {
+    padding-left: 10px;
     margin: 23px auto 30px;
   }
 }
