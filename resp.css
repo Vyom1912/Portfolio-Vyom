@@ -50,6 +50,12 @@
   .c-right {
     flex: 50%;
   }
+  .row {
+    width: 100%;
+  }
+  .about .row {
+    width: 90%;
+  }
 }
 @media only screen and (max-width: 935px) {
   .hero .container {
@@ -65,9 +71,6 @@
   }
   .navlist li a {
     padding: 0.6rem 0.75rem;
-  }
-  .row {
-    width: 100%;
   }
 }
 @media only screen and (max-width: 885px) {
@@ -89,6 +92,12 @@
   }
   .navbar .brand #brand-img {
     width: 10.9rem;
+  }
+  .portfolio .project {
+    gap: 16px;
+  }
+  .portfolio .project .p-item {
+    width: 12rem;
   }
 }
 @media only screen and (max-width: 845px) {
@@ -112,7 +121,6 @@
     padding: 10px 0;
     margin: 2.5rem auto 1rem;
   }
-
   .navlist li,
   .navlist li:nth-child(2) {
     margin: 0.7rem 0.7rem 0.7rem 0;
@@ -150,8 +158,14 @@
     min-width: 270px;
     transform: translateX(-48%) translateY(0%);
   }
-  .about .row {
-    width: 80%;
+  .portfolio .project {
+    width: 100%;
+    gap: 1rem;
+  }
+}
+@media (max-width: 825px) {
+  .project .p-item {
+    width: 12rem;
   }
 }
 @media only screen and (max-width: 792px) {
@@ -163,9 +177,6 @@
   }
   .hero-left p {
     font-size: 1.2rem;
-  }
-  .about .row {
-    width: 85%;
   }
 }
 @media (max-width: 741px) {
@@ -183,7 +194,8 @@
     height: 13rem;
   }
   .portfolio .project .p-item {
-    width: 12rem;
+    width: 11.5rem;
+    gap: 2rem;
   }
 }
 @media (max-width: 768px) {
@@ -222,9 +234,6 @@
   .about .row {
     width: 100%;
   }
-  .row {
-    width: 100%;
-  }
   .portfolio .project {
     width: 100%;
     gap: 16px;
@@ -250,7 +259,6 @@
     transition: all 0.3s ease-in;
   }
 }
-
 @media only screen and (max-width: 400px) {
   .project {
     width: 100%;
