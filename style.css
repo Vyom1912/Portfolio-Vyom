@@ -602,7 +602,13 @@ a {
   padding: 1.1rem;
   object-fit: contain;
   color: var(--primary-font);
-  transition: all 0.3s ease;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateX(150px);
+}
+.c-link.visible {
+  transform: translateX(0px);
+  opacity: 1;
 }
 .c-right .c-link .c-link-icone {
   font-size: 1.5rem;
@@ -637,6 +643,13 @@ a {
   align-items: flex-start;
   justify-content: left;
   margin-bottom: 25px;
+  transition: all 0.5s ease;
+  opacity: 0;
+  transform: translateX(150px);
+}
+.c-left .form .input-field.visible {
+  transform: translateX(0px);
+  opacity: 1;
 }
 .c-left .form .input-field label {
   margin: 0;
