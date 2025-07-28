@@ -135,7 +135,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 // -----------------------------------------------------
 // Timeline animation on scroll
-const timelineItems = document.querySelectorAll(".info-content, .p-item ");
+const timelineItems = document.querySelectorAll(
+  ".info-content, .p-item, .input-field, .c-link"
+);
 
 const observer = new IntersectionObserver(
   (entries) => {
