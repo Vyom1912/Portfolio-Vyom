@@ -147,7 +147,6 @@ const observer = new IntersectionObserver(
   },
   { threshold: 0.5 }
 );
-
 timelineItems.forEach((item) => observer.observe(item));
 // ------------------------------------------------
 // revel
@@ -167,42 +166,4 @@ function reveal() {
     }
   }
 }
-
 window.addEventListener("scroll", reveal);
-// -----------------------------------------------------------------------
-// project filter
-// gallery item filter
-const filterButtons = document.querySelectorAll("#filter-btns li");
-const pItems = document.querySelectorAll(".project .p-item");
-
-// Show all items on initial load
-showAllItems();
-
-function showAllItems() {
-  pItems.forEach((item) => {
-    item.classList.add("show");
-  });
-}
-
-filterButtons.forEach((button) => {
-  button.addEventListener("click", function () {
-    filterButtons.forEach((btn) => btn.classList.remove("active"));
-    this.classList.add("active");
-
-    const target = this.getAttribute("data-target");
-
-    pItems.forEach((item) => {
-      const itemCategory = item.getAttribute("data-id");
-
-      // Show item if it matches or "all"
-      if (target === "all" || itemCategory === target) {
-        // Trigger animation restart
-        item.classList.remove("show");
-        void item.offsetWidth; // This forces reflow
-        item.classList.add("show");
-      } else {
-        item.classList.remove("show");
-      }
-    });
-  });
-});
