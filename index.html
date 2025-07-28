@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="image/hero-img.png" type="ico" />
+    <title>VYOM - Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="resp.css" />
+    <!-- font awessome link -->
+    <script
+      src="https://kit.fontawesome.com/dd0de70807.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body onload="loder()">
+    <!-- ---------------------------------------------------------- -->
+    <div id="loader-box">
+      <div id="loader"></div>
+    </div>
+    <div class="animate-bottom" id="myDiv">
+      <!-- ---------------------------------------------------------- -->
+
+      <section class="hero flex" id="hero">
+        <div class="container flex">
+          <div class="hero-left flex flex-c align-top">
+            <span class="main-title"
+              >Hello, I am <br />
+              <span class="title">VYOM PATEL</span></span
+            >
+            <p id="typed"></p>
+            <a class="resume-btn" href="Vyom Resume.pdf" download="Vyom-Resume"
+              >Download CV</a
+            >
+            <div class="social-icone flex">
+              <a href="https://github.com/Vyom1912" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/vyom1912/" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/vyom.patel.3532?mibextid=ZbWKwL "
+                target="_blank"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+              <a href="https://www.instagram.com/vyom_1912/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <img src="image/hero-img.png" alt="" />
+          </div>
+        </div>
+      </section>
+      <!-- navbar -->
+      <header class="header" id="header">
+        <div class="center">
+          <nav class="navbar flex h-nav-resp">
+            <ul class="navbar-nav brand">
+              <img
+                src="image/nav-img.png"
+                alt=""
+                class="brand-img"
+                id="brand-img" />
+              <li class="brand-txt" id="brand-txt">
+                <h5 class="brand-title">VYOM PATEL</h5>
+                <div class="brand-subtitle">Web Designer | Developer</div>
+              </li>
+            </ul>
+            <ul class="navlist flex v-class-resp">
+              <li><a href="#hero">home</a></li>
+              <li><a href="#about">about</a></li>
+              <li><a href="#portfolio">portfolio</a></li>
+              <li><a href="#contect">contect</a></li>
+            </ul>
+            <div class="burger flex flex-c">
+              <div class="line"></div>
+              <div class="line"></div>
+              <div class="line"></div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- about -->
+      <section class="about flex" id="about">
+        <div class="container reveal flex flex-c">
+          <div class="heading">
+            <h1>about me</h1>
+          </div>
+          <div class="row">
+            <div class="info-box">
+              <div class="info-content">
+                <div class="heading">
+                  <h2>My Expertise</h2>
+                </div>
+                <div class="info">
+                  <p>
+                    I specialize in Web Development, Web Design, Logo Design,
+                    Template Design, and Figma Prototyping. By blending
+                    creativity with technical expertise, I craft visually
+                    appealing and highly functional solutions. My focus is on
+                    delivering user-centric designs and efficient code, ensuring
+                    seamless experiences across all devices.
+                  </p>
+                </div>
+              </div>
+              <div class="info-content">
+                <div class="heading">
+                  <h2>Experience</h2>
+                </div>
+                <div class="info flex flex-c align-top">
+                  <h3 class="info-heading">
+                    The One Web Technology | Intern ReactJs Developer
+                    <br /><span>Jan 2024 - April 2024</span>
+                  </h3>
+                  <ul>
+                    <p>
+                      Designed and developed FoodZing, a modern restaurant
+                      food-ordering website.
+                    </p>
+                    <p>
+                      Utilized HTML, CSS, and React.js for the front-end design
+                      and user interface. Integrated Firebase for back-end
+                      support, including real-time database management and
+                      authentication.
+                    </p>
+                    <p>
+                      Focused on responsive design and seamless user experience
+                      for web and mobile platforms.
+                    </p>
+                  </ul>
+                </div>
+                <div class="info flex flex-c align-top">
+                  <h3 class="info-heading">
+                    BrainyBeam Info-Tech Pvt. Ltd | Intern Web Design with React
+                    <br /><span>July 2023 - Aug 2023</span>
+                  </h3>
+                  <ul>
+                    <p>
+                      Designed and developed the dynamic website named as
+                      Joogad: An- e-Commerce Website For Grocery and Vegetables
+                      using React.
+                    </p>
+                  </ul>
+                </div>
+              </div>
+              <div class="info-content">
+                <div class="heading">
+                  <h2>Skills & Tools</h2>
+                </div>
+                <div class="info flex">
+                  <div class="i-item">HTML</div>
+                  <div class="i-item">CSS</div>
+                  <div class="i-item">JAVASCRIPT</div>
+                  <div class="i-item">BOOTSTRAP</div>
+                  <div class="i-item">PHP</div>
+                  <div class="i-item">REACT JS</div>
+                  <div class="i-item">Firebase</div>
+                  <div class="i-item">github</div>
+                  <div class="i-item">Git</div>
+                  <div class="i-item">FIGMA</div>
+                  <div class="i-item">Figma</div>
+                  <div class="i-item">Canva</div>
+                  <div class="i-item">VsCode</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- portfolio -->
+      <section class="portfolio flex" id="portfolio">
+        <div class="container reveal flex flex-c">
+          <div class="heading">
+            <h1>MY PORTFOLIO</h1>
+          </div>
+          <div class="project flex">
+            <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/RakhiStore.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>Rakhi Store</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">ReactJs</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                  <div class="p-tool">Figma</div>
+                </div>
+                <p class="p-description">
+                  A multi-page Rakhi-selling website created using React.js,
+                  with a responsive layout and a festive UI. Includes
+                  category-wise product pages, cart functionality, and smooth
+                  routing using React Router. Designed to deliver a seamless
+                  user experience across devices.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/A-Rakhi-Store.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a
+                    class="flex"
+                    href="https://rakhistore.themaroons.in/"
+                    target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/FoodZing.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>FoodZing</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">ReactJs</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                  <div class="p-tool">Firebase</div>
+                  <div class="p-tool">Figma</div>
+                </div>
+                <p class="p-description">
+                  A responsive food ordering web app built with React.js,
+                  designed to browse and order food from various categories.
+                  Includes features like user authentication (Firebase),
+                  real-time database, and cart functionality. Focused on
+                  delivering a fast and intuitive user experience across all
+                  devices.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a
+                    class="flex"
+                    href="https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/"
+                    target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/Musicplayer.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>Music Player</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">HTML</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                </div>
+                <p class="p-description">
+                  A fully functional, responsive music player built with HTML,
+                  CSS, and JavaScript. Includes features like play/pause,
+                  next/previous, search, shuffle, loop, volume control,
+                  favorites, and download options — all styled with a custom UI
+                  similar to Spotify.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/Music-Player.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a
+                    class="flex"
+                    href="https://vyom1912.github.io/Music-Player/"
+                    target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/TheMaroons.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>The Maroons: A Landing Page</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">HTML</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                </div>
+                <p class="p-description">
+                  A modern, responsive landing page designed for "The Maroons"
+                  startup. Built using HTML, CSS, and JavaScript, it includes
+                  smooth scroll animations, structured sections like services,
+                  about, and contact — ideal for showcasing company branding and
+                  engaging visitors.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/TheMaroons.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a class="flex" href="https://themaroons.in" target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/Notes.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>Notes Maker</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">HTML</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                </div>
+                <p class="p-description">
+                  A simple and responsive note-taking web app developed using
+                  HTML, CSS, and JavaScript. Users can create, save, and delete
+                  notes directly in the browser using localStorage, with a clean
+                  UI for easy organization and productivity.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/Notes-Maker.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a
+                    class="flex"
+                    href="https://vyom1912.github.io/Notes-Maker/"
+                    target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/CodeEditor.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>Code Editor</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">HTML</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                </div>
+                <p class="p-description">
+                  A modern, responsive landing page designed for "The Maroons"
+                  startup. Built using HTML, CSS, and JavaScript, it includes
+                  smooth scroll animations, structured sections like services,
+                  about, and contact — ideal for showcasing company branding and
+                  engaging visitors.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/Code-Editor.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a
+                    class="flex"
+                    href="https://vyom1912.github.io/Code-Editor/ "
+                    target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="p-item flex flex-c" data-id="development">
+              <div class="p-img flex">
+                <img src="image/TicTocToe.png" alt="" />
+              </div>
+              <div class="p-info flex flex-c">
+                <div class="p-name"><h3>Tic Tac Toe</h3></div>
+                <div class="p-tool-list flex">
+                  <div class="p-tool">HTML</div>
+                  <div class="p-tool">CSS</div>
+                  <div class="p-tool">Javascript</div>
+                </div>
+                <p class="p-description">
+                  A classic Tic Tac Toe game implemented using HTML, CSS, and
+                  JavaScript, featuring a responsive layout and turn-based logic
+                  for two players. Includes win detection and game reset
+                  functionality — perfect for showcasing logic implementation
+                  and UI skills.
+                </p>
+                <div class="p-links flex">
+                  <a
+                    href="https://github.com/Vyom1912/TIC-TAC-TOE-GAME.git"
+                    target="_blank"
+                    class="flex"
+                    >Github <i class="fa-brands fa-github"></i
+                  ></a>
+                  <a
+                    class="flex"
+                    href="https://vyom1912.github.io/TIC-TAC-TOE-GAME/"
+                    target="_blank"
+                    >Live Link <i class="fa-solid fa-link"></i
+                  ></a>
+                </div>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </section>
+      <!-- contect -->
+      <section class="contect flex" id="contect">
+        <div class="container reveal flex flex-c align-top">
+          <div class="heading" id="contect-1">
+            <h1>Get In Touch</h1>
+          </div>
+          <div class="c-box flex align-top">
+            <div class="c-left flex flex-c align-top">
+              <div class="heading">
+                <h2>Send Message</h2>
+              </div>
+              <form
+                action="https://api.web3forms.com/submit"
+                method="POST"
+                class="form flex flex-c align-top">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="5c8bcbf0-4b36-487d-b051-e7cadb1e9898" />
+
+                <div class="input-field">
+                  <label for="name">Your name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter Your Name"
+                    autocomplete="off"
+                    required />
+                </div>
+                <div class="input-field">
+                  <label for="email">Your e-mail</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="name@mail.com"
+                    autocomplete="off"
+                    required />
+                </div>
+                <div class="input-field">
+                  <label for="message">Your message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="6"
+                    placeholder="Leave a comment...*"
+                    autocomplete="off"
+                    required></textarea>
+                </div>
+                <button type="submit" class="btn flex">
+                  Send <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+            </div>
+            <div class="c-right flex flex-c">
+              <div class="c-link">
+                <div class="c-link-icone">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="c-link-name">E-mail</div>
+                <div class="c-link-address">vyom1912@gmail.com</div>
+              </div>
+              <div class="c-link">
+                <div class="c-link-icone">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="c-link-name">Linked In</div>
+                <div class="c-link-address">@vyom1912</div>
+              </div>
+              <div class="c-link">
+                <div class="c-link-icone">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="c-link-name">Github</div>
+                <div class="c-link-address">@Vyom1912</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ----------------------------- -->
+      <!-- footer -->
+      <footer class="footer flex">
+        <h3>copy right owned by VYOM PATEL</h3>
+      </footer>
+      <!-- --------------------------------------- -->
+      <!-- scroll button  -->
+      <!-- --------------------------------------- -->
+      <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa-solid fa-arrow-up"></i>
+      </button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
