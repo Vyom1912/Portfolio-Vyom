@@ -57,7 +57,8 @@
       <!-- navbar -->
       <header class="header" id="header">
         <div class="center">
-          <nav class="navbar flex h-nav-resp">
+          <nav class="navbar flex">
+            <!-- Brand -->
             <ul class="navbar-nav brand">
               <img
                 src="image/nav-img.png"
@@ -69,16 +70,17 @@
                 <div class="brand-subtitle">Web Designer | Developer</div>
               </li>
             </ul>
-            <ul class="navlist flex v-class-resp">
+
+            <!-- Navlist -->
+            <ul class="navlist flex" id="navlist">
               <li><a href="#hero">home</a></li>
               <li><a href="#about">about</a></li>
               <li><a href="#portfolio">portfolio</a></li>
               <li><a href="#contect">contect</a></li>
             </ul>
-            <div class="burger flex flex-c">
-              <div class="line"></div>
-              <div class="line"></div>
-              <div class="line"></div>
+            <!-- Burger -->
+            <div class="burger" id="burger">
+              <i class="fa-solid fa-bars" id="burger-icon"></i>
             </div>
           </nav>
         </div>
@@ -174,245 +176,7 @@
           <div class="heading">
             <h1>MY PORTFOLIO</h1>
           </div>
-          <div class="project flex">
-            <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/RakhiStore.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>Rakhi Store</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">ReactJs</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                  <div class="p-tool">Figma</div>
-                </div>
-                <p class="p-description">
-                  A multi-page Rakhi-selling website created using React.js,
-                  with a responsive layout and a festive UI. Includes
-                  category-wise product pages, cart functionality, and smooth
-                  routing using React Router. Designed to deliver a seamless
-                  user experience across devices.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/A-Rakhi-Store.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a
-                    class="flex"
-                    href="https://rakhistore.themaroons.in/"
-                    target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/FoodZing.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>FoodZing</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">ReactJs</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                  <div class="p-tool">Firebase</div>
-                  <div class="p-tool">Figma</div>
-                </div>
-                <p class="p-description">
-                  A responsive food ordering web app built with React.js,
-                  designed to browse and order food from various categories.
-                  Includes features like user authentication (Firebase),
-                  real-time database, and cart functionality. Focused on
-                  delivering a fast and intuitive user experience across all
-                  devices.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a
-                    class="flex"
-                    href="https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/"
-                    target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/Musicplayer.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>Music Player</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">HTML</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                </div>
-                <p class="p-description">
-                  A fully functional, responsive music player built with HTML,
-                  CSS, and JavaScript. Includes features like play/pause,
-                  next/previous, search, shuffle, loop, volume control,
-                  favorites, and download options — all styled with a custom UI
-                  similar to Spotify.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/Music-Player.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a
-                    class="flex"
-                    href="https://vyom1912.github.io/Music-Player/"
-                    target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/TheMaroons.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>The Maroons: A Landing Page</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">HTML</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                </div>
-                <p class="p-description">
-                  A modern, responsive landing page designed for "The Maroons"
-                  startup. Built using HTML, CSS, and JavaScript, it includes
-                  smooth scroll animations, structured sections like services,
-                  about, and contact — ideal for showcasing company branding and
-                  engaging visitors.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/TheMaroons.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a class="flex" href="https://themaroons.in" target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/Notes.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>Notes Maker</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">HTML</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                </div>
-                <p class="p-description">
-                  A simple and responsive note-taking web app developed using
-                  HTML, CSS, and JavaScript. Users can create, save, and delete
-                  notes directly in the browser using localStorage, with a clean
-                  UI for easy organization and productivity.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/Notes-Maker.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a
-                    class="flex"
-                    href="https://vyom1912.github.io/Notes-Maker/"
-                    target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/CodeEditor.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>Code Editor</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">HTML</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                </div>
-                <p class="p-description">
-                  A lightweight CodePen-style playground built with HTML, CSS,
-                  and JavaScript. Allows users to write and preview HTML, CSS,
-                  and JS code live in the browser. Designed for experimenting,
-                  learning, and rapid prototyping with real-time output.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/Code-Editor.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a
-                    class="flex"
-                    href="https://vyom1912.github.io/Code-Editor/ "
-                    target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div>
-            <!-- <div class="p-item flex flex-c">
-              <div class="p-img flex">
-                <img src="image/TicTocToe.png" alt="" />
-              </div>
-              <div class="p-info flex flex-c">
-                <div class="p-name"><h3>Tic Tac Toe</h3></div>
-                <div class="p-tool-list flex">
-                  <div class="p-tool">HTML</div>
-                  <div class="p-tool">CSS</div>
-                  <div class="p-tool">Javascript</div>
-                </div>
-                <p class="p-description">
-                  A classic Tic Tac Toe game implemented using HTML, CSS, and
-                  JavaScript, featuring a responsive layout and turn-based logic
-                  for two players. Includes win detection and game reset
-                  functionality — perfect for showcasing logic implementation
-                  and UI skills.
-                </p>
-                <div class="p-links flex">
-                  <a
-                    href="https://github.com/Vyom1912/TIC-TAC-TOE-GAME.git"
-                    target="_blank"
-                    class="flex"
-                    >Github <i class="fa-brands fa-github"></i
-                  ></a>
-                  <a
-                    class="flex"
-                    href="https://vyom1912.github.io/TIC-TAC-TOE-GAME/"
-                    target="_blank"
-                    >Live Link <i class="fa-solid fa-link"></i
-                  ></a>
-                </div>
-              </div>
-            </div> -->
-          </div>
+          <div class="project flex" id="project"></div>
         </div>
       </section>
       <!-- contect -->
