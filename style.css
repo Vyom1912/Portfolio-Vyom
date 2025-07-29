@@ -71,6 +71,7 @@ a {
   width: 85%;
   margin: auto;
   padding: 80px 0;
+  overflow: hidden;
   height: fit-content;
 }
 /* ---------------------------------------------------- */
