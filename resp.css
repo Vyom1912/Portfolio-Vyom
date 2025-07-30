@@ -243,7 +243,7 @@
 }
 @media (max-width: 608px) {
   .brand {
-    transform: translateX(-10%) translateY(0%);
+    transform: translateX(0%) translateY(0%);
   }
   .p-img img {
     height: 200px;

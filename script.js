@@ -247,7 +247,7 @@ function renderDetailedProjects() {
       description:
         'A modern, responsive landing page designed for "The Maroons" startup. Built using HTML, CSS, and JavaScript, it includes smooth scroll animations, structured sections like services, about, and contact — ideal for showcasing company branding and engaging visitors.',
       github: "https://github.com/Vyom1912/TheMaroons.git",
-      live: "https://themaroons.in",
+      live: "https://vyom1912.github.io/TheMaroons/",
     },
     {
       title: "Notes Maker",
@@ -300,10 +300,10 @@ function renderDetailedProjects() {
               <div class="p-links flex">
                 <a href="${
                   proj.github
-                }" target="_blank"> Github <i class="fa-brands fa-github"></i> GitHub</a>
+                }" target="_blank"> Github <i class="fa-brands fa-github"></i></a>
                 <a class="flex" href="${
                   proj.live
-                }" target="_blank">Live Link <i class="fa-solid fa-link"></i> Live</a>
+                }" target="_blank">Live <i class="fa-solid fa-link"></i></a>
               </div>
             </div>
           `;

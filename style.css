@@ -530,55 +530,19 @@ a {
   border: 1px solid gray;
 }
 
-.p-item.visible:nth-child(1) {
+.p-item.visible:nth-child(odd) {
   transform: translateX(0px);
   opacity: 1;
 }
-.p-item:nth-child(1) {
-  transform: translateX(-150px);
+.p-item:nth-child(odd) {
+  transform: translateX(-100px);
 }
-.p-item.visible:nth-child(2) {
+.p-item.visible:nth-child(even) {
   transform: translateY(0px);
   opacity: 1;
 }
-.p-item:nth-child(2) {
-  transform: translateX(150px);
-}
-
-.p-item.visible:nth-child(3) {
-  transform: translateX(0px);
-  opacity: 1;
-}
-.p-item:nth-child(3) {
-  transform: translateX(-150px);
-}
-.p-item.visible:nth-child(4) {
-  transform: translateY(0px);
-  opacity: 1;
-}
-.p-item:nth-child(4) {
-  transform: translateX(150px);
-}
-.p-item.visible:nth-child(5) {
-  transform: translateX(0px);
-  opacity: 1;
-}
-.p-item:nth-child(5) {
-  transform: translateX(-150px);
-}
-.p-item.visible:nth-child(6) {
-  transform: translateY(0px);
-  opacity: 1;
-}
-.p-item:nth-child(6) {
-  transform: translateX(150px);
-}
-.p-item.visible:nth-child(7) {
-  transform: translateX(0px);
-  opacity: 1;
-}
-.p-item:nth-child(7) {
-  transform: translateX(-150px);
+.p-item:nth-child(even) {
+  transform: translateX(100px);
 }
 
 /* ********************************************** */
@@ -608,7 +572,7 @@ a {
   color: var(--primary-font);
   transition: all 0.5s ease;
   opacity: 0;
-  transform: translateX(150px);
+  transform: translateX(70px);
 }
 .c-link.visible {
   transform: translateX(0px);
@@ -650,7 +614,7 @@ a {
   margin-bottom: 25px;
   transition: all 0.5s ease;
   opacity: 0;
-  transform: translateX(150px);
+  transform: translateX(100px);
 }
 .c-left .form .input-field.visible {
   transform: translateX(0px);
