@@ -62,8 +62,14 @@ a {
 .flex-c {
   flex-direction: column;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 .align-top {
   align-items: normal !important;
+}
+.flex-start {
+  align-items: flex-start;
 }
 .heading {
   margin: 20px auto 50px;
@@ -76,7 +82,7 @@ a {
   height: fit-content;
 }
 /* ---------------------------------------------------- */
-.reveal {
+/* .reveal {
   position: relative;
   transform: translateY(150px);
   opacity: 0;
@@ -86,7 +92,7 @@ a {
 .reveal.active {
   transform: translateY(0);
   opacity: 1;
-}
+} */
 
 /* ************************************** */
 /* loder */
@@ -392,10 +398,10 @@ a {
   margin: 0 auto 30px;
   padding: 0 8px;
   border-radius: 5px;
-  opacity: 0;
+  opacity: 1;
   transition: all 0.5s ease;
 }
-.info-content.visible:nth-child(1) {
+/* .info-content.visible:nth-child(1) {
   transform: translateX(0px);
   opacity: 1;
 }
@@ -415,11 +421,12 @@ a {
 }
 .info-content:nth-child(3) {
   transform: translateX(150px);
-}
+} */
 
 .info-box .info-content .info {
   flex-wrap: wrap;
   gap: 1rem;
+  opacity: 0;
   /* padding-left: 25px; */
   justify-content: flex-start;
 }
@@ -464,7 +471,7 @@ a {
   transition: all 0.5s ease-in;
   animation: projectdisplay 1s;
   overflow: hidden;
-  opacity: 0;
+  opacity: 1;
 }
 .p-item:hover {
   box-shadow: 0 0 15px rgba(128, 128, 128, 0.874);
@@ -530,7 +537,7 @@ a {
   border: 1px solid gray;
 }
 
-.p-item.visible:nth-child(odd) {
+/* .p-item.visible:nth-child(odd) {
   transform: translateX(0px);
   opacity: 1;
 }
@@ -543,7 +550,7 @@ a {
 }
 .p-item:nth-child(even) {
   transform: translateX(100px);
-}
+} */
 
 /* ********************************************** */
 /* contect */
@@ -571,13 +578,13 @@ a {
   object-fit: contain;
   color: var(--primary-font);
   transition: all 0.5s ease;
-  opacity: 0;
-  transform: translateX(70px);
+  opacity: 1;
+  /* transform: translateX(70px); */
 }
-.c-link.visible {
+/* .c-link.visible {
   transform: translateX(0px);
   opacity: 1;
-}
+} */
 .c-right .c-link .c-link-icone {
   font-size: 1.5rem;
 }
@@ -613,13 +620,13 @@ a {
   justify-content: left;
   margin-bottom: 25px;
   transition: all 0.5s ease;
-  opacity: 0;
-  transform: translateX(100px);
+  opacity: 1;
+  /* transform: translateX(100px); */
 }
-.c-left .form .input-field.visible {
+/* .c-left .form .input-field.visible {
   transform: translateX(0px);
   opacity: 1;
-}
+} */
 .c-left .form .input-field label {
   margin: 0;
   align-items: flex-start;

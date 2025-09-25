@@ -9,8 +9,16 @@ function showPage() {
   document.getElementById("loader").style.display = "none";
   document.getElementById("loader-box").style.height = "0px";
   document.getElementById("myDiv").style.display = "block";
-}
 
+  // Initialize AOS and trigger animation immediately
+  AOS.init({ once: true, duration: 800 });
+  AOS.refresh();
+  myDiv
+    .querySelectorAll("[data-aos]")
+    .forEach((el) => el.classList.add("aos-animate"));
+}
+// Call loader when page finishes loading
+window.addEventListener("load", loader);
 // --------------------------------------------------
 // Typing effect
 
@@ -174,41 +182,119 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
-// -----------------------------------------------------
-// Timeline animation on scroll
-const timelineItems = document.querySelectorAll(
-  ".info-content, .p-item, .input-field, .c-link"
-);
 
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0.5 }
-);
-timelineItems.forEach((item) => observer.observe(item));
-// ------------------------------------------------
-// revel animation on scroll
-function reveal() {
-  var reveals = document.querySelectorAll(".reveal");
+// ---------------- Dynamic Skills / Tools and Name ----------------
 
-  for (var i = 0; i < reveals.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = reveals[i].getBoundingClientRect().top;
-    var elementVisible = 150;
+const categorizedSkills = {
+  Frontend: [
+    {
+      name: "HTML",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
+    },
+    {
+      name: "CSS",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
+    },
+    {
+      name: "JavaScript",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "Bootstrap",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
+    },
+    {
+      name: "TailwindCSS",
+      url: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+    },
+    {
+      name: "React JS",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+    },
+  ],
+  "Backend as a Service": [
+    {
+      name: "Firebase",
+      url: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
+    },
+    {
+      name: "Appwrite",
+      url: "https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg",
+    },
+    {
+      name: "Java",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
+    },
+  ],
+  "Version Control / Dev Tools": [
+    {
+      name: "Git",
+      url: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
+    },
+    {
+      name: "GitHub",
+      url: "https://www.vectorlogo.zone/logos/github/github-icon.svg",
+    },
+    {
+      name: "VSCode",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
+    },
+  ],
+  "Design / UI Tools": [
+    {
+      name: "Figma",
+      url: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
+    },
+    {
+      name: "Canva",
+      // url: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Canva_Logo.png",
+      url: "https://freelogopng.com/images/all_img/1656733637logo-canva-png.png",
+    },
+  ],
+};
 
-    if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("active");
-    } else {
-      // reveals[i].classList.remove("active");
-    }
-  }
+const skillsContainer = document.getElementById("skills");
+
+for (const category in categorizedSkills) {
+  const catDiv = document.createElement("div");
+  catDiv.className = "skill-category";
+  catDiv.style.marginBottom = "20px";
+  catDiv.setAttribute("data-aos", "fade-right");
+  catDiv.setAttribute("data-aos-duration", "500");
+
+  const heading = document.createElement("h3");
+  heading.textContent = category;
+  heading.style.marginBottom = "10px";
+
+  catDiv.appendChild(heading);
+
+  const itemsDiv = document.createElement("div");
+  itemsDiv.style.display = "flex";
+  itemsDiv.style.flexWrap = "wrap";
+  itemsDiv.style.gap = "10px";
+
+  categorizedSkills[category].forEach((skill) => {
+    const item = document.createElement("div");
+    item.className = "i-item flex";
+
+    const img = document.createElement("img");
+    img.src = skill.url;
+    img.alt = skill.name;
+    img.width = 25;
+    img.height = 25;
+    img.style.marginRight = "8px";
+
+    const text = document.createTextNode(skill.name);
+
+    item.appendChild(img);
+    item.appendChild(text);
+    itemsDiv.appendChild(item);
+  });
+
+  catDiv.appendChild(itemsDiv);
+  skillsContainer.appendChild(catDiv);
 }
-window.addEventListener("scroll", reveal);
+
 // ---------------- Dynamic Projects ----------------
 function renderDetailedProjects() {
   const projects = [
@@ -284,6 +370,8 @@ function renderDetailedProjects() {
   projects.forEach((proj) => {
     const div = document.createElement("div");
     div.className = "p-item flex flex-c";
+    div.setAttribute("data-aos", "fade-right");
+    div.setAttribute("data-aos-duration", "500");
 
     div.innerHTML = `
             <div class="p-img flex">

@@ -11,268 +11,354 @@
     <script
       src="https://kit.fontawesome.com/dd0de70807.js"
       crossorigin="anonymous"></script>
+    <!-- AOS librery -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
-  <body onload="loader()">
+  <body>
     <!-- ---------------------------------------------------------- -->
-    <div id="loader-box">
+    <!-- <div id="loader-box">
       <div id="loader"></div>
     </div>
-    <div class="animate-bottom" id="myDiv">
-      <!-- ---------------------------------------------------------- -->
+    <div class="animate-bottom" id="myDiv"> -->
+    <!-- ---------------------------------------------------------- -->
 
-      <section class="hero flex" id="hero">
-        <div class="container flex">
-          <div class="hero-left flex flex-c align-top">
-            <span class="main-title"
-              >Hello, I am <br />
-              <span class="title">VYOM PATEL</span></span
-            >
-            <p id="typed"></p>
-            <a class="resume-btn" href="Vyom Resume.pdf" download="Vyom-Resume"
-              >Download CV</a
-            >
-            <div class="social-icone flex">
-              <a href="https://github.com/Vyom1912" target="_blank"
-                ><i class="fa-brands fa-square-github"></i
-              ></a>
-              <a href="https://www.linkedin.com/in/vyom1912/" target="_blank"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
-              <a
-                href="https://www.facebook.com/vyom.patel.3532?mibextid=ZbWKwL "
-                target="_blank"
-                ><i class="fa-brands fa-square-facebook"></i
-              ></a>
-              <a href="https://www.instagram.com/vyom_1912/" target="_blank"
-                ><i class="fa-brands fa-square-instagram"></i>
-                <!-- <i class="fa-brands fa-instagram"></i> -->
-              </a>
-            </div>
-          </div>
-          <div class="hero-right">
-            <img src="image/hero-img.png" alt="" />
+    <section class="hero flex" id="hero">
+      <div class="container flex">
+        <div class="hero-left flex flex-c align-top">
+          <span
+            class="main-title"
+            data-aos="fade-right"
+            data-aos-easing="ease"
+            data-aos-delay="50"
+            >Hello, I am <br />
+            <span
+              class="title"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="250"
+              >VYOM PATEL</span
+            ></span
+          >
+          <p
+            id="typed"
+            data-aos="fade-right"
+            data-aos-easing="ease"
+            data-aos-delay="450"></p>
+          <a
+            class="resume-btn"
+            href="Vyom Resume.pdf"
+            download="Vyom-Resume"
+            data-aos="fade-right"
+            data-aos-easing="ease"
+            data-aos-delay="650"
+            >Download CV</a
+          >
+          <div class="social-icone flex">
+            <a
+              href="https://github.com/Vyom1912"
+              target="_blank"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="850"
+              ><i class="fa-brands fa-square-github"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/vyom1912/"
+              target="_blank"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="1050"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a
+              href="https://www.facebook.com/vyom.patel.3532?mibextid=ZbWKwL "
+              target="_blank"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="1250"
+              ><i class="fa-brands fa-square-facebook"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/vyom_1912/"
+              target="_blank"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="1450"
+              ><i class="fa-brands fa-square-instagram"></i>
+              <!-- <i class="fa-brands fa-instagram"></i> -->
+            </a>
           </div>
         </div>
-      </section>
-      <!-- navbar -->
-      <header class="header" id="header">
-        <div class="center">
-          <nav class="navbar flex">
-            <!-- Brand -->
-            <ul class="navbar-nav brand">
-              <img
-                src="image/nav-img.png"
-                alt=""
-                class="brand-img"
-                id="brand-img" />
-              <li class="brand-txt" id="brand-txt">
-                <h5 class="brand-title">VYOM PATEL</h5>
-                <div class="brand-subtitle">Web Designer | Developer</div>
-              </li>
-            </ul>
-
-            <!-- Navlist -->
-            <ul class="navlist flex" id="navlist">
-              <li><a href="#hero">home</a></li>
-              <li><a href="#about">about</a></li>
-              <li><a href="#portfolio">portfolio</a></li>
-              <li><a href="#contect">contect</a></li>
-            </ul>
-            <!-- Burger -->
-            <div class="burger" id="burger">
-              <i class="fa-solid fa-bars" id="burger-icon"></i>
-            </div>
-          </nav>
+        <div class="hero-right">
+          <img
+            src="image/hero-img.png"
+            alt=""
+            data-aos="fade-left"
+            data-aos-easing="ease"
+            data-aos-delay="400" />
         </div>
-      </header>
-      <!-- about -->
-      <section class="about flex" id="about">
-        <div class="container reveal flex flex-c">
-          <div class="heading">
-            <h1>about me</h1>
+      </div>
+    </section>
+    <!-- navbar -->
+    <header class="header" id="header">
+      <div class="center">
+        <nav class="navbar flex">
+          <!-- Brand -->
+          <ul class="navbar-nav brand">
+            <img
+              src="image/nav-img.png"
+              alt=""
+              class="brand-img"
+              id="brand-img" />
+            <li class="brand-txt" id="brand-txt">
+              <h5 class="brand-title">VYOM PATEL</h5>
+              <div class="brand-subtitle">Web Designer | Developer</div>
+            </li>
+          </ul>
+
+          <!-- Navlist -->
+          <ul class="navlist flex" id="navlist">
+            <li><a href="#hero">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#portfolio">portfolio</a></li>
+            <li><a href="#contect">contect</a></li>
+          </ul>
+          <!-- Burger -->
+          <div class="burger" id="burger">
+            <i class="fa-solid fa-bars" id="burger-icon"></i>
           </div>
-          <div class="row">
-            <div class="info-box">
-              <div class="info-content">
-                <div class="info">
+        </nav>
+      </div>
+    </header>
+    <!-- about -->
+    <section class="about flex" id="about">
+      <div class="container reveal flex flex-c">
+        <div class="heading" data-aos="fade-right" data-aos-duration="500">
+          <h1>about me</h1>
+        </div>
+        <div class="row">
+          <div class="info-box">
+            <div class="info-content">
+              <div class="info" data-aos="fade-right" data-aos-duration="500">
+                <p>
+                  I am a frontend developer who loves transforming ideas into
+                  intuitive digital experiences. What started as curiosity has
+                  grown into a passion for clean design and functional code. I
+                  enjoy solving real-world problems with a focus on detail and
+                  user experience. Whether it's refining UI layouts or sketching
+                  startup ideas like The Maroons, I'm always creating. I thrive
+                  in collaborative environments and never stop learning. My goal
+                  is to build smarter, impactful solutions that feel as good as
+                  they work.
+                </p>
+              </div>
+            </div>
+            <div class="info-content">
+              <div
+                class="heading"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h2>Experience</h2>
+              </div>
+              <div
+                class="info flex flex-c align-top"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h3 class="info-heading">
+                  The One Web Technology | Intern ReactJs Developer
+                  <br /><span>Jan 2024 - April 2024</span>
+                </h3>
+                <ul>
                   <p>
-                    I am a frontend developer who loves transforming ideas into
-                    intuitive digital experiences. What started as curiosity has
-                    grown into a passion for clean design and functional code. I
-                    enjoy solving real-world problems with a focus on detail and
-                    user experience. Whether it's refining UI layouts or
-                    sketching startup ideas like The Maroons, I'm always
-                    creating. I thrive in collaborative environments and never
-                    stop learning. My goal is to build smarter, impactful
-                    solutions that feel as good as they work.
+                    Designed and developed FoodZing, a modern restaurant
+                    food-ordering website.
                   </p>
-                </div>
+                  <p>
+                    Utilized HTML, CSS, and React.js for the front-end design
+                    and user interface. Integrated Firebase for back-end
+                    support, including real-time database management and
+                    authentication.
+                  </p>
+                  <p>
+                    Focused on responsive design and seamless user experience
+                    for web and mobile platforms.
+                  </p>
+                </ul>
               </div>
-              <div class="info-content">
-                <div class="heading">
-                  <h2>Experience</h2>
-                </div>
-                <div class="info flex flex-c align-top">
-                  <h3 class="info-heading">
-                    The One Web Technology | Intern ReactJs Developer
-                    <br /><span>Jan 2024 - April 2024</span>
-                  </h3>
-                  <ul>
-                    <p>
-                      Designed and developed FoodZing, a modern restaurant
-                      food-ordering website.
-                    </p>
-                    <p>
-                      Utilized HTML, CSS, and React.js for the front-end design
-                      and user interface. Integrated Firebase for back-end
-                      support, including real-time database management and
-                      authentication.
-                    </p>
-                    <p>
-                      Focused on responsive design and seamless user experience
-                      for web and mobile platforms.
-                    </p>
-                  </ul>
-                </div>
-                <div class="info flex flex-c align-top">
-                  <h3 class="info-heading">
-                    BrainyBeam Info-Tech Pvt. Ltd | Intern Web Design with React
-                    <br /><span>July 2023 - Aug 2023</span>
-                  </h3>
-                  <ul>
-                    <p>
-                      Designed and developed the dynamic website named as
-                      Joogad: An- e-Commerce Website For Grocery and Vegetables
-                      using React.
-                    </p>
-                  </ul>
-                </div>
+              <div
+                class="info flex flex-c align-top"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h3 class="info-heading">
+                  BrainyBeam Info-Tech Pvt. Ltd | Intern Web Design with React
+                  <br /><span>July 2023 - Aug 2023</span>
+                </h3>
+                <ul>
+                  <p>
+                    Designed and developed the dynamic website named as Joogad:
+                    An- e-Commerce Website For Grocery and Vegetables using
+                    React.
+                  </p>
+                </ul>
               </div>
-              <div class="info-content">
-                <div class="heading">
-                  <h2>Skills & Tools</h2>
-                </div>
-                <div class="info flex">
-                  <div class="i-item">HTML</div>
-                  <div class="i-item">CSS</div>
-                  <div class="i-item">JAVASCRIPT</div>
-                  <div class="i-item">BOOTSTRAP</div>
-                  <div class="i-item">REACT JS</div>
-                  <div class="i-item">Firebase</div>
-                  <div class="i-item">Github</div>
-                  <div class="i-item">Git</div>
-                  <div class="i-item">Figma</div>
-                  <div class="i-item">Canva</div>
-                  <div class="i-item">VsCode</div>
-                </div>
+            </div>
+            <div class="info-content">
+              <div
+                class="heading"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h2>Skills & Tools</h2>
               </div>
+              <div
+                class="info flex flex-c justify-start flex-start"
+                id="skills"
+                data-aos="fade-right"></div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- portfolio -->
-      <section class="portfolio flex" id="portfolio">
-        <div class="container reveal flex flex-c">
-          <div class="heading">
-            <h1>MY PORTFOLIO</h1>
-          </div>
-          <div class="project flex" id="project"></div>
+      </div>
+    </section>
+    <!-- portfolio -->
+    <section class="portfolio flex" id="portfolio">
+      <div class="container reveal flex flex-c">
+        <div class="heading" data-aos="fade-right" data-aos-duration="500">
+          <h1>MY PORTFOLIO</h1>
         </div>
-      </section>
-      <!-- contect -->
-      <section class="contect flex" id="contect">
-        <div class="container reveal flex flex-c align-top">
-          <div class="heading" id="contect-1">
-            <h1>Get In Touch</h1>
-          </div>
-          <div class="c-box flex align-top">
-            <div class="c-left flex flex-c align-top">
-              <div class="heading">
-                <h2>Send Message</h2>
-              </div>
-              <form
-                action="https://api.web3forms.com/submit"
-                method="POST"
-                class="form flex flex-c align-top">
-                <input
-                  type="hidden"
-                  name="access_key"
-                  value="5c8bcbf0-4b36-487d-b051-e7cadb1e9898" />
+        <div class="project flex" id="project"></div>
+      </div>
+    </section>
+    <!-- contect -->
+    <section class="contect flex" id="contect">
+      <div class="container reveal flex flex-c align-top">
+        <div
+          class="heading"
+          data-aos="fade-right"
+          data-aos-duration="500"
+          id="contect-1">
+          <h1>Get In Touch</h1>
+        </div>
+        <div class="c-box flex align-top">
+          <div class="c-left flex flex-c align-top">
+            <div class="heading" data-aos="fade-left" data-aos-duration="500">
+              <h2>Send Message</h2>
+            </div>
+            <form
+              action="https://api.web3forms.com/submit"
+              method="POST"
+              class="form flex flex-c align-top">
+              <input
+                type="hidden"
+                name="access_key"
+                value="5c8bcbf0-4b36-487d-b051-e7cadb1e9898" />
 
-                <div class="input-field">
-                  <label for="name">Your name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    placeholder="Enter Your Name"
-                    autocomplete="off"
-                    required />
-                </div>
-                <div class="input-field">
-                  <label for="email">Your e-mail</label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    placeholder="name@mail.com"
-                    autocomplete="off"
-                    required />
-                </div>
-                <div class="input-field">
-                  <label for="message">Your message</label>
-                  <textarea
-                    name="message"
-                    id="message"
-                    cols="30"
-                    rows="6"
-                    placeholder="Leave a comment...*"
-                    autocomplete="off"
-                    required></textarea>
-                </div>
-                <button type="submit" class="btn flex">
-                  Send <i class="fa-solid fa-paper-plane"></i>
-                </button>
-              </form>
+              <div
+                class="input-field"
+                data-aos="fade-left"
+                data-aos-duration="500"
+                data-aos-delay="300">
+                <label for="name">Your name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  placeholder="Enter Your Name"
+                  autocomplete="off"
+                  required />
+              </div>
+              <div
+                class="input-field"
+                data-aos="fade-left"
+                data-aos-duration="500"
+                data-aos-delay="400">
+                <label for="email">Your e-mail</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="name@mail.com"
+                  autocomplete="off"
+                  required />
+              </div>
+              <div
+                class="input-field"
+                data-aos="fade-left"
+                data-aos-duration="500"
+                data-aos-delay="500">
+                <label for="message">Your message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  cols="30"
+                  rows="6"
+                  placeholder="Leave a comment...*"
+                  autocomplete="off"
+                  required></textarea>
+              </div>
+              <button
+                type="submit"
+                class="btn flex"
+                data-aos="fade-left"
+                data-aos-duration="500"
+                data-aos-delay="600"
+                data-aos-offset="20">
+                Send <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </form>
+          </div>
+          <div class="c-right flex flex-c">
+            <div
+              class="c-link"
+              data-aos="fade-right"
+              data-aos-duration="500"
+              data-aos-delay="300">
+              <div class="c-link-icone">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="c-link-name">E-mail</div>
+              <div class="c-link-address">vyom1912@gmail.com</div>
             </div>
-            <div class="c-right flex flex-c">
-              <div class="c-link">
-                <div class="c-link-icone">
-                  <i class="fa-solid fa-envelope"></i>
-                </div>
-                <div class="c-link-name">E-mail</div>
-                <div class="c-link-address">vyom1912@gmail.com</div>
+            <div
+              class="c-link"
+              data-aos="fade-right"
+              data-aos-duration="500"
+              data-aos-delay="400">
+              <div class="c-link-icone">
+                <i class="fa-brands fa-linkedin-in"></i>
               </div>
-              <div class="c-link">
-                <div class="c-link-icone">
-                  <i class="fa-brands fa-linkedin-in"></i>
-                </div>
-                <div class="c-link-name">Linked In</div>
-                <div class="c-link-address">@vyom1912</div>
+              <div class="c-link-name">Linked In</div>
+              <div class="c-link-address">@vyom1912</div>
+            </div>
+            <div
+              class="c-link"
+              data-aos="fade-right"
+              data-aos-duration="500"
+              data-aos-delay="500">
+              <div class="c-link-icone">
+                <i class="fa-brands fa-github"></i>
               </div>
-              <div class="c-link">
-                <div class="c-link-icone">
-                  <i class="fa-brands fa-github"></i>
-                </div>
-                <div class="c-link-name">Github</div>
-                <div class="c-link-address">@Vyom1912</div>
-              </div>
+              <div class="c-link-name">Github</div>
+              <div class="c-link-address">@Vyom1912</div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- ----------------------------- -->
-      <!-- footer -->
-      <footer class="footer flex">
-        <h3>copy right owned by VYOM PATEL</h3>
-      </footer>
-      <!-- --------------------------------------- -->
-      <!-- scroll button  -->
-      <!-- --------------------------------------- -->
-      <button onclick="topFunction()" id="myBtn" title="Go to top">
-        <i class="fa-solid fa-arrow-up"></i>
-      </button>
-    </div>
+      </div>
+    </section>
+    <!-- ----------------------------- -->
+    <!-- footer -->
+    <footer class="footer flex">
+      <h3>copy right owned by VYOM PATEL</h3>
+    </footer>
+    <!-- --------------------------------------- -->
+    <!-- scroll button  -->
+    <!-- --------------------------------------- -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    <!-- </div> -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
