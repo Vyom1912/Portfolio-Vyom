@@ -401,27 +401,6 @@ a {
   opacity: 1;
   transition: all 0.5s ease;
 }
-/* .info-content.visible:nth-child(1) {
-  transform: translateX(0px);
-  opacity: 1;
-}
-.info-content:nth-child(1) {
-  transform: translateX(-150px);
-}
-.info-content.visible:nth-child(2) {
-  transform: translateY(0px);
-  opacity: 1;
-}
-.info-content:nth-child(2) {
-  transform: translateY(100px);
-}
-.info-content.visible:nth-child(3) {
-  transform: translateX(0px);
-  opacity: 1;
-}
-.info-content:nth-child(3) {
-  transform: translateX(150px);
-} */
 
 .info-box .info-content .info {
   flex-wrap: wrap;

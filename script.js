@@ -1,3 +1,11 @@
+// {
+//   "hosting": {
+//     "site": "vyom1912",
+
+//     "public": "public",
+//     ...
+//   }
+// }
 // loder
 var myVar;
 

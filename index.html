@@ -242,15 +242,7 @@
             <div class="heading" data-aos="fade-left" data-aos-duration="500">
               <h2>Send Message</h2>
             </div>
-            <form
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              class="form flex flex-c align-top">
-              <input
-                type="hidden"
-                name="access_key"
-                value="5c8bcbf0-4b36-487d-b051-e7cadb1e9898" />
-
+            <form class="form flex flex-c align-top">
               <div
                 class="input-field"
                 data-aos="fade-left"
@@ -360,5 +352,28 @@
       AOS.init();
     </script>
     <script src="script.js"></script>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
+
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCVixZvtWbbHZpDRfQTLRVUemrxlnztazw",
+        authDomain: "myportfolio-fb512.firebaseapp.com",
+        projectId: "myportfolio-fb512",
+        storageBucket: "myportfolio-fb512.firebasestorage.app",
+        messagingSenderId: "872139928313",
+        appId: "1:872139928313:web:d829a46b32104070d22828",
+        measurementId: "G-TS73YB0K7B",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+    </script>
   </body>
 </html>
