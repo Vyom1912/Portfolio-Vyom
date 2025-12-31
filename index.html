@@ -141,16 +141,48 @@
             <div class="info-content">
               <div class="info" data-aos="fade-right" data-aos-duration="500">
                 <p>
-                  I am a frontend developer who loves transforming ideas into
-                  intuitive digital experiences. What started as curiosity has
-                  grown into a passion for clean design and functional code. I
-                  enjoy solving real-world problems with a focus on detail and
-                  user experience. Whether it's refining UI layouts or sketching
-                  startup ideas like The Maroons, I'm always creating. I thrive
-                  in collaborative environments and never stop learning. My goal
-                  is to build smarter, impactful solutions that feel as good as
-                  they work.
+                  I am a Computer Engineering graduate and currently pursuing my
+                  M.E. in Computer Engineering. I have a strong interest in
+                  software development, problem-solving, and modern web
+                  technologies. I enjoy learning new skills, building practical
+                  projects, and working on real-world challenges that enhance my
+                  technical expertise.
                 </p>
+              </div>
+            </div>
+            <div class="info-content">
+              <div
+                class="heading"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h2>Education</h2>
+              </div>
+              <div
+                class="info flex flex-c align-top"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h3 class="info-heading">
+                  Master of Engineering (M.E.) in Computer Engineering
+                </h3>
+                <ul>
+                  <p>LDRP Institute of Technology and Research</p>
+                  <p>Aug 2025 - April 2027(pursuing)</p>
+                </ul>
+              </div>
+              <div
+                class="info flex flex-c align-top"
+                data-aos="fade-right"
+                data-aos-duration="500">
+                <h3 class="info-heading">
+                  Bachelor of Engineering (B.E.) in Computer Engineering
+                </h3>
+                <ul>
+                  <p>
+                    Government Engineering College, Modasa (affiliated to GTU)
+                  </p>
+                  <p>July 2020 – May 2024</p>
+                  <p><b>CGPA:</b> 7.91</p>
+                </ul>
               </div>
             </div>
             <div class="info-content">
@@ -202,6 +234,7 @@
                 </ul>
               </div>
             </div>
+
             <div class="info-content">
               <div
                 class="heading"
@@ -242,7 +275,15 @@
             <div class="heading" data-aos="fade-left" data-aos-duration="500">
               <h2>Send Message</h2>
             </div>
-            <form class="form flex flex-c align-top">
+            <form
+              class="form flex flex-c align-top"
+              id="contactForm"
+              action="https://api.web3forms.com/submit"
+              method="POST">
+              <input
+                type="hidden"
+                name="access_key"
+                value="b425eae4-14d0-43ec-abec-40e85b13220f" />
               <div
                 class="input-field"
                 data-aos="fade-left"
@@ -299,7 +340,7 @@
           </div>
           <div class="c-right flex flex-c">
             <div
-              class="c-link"
+              class="c-link flex flex-c"
               data-aos="fade-right"
               data-aos-duration="500"
               data-aos-delay="300">
@@ -310,18 +351,18 @@
               <div class="c-link-address">vyom1912@gmail.com</div>
             </div>
             <div
-              class="c-link"
+              class="c-link flex flex-c"
               data-aos="fade-right"
               data-aos-duration="500"
               data-aos-delay="400">
               <div class="c-link-icone">
                 <i class="fa-brands fa-linkedin-in"></i>
               </div>
-              <div class="c-link-name">Linked In</div>
+              <div class="c-link-name">LinkedIn</div>
               <div class="c-link-address">@vyom1912</div>
             </div>
             <div
-              class="c-link"
+              class="c-link flex flex-c"
               data-aos="fade-right"
               data-aos-duration="500"
               data-aos-delay="500">
@@ -352,28 +393,5 @@
       AOS.init();
     </script>
     <script src="script.js"></script>
-    <script type="module">
-      // Import the functions you need from the SDKs you need
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-app.js";
-      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.3.0/firebase-analytics.js";
-      // TODO: Add SDKs for Firebase products that you want to use
-      // https://firebase.google.com/docs/web/setup#available-libraries
-
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      const firebaseConfig = {
-        apiKey: "AIzaSyCVixZvtWbbHZpDRfQTLRVUemrxlnztazw",
-        authDomain: "myportfolio-fb512.firebaseapp.com",
-        projectId: "myportfolio-fb512",
-        storageBucket: "myportfolio-fb512.firebasestorage.app",
-        messagingSenderId: "872139928313",
-        appId: "1:872139928313:web:d829a46b32104070d22828",
-        measurementId: "G-TS73YB0K7B",
-      };
-
-      // Initialize Firebase
-      const app = initializeApp(firebaseConfig);
-      const analytics = getAnalytics(app);
-    </script>
   </body>
 </html>

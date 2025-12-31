@@ -255,7 +255,10 @@
   .c-right {
     gap: 0.8rem !important;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center !important;
+  }
+  .c-link {
+    align-items: center !important;
   }
 }
 @media (max-width: 400px) {

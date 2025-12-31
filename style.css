@@ -558,6 +558,7 @@ a {
   color: var(--primary-font);
   transition: all 0.5s ease;
   opacity: 1;
+  align-items: flex-start;
   /* transform: translateX(70px); */
 }
 /* .c-link.visible {

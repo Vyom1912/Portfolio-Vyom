@@ -1,12 +1,3 @@
-// {
-//   "hosting": {
-//     "site": "vyom1912",
-
-//     "public": "public",
-//     ...
-//   }
-// }
-// loder
 var myVar;
 
 function loader() {
@@ -222,6 +213,10 @@ const categorizedSkills = {
   ],
   "Backend as a Service": [
     {
+      name: "Node JS",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
+    },
+    {
       name: "Firebase",
       url: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
     },
@@ -232,6 +227,16 @@ const categorizedSkills = {
     {
       name: "Java",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
+    },
+  ],
+  Database: [
+    // {
+    //   name: "MySQL",
+    //   url: "https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg",
+    // },
+    {
+      name: "MongoDB",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
     },
   ],
   "Version Control / Dev Tools": [
