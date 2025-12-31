@@ -203,7 +203,6 @@
   }
   .hero-left .main-title {
     font-size: 1.4rem;
-    text-align: center;
   }
   .hero-left .main-title .title {
     font-size: 3.2rem;
@@ -211,14 +210,10 @@
   .hero-left #typed {
     font-size: 1.1rem;
     width: fit-content;
-    margin: auto;
   }
-  .hero .resume-btn {
-    margin: auto;
-  }
+
   .social-icone {
     width: fit-content;
-    margin: auto;
     margin-top: 30px;
   }
   .c-box {
@@ -246,7 +241,17 @@
     padding: 1.1rem 0.3rem !important;
   }
 }
-@media (max-width: 540px) {
+@media (max-width: 560px) {
+  .hero-left .main-title,
+  .hero-left .title,
+  .hero p,
+  .hero .resume-btn {
+    margin: auto;
+    text-align: center;
+  }
+  .hero .social-icone {
+    margin: 30px auto 0;
+  }
   .c-link {
     width: 8.5rem !important;
   }
