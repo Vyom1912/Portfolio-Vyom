@@ -73,7 +73,46 @@ a {
 }
 .heading {
   margin: 20px auto 50px;
+  position: relative;
 }
+/* Animated underline */
+.heading::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -3px;
+  transform: translateX(-50%);
+  width: 120%;
+  height: 2px;
+  background: var(--primary-font);
+  transition: width 0.4s ease;
+}
+/* Animated underline */
+.heading h1::before {
+  content: "";
+  position: absolute;
+  left: 110%;
+  bottom: -3px;
+  transform: translate(-20%, 30%);
+  width: 5px;
+  border-radius: 50%;
+  height: 5px;
+  background: var(--primary-font);
+  transition: all 0.4s ease;
+}
+.heading h1::after {
+  content: "";
+  position: absolute;
+  left: -11%;
+  bottom: -3px;
+  transform: translate(-20%, 30%);
+  width: 5px;
+  border-radius: 50%;
+  height: 5px;
+  background: var(--primary-font);
+  transition: all 0.4s ease;
+}
+
 .container {
   width: 85%;
   margin: auto;
@@ -392,6 +431,9 @@ a {
   text-align: left;
   margin: 20px 0;
 }
+.info-box .heading::after {
+  width: 0;
+}
 .info-heading {
   margin-top: 10px;
 }
@@ -592,6 +634,9 @@ a {
 .c-left .heading,
 .c-right .heading {
   margin-bottom: 20px;
+}
+.c-left .heading::after {
+  width: 0;
 }
 .c-left .form {
   width: 100%;
