@@ -260,7 +260,9 @@
         <div class="heading" data-aos="fade-right" data-aos-duration="500">
           <h1>MY PORTFOLIO</h1>
         </div>
-        <div class="project flex" id="project"></div>
+        <div class="row">
+          <div class="project flex" id="project"></div>
+        </div>
       </div>
     </section>
     <!-- contect -->
@@ -273,107 +275,109 @@
           id="contect-1">
           <h1>Get In Touch</h1>
         </div>
-        <div class="c-box flex align-top">
-          <div class="c-left flex flex-c align-top">
-            <div class="heading" data-aos="fade-left" data-aos-duration="500">
-              <h2>Send Message</h2>
+        <div class="row">
+          <div class="c-box flex align-top">
+            <div class="c-left flex flex-c align-top">
+              <div class="heading" data-aos="fade-left" data-aos-duration="500">
+                <h2>Send Message</h2>
+              </div>
+              <form
+                class="form flex flex-c align-top"
+                id="contactForm"
+                action="https://api.web3forms.com/submit"
+                method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="b425eae4-14d0-43ec-abec-40e85b13220f" />
+                <div
+                  class="input-field"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  data-aos-delay="300">
+                  <label for="name">Your name</label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter Your Name"
+                    autocomplete="off"
+                    required />
+                </div>
+                <div
+                  class="input-field"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  data-aos-delay="400">
+                  <label for="email">Your e-mail</label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="name@mail.com"
+                    autocomplete="off"
+                    required />
+                </div>
+                <div
+                  class="input-field"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  data-aos-delay="500">
+                  <label for="message">Your message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    cols="30"
+                    rows="6"
+                    placeholder="Leave a comment...*"
+                    autocomplete="off"
+                    required></textarea>
+                </div>
+                <button
+                  type="submit"
+                  class="btn flex"
+                  data-aos="fade-left"
+                  data-aos-duration="500"
+                  data-aos-delay="600"
+                  data-aos-offset="20">
+                  Send <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
             </div>
-            <form
-              class="form flex flex-c align-top"
-              id="contactForm"
-              action="https://api.web3forms.com/submit"
-              method="POST">
-              <input
-                type="hidden"
-                name="access_key"
-                value="b425eae4-14d0-43ec-abec-40e85b13220f" />
+            <div class="c-right flex flex-c">
               <div
-                class="input-field"
-                data-aos="fade-left"
+                class="c-link flex flex-c"
+                data-aos="fade-right"
                 data-aos-duration="500"
                 data-aos-delay="300">
-                <label for="name">Your name</label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  placeholder="Enter Your Name"
-                  autocomplete="off"
-                  required />
+                <div class="c-link-icone">
+                  <i class="fa-solid fa-envelope"></i>
+                </div>
+                <div class="c-link-name">E-mail</div>
+                <div class="c-link-address">vyom1912@gmail.com</div>
               </div>
               <div
-                class="input-field"
-                data-aos="fade-left"
+                class="c-link flex flex-c"
+                data-aos="fade-right"
                 data-aos-duration="500"
                 data-aos-delay="400">
-                <label for="email">Your e-mail</label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="name@mail.com"
-                  autocomplete="off"
-                  required />
+                <div class="c-link-icone">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div class="c-link-name">LinkedIn</div>
+                <div class="c-link-address">@vyom1912</div>
               </div>
               <div
-                class="input-field"
-                data-aos="fade-left"
+                class="c-link flex flex-c"
+                data-aos="fade-right"
                 data-aos-duration="500"
                 data-aos-delay="500">
-                <label for="message">Your message</label>
-                <textarea
-                  name="message"
-                  id="message"
-                  cols="30"
-                  rows="6"
-                  placeholder="Leave a comment...*"
-                  autocomplete="off"
-                  required></textarea>
+                <div class="c-link-icone">
+                  <i class="fa-brands fa-github"></i>
+                </div>
+                <div class="c-link-name">Github</div>
+                <div class="c-link-address">@Vyom1912</div>
               </div>
-              <button
-                type="submit"
-                class="btn flex"
-                data-aos="fade-left"
-                data-aos-duration="500"
-                data-aos-delay="600"
-                data-aos-offset="20">
-                Send <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </form>
-          </div>
-          <div class="c-right flex flex-c">
-            <div
-              class="c-link flex flex-c"
-              data-aos="fade-right"
-              data-aos-duration="500"
-              data-aos-delay="300">
-              <div class="c-link-icone">
-                <i class="fa-solid fa-envelope"></i>
-              </div>
-              <div class="c-link-name">E-mail</div>
-              <div class="c-link-address">vyom1912@gmail.com</div>
-            </div>
-            <div
-              class="c-link flex flex-c"
-              data-aos="fade-right"
-              data-aos-duration="500"
-              data-aos-delay="400">
-              <div class="c-link-icone">
-                <i class="fa-brands fa-linkedin-in"></i>
-              </div>
-              <div class="c-link-name">LinkedIn</div>
-              <div class="c-link-address">@vyom1912</div>
-            </div>
-            <div
-              class="c-link flex flex-c"
-              data-aos="fade-right"
-              data-aos-duration="500"
-              data-aos-delay="500">
-              <div class="c-link-icone">
-                <i class="fa-brands fa-github"></i>
-              </div>
-              <div class="c-link-name">Github</div>
-              <div class="c-link-address">@Vyom1912</div>
             </div>
           </div>
         </div>

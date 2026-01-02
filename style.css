@@ -81,6 +81,10 @@ a {
   overflow-x: hidden;
   height: fit-content;
 }
+.row {
+  width: 70%;
+  margin: auto;
+}
 /* ---------------------------------------------------- */
 /* .reveal {
   position: relative;
@@ -380,9 +384,6 @@ a {
   /* width: 100vh; */
   overflow-x: hidden;
 }
-.about .row {
-  width: 70%;
-}
 .about .container .info-box {
   width: 100%;
   backdrop-filter: blur(10px);
@@ -431,13 +432,14 @@ a {
 /* ******************************** */
 /* Portfolio */
 /* ******************************** */
+
 .portfolio .project {
   width: 100%;
+  padding: 0 8px;
   flex-direction: column;
   gap: 1.5rem;
   overflow-x: hidden;
 }
-
 .p-item {
   /* width: 95%; */
   margin: auto;
@@ -534,8 +536,11 @@ a {
 /* ********************************************** */
 /* contect */
 /* ********************************************* */
+
 .contect .c-box {
-  width: 70%;
+  /* width: 70%; */
+  width: 100%;
+  padding: 0 8px;
   margin: auto;
   display: flex;
   flex-direction: row-reverse;
