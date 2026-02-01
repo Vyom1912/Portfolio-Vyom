@@ -1,0 +1,451 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://kit.fontawesome.com/dd0de70807.js"
+      crossorigin="anonymous"></script>
+    <!-- AOS librery -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Karla:wght@400;500&family=Lilita+One&display=swap");
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      :root {
+        --gray: #3b5060;
+        --white: #fff;
+        --primary-font: #1b262c;
+        --secondary-font: #0f4c75;
+        --primary-bg: #bbe1fa;
+        --secondary-bg: #3282b8;
+      }
+      html {
+        scroll-behavior: smooth;
+        -webkit-tap-highlight-color: transparent;
+      }
+      body {
+        width: 100vw;
+        font-size: 100%;
+        font-family: "Inter", sans-serif;
+        /* overflow: hidden; */
+        overflow-x: hidden;
+      }
+      h1 {
+        font-size: 2rem;
+        letter-spacing: 0.075rem;
+        text-transform: uppercase;
+      }
+      h2 {
+        font-size: 1.5rem;
+      }
+      h3 {
+        font-size: 1.1rem;
+        text-align: left;
+      }
+      h1,
+      h2,
+      h3 {
+        font-family: "Karla", sans-serif;
+        color: var(--primary-font);
+      }
+      p,
+      li,
+      a {
+        font-family: "Inter", sans-serif;
+        font-size: 1rem;
+        text-align: justify;
+        color: var(--primary-font);
+      }
+      li,
+      a {
+        list-style: none;
+        text-decoration: none;
+      }
+      .flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+      }
+      .flex-c {
+        flex-direction: column;
+      }
+      .justify-start {
+        justify-content: flex-start;
+      }
+      .align-top {
+        align-items: normal !important;
+      }
+      .flex-start {
+        align-items: flex-start;
+      }
+      .heading {
+        margin: 20px auto 50px;
+        position: relative;
+      }
+      /* Animated underline */
+      .heading::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: -3px;
+        transform: translateX(-50%);
+        width: 120%;
+        height: 2px;
+        background: var(--primary-font);
+        transition: width 0.4s ease;
+      }
+      /* Animated underline */
+      .heading h1::before {
+        content: "";
+        position: absolute;
+        left: 110%;
+        bottom: -3px;
+        transform: translate(-20%, 30%);
+        width: 5px;
+        border-radius: 50%;
+        height: 5px;
+        background: var(--primary-font);
+        transition: all 0.4s ease;
+      }
+      .heading h1::after {
+        content: "";
+        position: absolute;
+        left: -11%;
+        bottom: -3px;
+        transform: translate(-20%, 30%);
+        width: 5px;
+        border-radius: 50%;
+        height: 5px;
+        background: var(--primary-font);
+        transition: all 0.4s ease;
+      }
+
+      .container {
+        width: 85%;
+        margin: auto;
+        padding: 80px 0;
+        overflow-x: hidden;
+        height: fit-content;
+      }
+      .row {
+        width: 70%;
+        margin: auto;
+      }
+      /* ---------------------------------------------------- */
+      /* .reveal {
+  position: relative;
+  transform: translateY(150px);
+  opacity: 0;
+  transition: 1.5s all ease;
+}
+
+.reveal.active {
+  transform: translateY(0);
+  opacity: 1;
+} */
+
+      /* ************************************** */
+      /* loder */
+      /* ************************************** */
+      #loader-box {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        z-index: 9999;
+      }
+      #loader {
+        height: 60px;
+        aspect-ratio: 2;
+        border-bottom: 3px solid #0000;
+        background: linear-gradient(90deg, #524656 50%, #0000 0) -25% 100%/50%
+          3px repeat-x border-box;
+        position: relative;
+        animation: l3-0 0.75s linear infinite;
+      }
+      #loader:before {
+        content: "";
+        position: absolute;
+        inset: auto 42.5% 0;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background: var(--secondary-bg);
+        animation: l3-1 0.75s cubic-bezier(0, 900, 1, 900) infinite;
+      }
+      @keyframes l3-0 {
+        to {
+          background-position: -125% 100%;
+        }
+      }
+      @keyframes l3-1 {
+        0%,
+        2% {
+          bottom: 0%;
+        }
+        98%,
+        to {
+          bottom: 0.1%;
+        }
+      }
+      /* Add animation to "page content" */
+      .animate-bottom {
+        position: relative;
+        -webkit-animation-name: animatebottom;
+        -webkit-animation-duration: 1s;
+        animation-name: animatebottom;
+        animation-duration: 1s;
+      }
+      @-webkit-keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0;
+        }
+        to {
+          bottom: 0px;
+          opacity: 1;
+        }
+      }
+      @keyframes animatebottom {
+        from {
+          bottom: -100px;
+          opacity: 0;
+        }
+        to {
+          bottom: 0;
+          opacity: 1;
+        }
+      }
+      #myDiv {
+        display: block;
+        visibility: hidden;
+        text-align: center;
+      }
+
+      /* ************************************** */
+      /* hero */
+      /* ************************************** */
+      .hero {
+        height: 100vh;
+        opacity: 1 !important;
+        transform: none !important;
+      }
+      .hero .container {
+        justify-content: center;
+        gap: 2.75rem;
+        flex-wrap: wrap;
+      }
+      .hero-left {
+        /* gap: 1rem; */
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        color: var(--primary-font);
+      }
+      .hero-left .main-title {
+        font-size: 3rem;
+        text-align: left;
+        width: fit-content;
+      }
+      .hero-left .main-title .title {
+        width: fit-content;
+        font-family: "Lilita One", cursive;
+        font-size: 6rem;
+        line-height: 5.8rem;
+        letter-spacing: 0.3rem;
+      }
+      .hero p {
+        width: 100%;
+        height: 40px;
+        overflow: hidden;
+        text-align: initial;
+        font-size: 1.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .hero .resume-btn {
+        /* margin: auto; */
+        margin-top: 10px;
+        width: fit-content;
+        padding: 0.6rem 2rem;
+        border: 1.5px solid var(--primary-font);
+        border-radius: 4px;
+        position: relative;
+        transition: all 0.3s ease;
+      }
+      .hero .resume-btn::after {
+        content: "";
+        position: absolute;
+        width: 0%;
+        height: 0%;
+        top: 50%;
+        left: 50%;
+        border-radius: 4px;
+        color: var(--white);
+        transition: all 0.3s ease;
+        background-color: var(--primary-font);
+        z-index: -1;
+      }
+
+      .hero .resume-btn:hover::after {
+        left: 0%;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .hero .resume-btn:hover {
+        color: var(--white);
+      }
+      .social-icone {
+        width: 250px;
+        margin-top: 30px;
+        justify-content: flex-start;
+        gap: 25px;
+        /* margin: 35px 0 0 -15px; */
+        /* background-color: var(--secondary-bg); */
+      }
+      .social-icone i {
+        font-size: 2rem;
+        width: 1.5rem;
+        height: 1.5em;
+        transition: all 0.3s ease-in-out;
+      }
+      .social-icone i:hover {
+        transform: scale(1.2);
+      }
+      .hero-right {
+        width: 19.5rem;
+        height: 19.5rem;
+      }
+      .hero-right img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="loader-box">
+      <div id="loader"></div>
+    </div>
+    <div class="animate-bottom" id="myDiv" style="visibility: hidden">
+      <!-- ---------------------------------------------------------- -->
+
+      <section class="hero flex" id="hero">
+        <div class="container flex">
+          <div class="hero-left flex flex-c align-top">
+            <span
+              class="main-title"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="50"
+              >Hello, I am <br />
+              <span
+                class="title"
+                data-aos="fade-right"
+                data-aos-easing="ease"
+                data-aos-delay="250"
+                >VYOM PATEL</span
+              ></span
+            >
+            <p
+              id="typed"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="450"></p>
+            <a
+              class="resume-btn"
+              href="Vyom Resume.pdf"
+              download="Vyom-Resume"
+              data-aos="fade-right"
+              data-aos-easing="ease"
+              data-aos-delay="650"
+              >Download CV</a
+            >
+            <div class="social-icone flex">
+              <a
+                href="https://github.com/Vyom1912"
+                target="_blank"
+                data-aos="fade-right"
+                data-aos-easing="ease"
+                data-aos-delay="850"
+                ><i class="fa-brands fa-square-github"></i
+              ></a>
+              <a
+                href="https://www.linkedin.com/in/vyom1912/"
+                target="_blank"
+                data-aos="fade-right"
+                data-aos-easing="ease"
+                data-aos-delay="1050"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a
+                href="https://www.facebook.com/vyom.patel.3532?mibextid=ZbWKwL "
+                target="_blank"
+                data-aos="fade-right"
+                data-aos-easing="ease"
+                data-aos-delay="1250"
+                ><i class="fa-brands fa-square-facebook"></i
+              ></a>
+              <a
+                href="https://www.instagram.com/vyom_1912/"
+                target="_blank"
+                data-aos="fade-right"
+                data-aos-easing="ease"
+                data-aos-delay="1450"
+                ><i class="fa-brands fa-square-instagram"></i>
+                <!-- <i class="fa-brands fa-instagram"></i> -->
+              </a>
+            </div>
+          </div>
+          <div class="hero-right">
+            <img
+              src="image/hero-img.png"
+              alt=""
+              data-aos="fade-left"
+              data-aos-easing="ease"
+              data-aos-delay="400" />
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+    <script>
+      function loader() {
+        setTimeout(showPage, 2500);
+      }
+
+      function showPage() {
+        const loaderBox = document.getElementById("loader-box");
+        const myDiv = document.getElementById("myDiv");
+
+        loaderBox.remove();
+        myDiv.style.visibility = "visible";
+
+        AOS.init({
+          once: true,
+          duration: 800,
+          disableMutationObserver: true,
+        });
+
+        AOS.refreshHard(); // important
+        // setTimeout(() => {
+        //   AOS.refreshHard();
+        // }, 100);
+      }
+
+      window.addEventListener("load", loader);
+    </script>
+  </body>
+</html>
