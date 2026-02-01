@@ -1,23 +1,46 @@
-var myVar;
+// var myVar;
+
+// function loader() {
+//   myVar = setTimeout(showPage, 2500);
+// }
+
+// function showPage() {
+//   document.getElementById("loader").style.display = "none";
+//   document.getElementById("loader-box").style.height = "0px";
+//   document.getElementById("myDiv").style.display = "block";
+
+//   // Initialize AOS and trigger animation immediately
+//   AOS.init({ once: true, duration: 800 });
+//   AOS.refresh();
+//   myDiv
+//     .querySelectorAll("[data-aos]")
+//     .forEach((el) => el.classList.add("aos-animate"));
+// }
+// // Call loader when page finishes loading
+// window.addEventListener("load", loader);
 
 function loader() {
-  myVar = setTimeout(showPage, 2500);
+  setTimeout(showPage, 2500);
 }
 
 function showPage() {
-  document.getElementById("loader").style.display = "none";
-  document.getElementById("loader-box").style.height = "0px";
-  document.getElementById("myDiv").style.display = "block";
+  const loaderBox = document.getElementById("loader-box");
+  const myDiv = document.getElementById("myDiv");
 
-  // Initialize AOS and trigger animation immediately
-  AOS.init({ once: true, duration: 800 });
-  AOS.refresh();
-  myDiv
-    .querySelectorAll("[data-aos]")
-    .forEach((el) => el.classList.add("aos-animate"));
+  loaderBox.remove();
+  myDiv.style.visibility = "visible";
+
+  AOS.init({
+    once: true,
+    duration: 800,
+    disableMutationObserver: true,
+  });
+
+  AOS.refreshHard(); // important
 }
-// Call loader when page finishes loading
+
 window.addEventListener("load", loader);
+
 // --------------------------------------------------
 // Typing effect
 
@@ -55,7 +78,7 @@ window.addEventListener("load", loader);
 // // Start the typing animation
 // typeLine();
 
-const lines = ["Front end Developer", "Front end Designer"];
+const lines = ["Full Stack Developer", "UI/UX Designer"];
 const typingText = document.getElementById("typed");
 
 let lineIndex = 0;
