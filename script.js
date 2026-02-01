@@ -219,8 +219,111 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // ---------------- Dynamic Skills / Tools and Name ----------------
 
+// const categorizedSkills = {
+//   "Frontend Development": [
+//     {
+//       name: "HTML",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg",
+//     },
+//     {
+//       name: "CSS",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg",
+//     },
+//     {
+//       name: "JavaScript",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+//     },
+//     {
+//       name: "Bootstrap",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-original.svg",
+//     },
+//     {
+//       name: "Tailwind CSS",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/tailwindcss/tailwindcss-plain.svg",
+//     },
+//     {
+//       name: "React.js",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original.svg",
+//     },
+//   ],
+
+//   "Backend Development": [
+//     {
+//       name: "Node.js",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg",
+//     },
+//     {
+//       name: "Express.js",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original.svg",
+//     },
+//     {
+//       name: "Java",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
+//     },
+//   ],
+
+//   "Backend as a Service (BaaS)": [
+//     {
+//       name: "Firebase",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
+//     },
+//     {
+//       name: "Appwrite",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/appwrite/appwrite-original.svg",
+//     },
+//   ],
+
+//   Databases: [
+//     {
+//       name: "MongoDB",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original.svg",
+//     },
+//   ],
+
+//   "Version Control & Developer Tools": [
+//     {
+//       name: "Git",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/git/git-original.svg",
+//     },
+//     {
+//       name: "GitHub",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/github/github-original.svg",
+//     },
+//     {
+//       name: "VS Code",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
+//     },
+//   ],
+
+//   "UI / Design Tools": [
+//     {
+//       name: "Figma",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/figma/figma-original.svg",
+//     },
+//     {
+//       name: "Canva",
+//       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/canva/canva-original.svg",
+//     },
+//   ],
+// };
 const categorizedSkills = {
-  Frontend: [
+  "Frontend Development": [
+    {
+      name: "React.js",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
+    },
+    {
+      name: "JavaScript",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
+    },
+    {
+      name: "Tailwind CSS",
+      url: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
+    },
+    {
+      name: "Bootstrap",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
+    },
     {
       name: "HTML",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg",
@@ -229,28 +332,24 @@ const categorizedSkills = {
       name: "CSS",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg",
     },
-    {
-      name: "JavaScript",
-      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg",
-    },
-    {
-      name: "Bootstrap",
-      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg",
-    },
-    {
-      name: "TailwindCSS",
-      url: "https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg",
-    },
-    {
-      name: "React JS",
-      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg",
-    },
   ],
-  "Backend as a Service": [
+
+  "Backend Development": [
     {
-      name: "Node JS",
+      name: "Node.js",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg",
     },
+    {
+      name: "Express.js",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
+    },
+    {
+      name: "Java",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
+    },
+  ],
+
+  "Backend as a Service (BaaS)": [
     {
       name: "Firebase",
       url: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
@@ -259,22 +358,16 @@ const categorizedSkills = {
       name: "Appwrite",
       url: "https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg",
     },
-    {
-      name: "Java",
-      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-    },
   ],
-  Database: [
-    // {
-    //   name: "MySQL",
-    //   url: "https://www.vectorlogo.zone/logos/mysql/mysql-icon.svg",
-    // },
+
+  Databases: [
     {
       name: "MongoDB",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
     },
   ],
-  "Version Control / Dev Tools": [
+
+  "Version Control & Developer Tools": [
     {
       name: "Git",
       url: "https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg",
@@ -284,18 +377,18 @@ const categorizedSkills = {
       url: "https://www.vectorlogo.zone/logos/github/github-icon.svg",
     },
     {
-      name: "VSCode",
+      name: "VS Code",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/vscode/vscode-original.svg",
     },
   ],
-  "Design / UI Tools": [
+
+  "UI / Design Tools": [
     {
       name: "Figma",
       url: "https://www.vectorlogo.zone/logos/figma/figma-icon.svg",
     },
     {
       name: "Canva",
-      // url: "https://upload.wikimedia.org/wikipedia/commons/c/cb/Canva_Logo.png",
       url: "https://freelogopng.com/images/all_img/1656733637logo-canva-png.png",
     },
   ],
@@ -455,7 +548,7 @@ function renderDetailedProjects() {
           }
         });
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
     observer.observe(div);
   });
