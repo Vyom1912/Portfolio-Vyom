@@ -399,6 +399,30 @@
       </button>
     </div>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      function loader() {
+        setTimeout(showPage, 2500);
+      }
+
+      function showPage() {
+        const loaderBox = document.getElementById("loader-box");
+        const myDiv = document.getElementById("myDiv");
+
+        loaderBox.remove();
+        myDiv.style.visibility = "visible";
+
+        if (window.AOS) {
+          AOS.init({
+            once: true,
+            duration: 800,
+            disableMutationObserver: true,
+          });
+          AOS.refreshHard();
+        }
+      }
+
+      window.addEventListener("load", loader);
+    </script>
     <script src="script.js"></script>
   </body>
 </html>

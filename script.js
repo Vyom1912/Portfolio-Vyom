@@ -19,27 +19,27 @@
 // // Call loader when page finishes loading
 // window.addEventListener("load", loader);
 
-function loader() {
-  setTimeout(showPage, 2500);
-}
+// function loader() {
+//   setTimeout(showPage, 2500);
+// }
 
-function showPage() {
-  const loaderBox = document.getElementById("loader-box");
-  const myDiv = document.getElementById("myDiv");
+// function showPage() {
+//   const loaderBox = document.getElementById("loader-box");
+//   const myDiv = document.getElementById("myDiv");
 
-  loaderBox.remove();
-  myDiv.style.visibility = "visible";
+//   loaderBox.remove();
+//   myDiv.style.visibility = "visible";
 
-  AOS.init({
-    once: true,
-    duration: 800,
-    disableMutationObserver: true,
-  });
+//   AOS.init({
+//     once: true,
+//     duration: 800,
+//     disableMutationObserver: true,
+//   });
 
-  AOS.refreshHard(); // important
-}
+//   AOS.refreshHard(); // important
+// }
 
-window.addEventListener("load", loader);
+// window.addEventListener("load", loader);
 
 // --------------------------------------------------
 // Typing effect
