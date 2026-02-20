@@ -366,10 +366,10 @@ const categorizedSkills = {
       name: "Express.js",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
     },
-    {
-      name: "Java",
-      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-    },
+    // {
+    //   name: "Java",
+    //   url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
+    // },
   ],
 
   "Backend as a Service (BaaS)": [
@@ -383,10 +383,22 @@ const categorizedSkills = {
     },
   ],
 
-  Databases: [
+  "Databases & ORM": [
     {
       name: "MongoDB",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+    },
+    {
+      name: "MySQL",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
+    },
+    {
+      name: "Prisma",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/prisma/prisma-original.svg",
+    },
+    {
+      name: "Drizzle",
+      url: "https://avatars.githubusercontent.com/u/108468352?s=200&v=4",
     },
   ],
 
@@ -416,7 +428,6 @@ const categorizedSkills = {
     },
   ],
 };
-
 const skillsContainer = document.getElementById("skills");
 
 for (const category in categorizedSkills) {
@@ -576,3 +587,4 @@ function renderDetailedProjects() {
     observer.observe(div);
   });
 }
+
