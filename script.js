@@ -366,10 +366,10 @@ const categorizedSkills = {
       name: "Express.js",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg",
     },
-    {
-      name: "Java",
-      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
-    },
+    // {
+    //   name: "Java",
+    //   url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg",
+    // },
   ],
 
   "Backend as a Service (BaaS)": [
@@ -383,10 +383,22 @@ const categorizedSkills = {
     },
   ],
 
-  Databases: [
+  "Databases & ORM": [
     {
       name: "MongoDB",
       url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg",
+    },
+    {
+      name: "MySQL",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg",
+    },
+    {
+      name: "Prisma",
+      url: "https://raw.githubusercontent.com/devicons/devicon/master/icons/prisma/prisma-original.svg",
+    },
+    {
+      name: "Drizzle",
+      url: "https://avatars.githubusercontent.com/u/108468352?s=200&v=4",
     },
   ],
 
@@ -463,6 +475,15 @@ for (const category in categorizedSkills) {
 function renderDetailedProjects() {
   const projects = [
     {
+      title: "URL Shortener",
+      image: "image/UrlShortener.png",
+      tools: ["Node.js", "Express.js", "MongoDB", "EJS", "Zod"],
+      description:
+        "A full-stack URL shortening web application built with Node.js and Express.js, featuring user authentication, protected routes, and session-based access control. Includes custom user-specific short codes, duplicate validation, full CRUD functionality, and dynamic redirection with server-side validation for a secure and scalable backend system.",
+      github: "https://github.com/Vyom1912/urlShortener.git",
+      live: "https://vyom-urlshortener.vercel.app/",
+    },
+    {
       title: "Rakhi Store",
       image: "image/RakhiStore.png",
       tools: ["ReactJs", "CSS", "Javascript", "Figma"],
@@ -508,15 +529,15 @@ function renderDetailedProjects() {
       github: "https://github.com/Vyom1912/Notes-Maker.git",
       live: "https://vyom1912.github.io/Notes-Maker/",
     },
-    {
-      title: "Code Editor",
-      image: "image/CodeEditor.png",
-      tools: ["HTML", "CSS", "Javascript"],
-      description:
-        "A lightweight CodePen-style playground built with HTML, CSS, and JavaScript. Allows users to write and preview HTML, CSS, and JS code live in the browser. Designed for experimenting, learning, and rapid prototyping with real-time output.",
-      github: "https://github.com/Vyom1912/Code-Editor.git",
-      live: "https://vyom1912.github.io/Code-Editor/",
-    },
+    // {
+    //   title: "Code Editor",
+    //   image: "image/CodeEditor.png",
+    //   tools: ["HTML", "CSS", "Javascript"],
+    //   description:
+    //     "A lightweight CodePen-style playground built with HTML, CSS, and JavaScript. Allows users to write and preview HTML, CSS, and JS code live in the browser. Designed for experimenting, learning, and rapid prototyping with real-time output.",
+    //   github: "https://github.com/Vyom1912/Code-Editor.git",
+    //   live: "https://vyom1912.github.io/Code-Editor/",
+    // },
     // {
     //   title: "Tic Tac Toe",
     //   image: "image/TicTocToe.png",
