@@ -479,7 +479,7 @@ function renderDetailedProjects() {
       image: "image/UrlShortener.png",
       tools: ["Node.js", "Express.js", "MongoDB", "EJS", "Zod"],
       description:
-        "A full-stack URL shortening web application built with Node.js and Express.js, featuring user authentication, protected routes, and session-based access control. Includes custom user-specific short codes, duplicate validation, full CRUD functionality, and dynamic redirection with server-side validation for a secure and scalable backend system.",
+        "Built a full-stack URL shortener using Node.js, Express.js, MongoDB, and EJS, enabling users to create custom short links with unique shortcodes and manage them through a dashboard. Implemented secure authentication using JSON Web Token and Argon2, including login, registration, and protected sessions, along with email-based features like password reset and account verification using Nodemailer and MJML. Ensured reliable data handling through robust input validation using Zod.",
       github: "https://github.com/Vyom1912/urlShortener.git",
       live: "https://vyom-urlshortener.vercel.app/",
     },
