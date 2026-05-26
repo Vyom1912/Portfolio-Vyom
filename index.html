@@ -1,454 +1,578 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="image/hero-img.png" type="ico" />
-    <title>VYOM - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="resp.css" />
-    <!-- font awessome link -->
-    <script
-      src="https://kit.fontawesome.com/dd0de70807.js"
-      crossorigin="anonymous"></script>
-    <!-- AOS librery -->
+    <meta
+      name="description"
+      content="Vyom Patel – Full Stack JavaScript Developer specializing in React, Node.js, Express, and MongoDB." />
+    <meta property="og:title" content="VYOM PATEL – Portfolio" />
+    <meta
+      property="og:description"
+      content="Full Stack Developer & UI/UX Designer" />
+    <meta property="og:type" content="website" />
+    <!-- favicon -->
+    <link rel="icon" href="image/hero-img.png" />
+    <title>Vyom Patel – Full Stack Developer</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- AOS -->
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/resp.css" />
   </head>
   <body>
-    <!-- ---------------------------------------------------------- -->
-    <div id="loader-box">
-      <div id="loader"></div>
-    </div>
-    <div class="animate-bottom" id="myDiv" style="visibility: hidden">
-      <!-- ---------------------------------------------------------- -->
+    <!-- Progress bar -->
+    <div id="progress-bar"></div>
 
-      <section class="hero flex" id="hero">
-        <div class="container flex">
-          <div class="hero-left flex flex-c align-top">
-            <span
-              class="main-title"
-              data-aos="fade-right"
-              data-aos-easing="ease"
-              data-aos-delay="50"
-              >Hello, I am <br />
-              <span
-                class="title"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-delay="250"
-                >VYOM PATEL</span
-              ></span
-            >
-            <p
-              id="typed"
-              data-aos="fade-right"
-              data-aos-easing="ease"
-              data-aos-delay="450"></p>
+    <!-- Loader -->
+    <div id="loader-overlay">
+      <div class="loader-content">
+        <div class="loader-name" id="loader-name"></div>
+        <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+      </div>
+    </div>
+
+    <!-- ============================================================
+     HERO
+============================================================ -->
+    <section id="hero">
+      <div class="hero-mesh">
+        <div class="mesh-blob blob-1"></div>
+        <div class="mesh-blob blob-2"></div>
+        <div class="mesh-blob blob-3"></div>
+      </div>
+      <div class="hero-grid"></div>
+      <div class="hero-container container">
+        <div class="hero-left">
+          <div class="hero-eyebrow" data-aos="fade-up" data-aos-delay="0">
+            <div class="dot"></div>
+            <span>Available for Opportunities</span>
+          </div>
+
+          <h1 class="hero-name" data-aos="fade-up" data-aos-delay="80">
+            Vyom<br />Patel
+          </h1>
+
+          <div class="hero-typed-wrap" data-aos="fade-up" data-aos-delay="160">
+            <p id="typed-text"><span class="cursor"></span></p>
+          </div>
+
+          <p class="hero-desc" data-aos="fade-up" data-aos-delay="240">
+            I build scalable full-stack web applications with React, Node.js,
+            and modern cloud tools. Passionate about clean code, great UX, and
+            solving real problems.
+          </p>
+
+          <div class="hero-actions" data-aos="fade-up" data-aos-delay="320">
             <a
-              class="resume-btn"
-              href="Vyom Resume.pdf"
-              download="Vyom-Resume"
-              data-aos="fade-right"
-              data-aos-easing="ease"
-              data-aos-delay="650"
-              >Download CV</a
-            >
-            <div class="social-icone flex">
-              <a
-                href="https://github.com/Vyom1912"
-                target="_blank"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-delay="850"
-                ><i class="fa-brands fa-square-github"></i
-              ></a>
+              href="/Vyom Resume.pdf"
+              download="Vyom's Resume.pdf"
+              class="btn-primary">
+              <i class="fa-solid fa-download"></i> Download Resume
+            </a>
+            <a href="#contact" class="btn-outline">
+              <i class="fa-regular fa-envelope"></i> Hire Me
+            </a>
+          </div>
+
+          <div class="hero-socials" data-aos="fade-up" data-aos-delay="400">
+            <a
+              href="https://github.com/Vyom1912"
+              target="_blank"
+              rel="noopener"
+              aria-label="GitHub">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/vyom1912/"
+              target="_blank"
+              rel="noopener"
+              aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a
+              href="https://www.instagram.com/vyom_1912/"
+              target="_blank"
+              rel="noopener"
+              aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="mailto:vyom1912@gmail.com" aria-label="Email">
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+          </div>
+
+          <div class="hero-stats" data-aos="fade-up" data-aos-delay="480">
+            <div class="stat-item">
+              <div class="stat-num">6<span class="accent">+</span></div>
+              <div class="stat-label">Projects Built</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">2<span class="accent">+</span></div>
+              <div class="stat-label">Internships</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-num">8.96<span class="accent"></span></div>
+              <div class="stat-label">M.E. CGPA</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-right" data-aos="fade-left" data-aos-delay="200">
+          <div class="hero-avatar-wrap">
+            <div class="hero-avatar-ring"></div>
+            <div class="hero-avatar-ring-2"></div>
+            <img
+              src="image/hero-img.png"
+              alt="Vyom Patel"
+              class="hero-avatar" />
+
+            <div class="float-badge badge-exp">
+              <i class="fa-solid fa-code"></i>
+              <div>
+                <div style="font-size: 0.7rem; color: var(--text-muted)">
+                  Stack
+                </div>
+                <div style="font-size: 0.78rem; font-weight: 600">
+                  MERN + UI / UX
+                </div>
+              </div>
+            </div>
+
+            <div class="float-badge badge-open">
+              <i class="fa-solid fa-circle-check" style="color: #10b981"></i>
+              <div>
+                <div style="font-size: 0.7rem; color: var(--text-muted)">
+                  Status
+                </div>
+                <div style="font-size: 0.78rem; font-weight: 600">
+                  Open to Work
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     NAVBAR
+============================================================ -->
+    <nav id="navbar">
+      <div class="nav-inner">
+        <!-- Brand -->
+        <a href="#hero" class="nav-brand" id="navBrand">
+          <div class="nav-avatar-wrap" id="brand-img-wrap">
+            <div class="nav-avatar-ring-outer"></div>
+            <div class="nav-avatar-ring-inner"></div>
+            <img
+              src="image/hero-img.png"
+              alt="Vyom Patel logo"
+              class="nav-avatar-img"
+              id="brand-img" />
+          </div>
+          <div class="nav-brand-text" id="brand-txt">
+            <span class="nav-brand-name">VYOM PATEL</span>
+            <span class="nav-brand-sub">Web Designer | Developer</span>
+          </div>
+        </a>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#hero" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <button id="theme-toggle" aria-label="Toggle theme">
+            <div class="toggle-thumb">☾</div>
+          </button>
+        </ul>
+        <div class="toggleBtn">
+          <button id="theme-toggle-mobile" aria-label="Toggle theme">
+            <div class="toggle-thumb">☾</div>
+          </button>
+          <div class="burger" id="burger">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-nav" id="mobileNav">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <!-- ============================================================
+     ABOUT
+============================================================ -->
+    <section id="about">
+      <div class="container">
+        <span class="section-label" data-aos="fade-up">01 / About</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">
+          Who I <span class="highlight">Am</span>
+        </h2>
+        <div class="divider" data-aos="fade-up" data-aos-delay="120"></div>
+
+        <div class="about-grid">
+          <div class="about-text" data-aos="fade-right">
+            <p>
+              I'm a
+              <strong style="color: var(--accent)"
+                >Full Stack JavaScript Developer</strong
+              >
+              and M.E. Computer Engineering student, passionate about crafting
+              practical, scalable, and user-friendly web applications from the
+              ground up.
+            </p>
+            <p>
+              My core stack is
+              <strong>React, Node.js, Express, and MongoDB</strong> — but I'm
+              equally comfortable working with Firebase, Appwrite, Prisma, and
+              modern tooling like Tailwind and TypeScript. I care deeply about
+              clean architecture, code quality, and great user experiences.
+            </p>
+            <p>
+              I've built everything from full-featured authentication systems
+              with JWT & Argon2 to responsive e-commerce storefronts. I'm now
+              actively seeking a <strong>full-time role</strong> where I can
+              contribute, grow, and solve real-world problems.
+            </p>
+          </div>
+
+          <div data-aos="fade-left" data-aos-delay="120">
+            <div class="timeline">
+              <!-- Education -->
+              <div class="timeline-item">
+                <div class="timeline-dot filled"></div>
+                <span class="tl-label">Education · 2025–2027</span>
+                <div class="tl-title">M.E. in Computer Engineering</div>
+                <div class="tl-sub">
+                  LDRP Institute of Technology & Research
+                </div>
+                <span class="tl-gpa">CGPA: 8.96 · Pursuing</span>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="tl-label">Education · 2020–2024</span>
+                <div class="tl-title">B.E. in Computer Engineering</div>
+                <div class="tl-sub">
+                  Gujarat Technological University (GECM)
+                </div>
+                <span class="tl-gpa">CGPA: 7.91</span>
+              </div>
+
+              <!-- Experience -->
+              <!-- <div class="timeline-item">
+                <div class="timeline-dot filled"></div>
+                <span class="tl-label">Experience · Jan–Apr 2024</span>
+                <div class="tl-title">React.js Intern</div>
+                <div class="tl-sub">The One Web Technology · Vadodara</div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <span class="tl-label">Experience · Jul–Aug 2023</span>
+                <div class="tl-title">Web Design Intern (React)</div>
+                <div class="tl-sub">
+                  BrainyBeam Info-Tech Pvt. Ltd · Ahmedabad
+                </div>
+              </div> -->
+            </div>
+
+            <div class="about-highlights">
+              <span class="highlight-chip"
+                ><i class="fa-solid fa-map-pin"></i> Himatnagar, India</span
+              >
+              <span class="highlight-chip"
+                ><i class="fa-solid fa-graduation-cap"></i> M.E. Computer
+                Engg.</span
+              >
+              <span class="highlight-chip"
+                ><i class="fa-solid fa-briefcase"></i> Open to Work</span
+              >
+              <span class="highlight-chip"
+                ><i class="fa-solid fa-language"></i> English & Gujarati</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SKILLS
+============================================================ -->
+    <section id="skills">
+      <div class="container">
+        <span class="section-label" data-aos="fade-up">02 / Skills</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">
+          Tech <span class="highlight">Stack</span>
+        </h2>
+        <div class="divider" data-aos="fade-up" data-aos-delay="120"></div>
+
+        <div class="skills-grid" id="skillsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     EXPERIENCE
+============================================================ -->
+    <section id="experience">
+      <div class="container">
+        <span class="section-label" data-aos="fade-up">03 / Experience</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">
+          Work <span class="highlight">Experience</span>
+        </h2>
+        <div class="divider" data-aos="fade-up" data-aos-delay="120"></div>
+
+        <div class="exp-list">
+          <div class="exp-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="exp-icon"><i class="fa-brands fa-react"></i></div>
+            <div class="exp-info">
+              <div class="exp-meta">
+                <div class="exp-role">Intern React.js Developer</div>
+                <div class="exp-period">Jan 2024 – Apr 2024</div>
+              </div>
+              <div class="exp-company">
+                The One Web Technology <span>· Vadodara, India</span>
+              </div>
+              <ul class="exp-points">
+                <li>
+                  Built <strong>FoodZing</strong>, a fully responsive
+                  food-ordering website using React.js and Firebase, with
+                  real-time database, user authentication, and mobile-first UI.
+                </li>
+                <li>
+                  Implemented Firebase Auth, Firestore real-time sync, and cart
+                  management with context API.
+                </li>
+                <li>
+                  Designed UI components and layouts based on Figma mockups,
+                  ensuring cross-device compatibility.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- <div class="exp-card" data-aos="fade-up" data-aos-delay="180">
+            <div class="exp-icon"><i class="fa-solid fa-laptop-code"></i></div>
+            <div class="exp-info">
+              <div class="exp-meta">
+                <div class="exp-role">Intern Web Design with React</div>
+                <div class="exp-period">Jul 2023 – Aug 2023</div>
+              </div>
+              <div class="exp-company">
+                BrainyBeam Info-Tech Pvt. Ltd <span>· Ahmedabad, India</span>
+              </div>
+              <ul class="exp-points">
+                <li>
+                  Designed and developed <strong>Joogad</strong>, a dynamic
+                  e-commerce website for grocery and vegetable ordering using
+                  React.
+                </li>
+                <li>
+                  Built reusable component library and implemented structured UI
+                  for product listings, cart, and checkout flows.
+                </li>
+              </ul>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     PROJECTS
+============================================================ -->
+    <section id="projects">
+      <div class="container">
+        <span class="section-label" data-aos="fade-up">04 / Projects</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">
+          Featured <span class="highlight">Work</span>
+        </h2>
+        <div class="divider" data-aos="fade-up" data-aos-delay="120"></div>
+
+        <div class="projects-filter" data-aos="fade-up" data-aos-delay="180">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+          <button class="filter-btn" data-filter="frontend">Frontend</button>
+        </div>
+
+        <div class="projects-grid" id="projectsGrid"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     CONTACT
+============================================================ -->
+    <section id="contact">
+      <div class="container">
+        <span class="section-label" data-aos="fade-up">05 / Contact</span>
+        <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">
+          Let's <span class="highlight">Connect</span>
+        </h2>
+        <div class="divider" data-aos="fade-up" data-aos-delay="120"></div>
+
+        <div class="contact-grid">
+          <div data-aos="fade-right">
+            <h3 class="contact-info-title">Open to roles & collaborations</h3>
+            <p class="contact-info-desc">
+              Whether you have a job opportunity, freelance project, or just
+              want to say hello — my inbox is always open. I'll get back to you
+              within 24 hours.
+            </p>
+
+            <div class="contact-links">
+              <a href="mailto:vyom1912@gmail.com" class="contact-link-item">
+                <div class="cli-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div>
+                  <div class="cli-label">Email</div>
+                  <div class="cli-value">vyom1912@gmail.com</div>
+                </div>
+              </a>
               <a
                 href="https://www.linkedin.com/in/vyom1912/"
                 target="_blank"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-delay="1050"
-                ><i class="fa-brands fa-linkedin"></i
-              ></a>
+                rel="noopener"
+                class="contact-link-item">
+                <div class="cli-icon">
+                  <i class="fa-brands fa-linkedin-in"></i>
+                </div>
+                <div>
+                  <div class="cli-label">LinkedIn</div>
+                  <div class="cli-value">linkedin.com/in/vyom1912</div>
+                </div>
+              </a>
               <a
-                href="https://www.facebook.com/vyom.patel.3532?mibextid=ZbWKwL "
+                href="https://github.com/Vyom1912"
                 target="_blank"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-delay="1250"
-                ><i class="fa-brands fa-square-facebook"></i
-              ></a>
-              <a
-                href="https://www.instagram.com/vyom_1912/"
-                target="_blank"
-                data-aos="fade-right"
-                data-aos-easing="ease"
-                data-aos-delay="1450"
-                ><i class="fa-brands fa-square-instagram"></i>
-                <!-- <i class="fa-brands fa-instagram"></i> -->
+                rel="noopener"
+                class="contact-link-item">
+                <div class="cli-icon"><i class="fa-brands fa-github"></i></div>
+                <div>
+                  <div class="cli-label">GitHub</div>
+                  <div class="cli-value">github.com/Vyom1912</div>
+                </div>
               </a>
             </div>
           </div>
-          <div class="hero-right">
-            <img
-              src="image/hero-img.png"
-              alt=""
-              data-aos="fade-left"
-              data-aos-easing="ease"
-              data-aos-delay="400" />
-          </div>
-        </div>
-      </section>
-      <!-- navbar -->
-      <header class="header" id="header">
-        <div class="center">
-          <nav class="navbar flex">
-            <!-- Brand -->
-            <ul class="navbar-nav brand">
-              <img
-                src="image/nav-img.png"
-                alt=""
-                class="brand-img"
-                id="brand-img" />
-              <li class="brand-txt" id="brand-txt">
-                <h5 class="brand-title">VYOM PATEL</h5>
-                <div class="brand-subtitle">Web Designer | Developer</div>
-              </li>
-            </ul>
 
-            <!-- Navlist -->
-            <ul class="navlist flex" id="navlist">
-              <li><a href="#hero">home</a></li>
-              <li><a href="#about">about</a></li>
-              <li><a href="#portfolio">portfolio</a></li>
-              <li><a href="#contect">contect</a></li>
-            </ul>
-            <!-- Burger -->
-            <div class="burger" id="burger">
-              <i class="fa-solid fa-bars" id="burger-icon"></i>
-            </div>
-          </nav>
-        </div>
-      </header>
-      <!-- about -->
-      <section class="about flex" id="about">
-        <div class="container reveal flex flex-c">
-          <div class="heading" data-aos="fade-right" data-aos-duration="500">
-            <h1>about me</h1>
-          </div>
-          <div class="row">
-            <div class="info-box">
-              <div class="info-content">
-                <div class="info" data-aos="fade-right" data-aos-duration="500">
-                  <!-- <p>
-                    Full-Stack JavaScript Developer specializing in React.js and
-                    Node.js. I build responsive frontend interfaces and secure
-                    backend systems with authentication, database integration,
-                    and full CRUD functionality.
-                  </p>
-                  <p>
-                    From dynamic web apps to complete full-stack projects, I
-                    focus on performance, scalability, and clean architecture.
-                    Passionate about learning, problem-solving, and creating
-                    seamless user experiences.
-                  </p> -->
-                  <p style="margin-bottom: 15px">
-                    I’m a full-stack JavaScript developer with a strong focus on
-                    building practical and scalable web applications. I work
-                    with technologies like React, Node.js, Express.js, and
-                    MongoDB to create applications that combine clean user
-                    interfaces with secure and structured backend systems.
-                  </p>
-                  <p style="margin-bottom: 15px">
-                    I have experience developing full-stack projects with
-                    features like authentication, protected routes, database
-                    integration, and complete CRUD functionality. I enjoy
-                    building real-world applications such as dashboards, APIs,
-                    and user-focused systems, while keeping code clean,
-                    maintainable, and efficient.
-                  </p>
-                  <p style="margin-bottom: 15px">
-                    I’m currently pursuing my Master’s in Computer Engineering
-                    and actively looking for opportunities to apply my skills,
-                    learn from real-world challenges, and grow as a developer.
-                  </p>
-                </div>
-              </div>
-              <div class="info-content">
-                <div
-                  class="heading"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h2>Education</h2>
-                </div>
-                <div
-                  class="info flex flex-c align-top"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h3 class="info-heading">
-                    Master of Engineering (M.E.) in Computer Engineering
-                  </h3>
-                  <ul>
-                    <p>LDRP Institute of Technology and Research</p>
-                    <p>Aug 2025 - April 2027(pursuing)</p>
-                  </ul>
-                </div>
-                <div
-                  class="info flex flex-c align-top"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h3 class="info-heading">
-                    Bachelor of Engineering (B.E.) in Computer Engineering
-                  </h3>
-                  <ul>
-                    <p>
-                      Government Engineering College, Modasa (affiliated to GTU)
-                    </p>
-                    <p>July 2020 – May 2024</p>
-                    <p><b>CGPA:</b> 7.91</p>
-                  </ul>
-                </div>
-              </div>
-              <div class="info-content">
-                <div
-                  class="heading"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h2>Experience</h2>
-                </div>
-                <div
-                  class="info flex flex-c align-top"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h3 class="info-heading">
-                    The One Web Technology | Intern ReactJs Developer
-                    <br /><span>Jan 2024 - April 2024</span>
-                  </h3>
-                  <ul>
-                    <p>
-                      Designed and developed FoodZing, a modern restaurant
-                      food-ordering web application.
-                    </p>
-                    <p>
-                      Built responsive user interfaces using HTML, CSS, and
-                      React.js.
-                    </p>
-                    <p>
-                      Integrated Firebase for authentication and real-time
-                      database management.
-                    </p>
-                    <p>
-                      Focused on performance, usability, and seamless
-                      cross-device experience.
-                    </p>
-                  </ul>
-                </div>
-                <div
-                  class="info flex flex-c align-top"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h3 class="info-heading">
-                    BrainyBeam Info-Tech Pvt. Ltd | Intern Web Design with React
-                    <br /><span>July 2023 - Aug 2023</span>
-                  </h3>
-                  <ul>
-                    <p>
-                      Developed “Joogad”, a dynamic e-commerce website for
-                      grocery and vegetable ordering using React.
-                    </p>
-                    <p>
-                      Implemented reusable components and structured UI for
-                      better scalability.
-                    </p>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="info-content">
-                <div
-                  class="heading"
-                  data-aos="fade-right"
-                  data-aos-duration="500">
-                  <h2>Skills & Tools</h2>
-                </div>
-                <div
-                  class="info flex flex-c justify-start flex-start"
-                  id="skills"
-                  data-aos="fade-right"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- portfolio -->
-      <section class="portfolio flex" id="portfolio">
-        <div class="container reveal flex flex-c">
-          <div class="heading" data-aos="fade-right" data-aos-duration="500">
-            <h1>MY PORTFOLIO</h1>
-          </div>
-          <div class="row">
-            <div class="project flex" id="project"></div>
-          </div>
-        </div>
-      </section>
-      <!-- contect -->
-      <section class="contect flex" id="contect">
-        <div class="container reveal flex flex-c align-top">
-          <div
-            class="heading"
-            data-aos="fade-right"
-            data-aos-duration="500"
-            id="contect-1">
-            <h1>Get In Touch</h1>
-          </div>
-          <div class="row">
-            <div class="c-box flex align-top">
-              <div class="c-left flex flex-c align-top">
-                <div
-                  class="heading"
-                  data-aos="fade-left"
-                  data-aos-duration="500">
-                  <h2>Send Message</h2>
-                </div>
-                <form
-                  class="form flex flex-c align-top"
-                  id="contactForm"
-                  action="https://api.web3forms.com/submit"
-                  method="POST">
-                  <input
-                    type="hidden"
-                    name="access_key"
-                    value="b425eae4-14d0-43ec-abec-40e85b13220f" />
-                  <div
-                    class="input-field"
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    data-aos-delay="300">
-                    <label for="name">Your name</label>
+          <div data-aos="fade-left" data-aos-delay="100">
+            <div class="contact-form">
+              <form
+                id="contactForm"
+                action="https://api.web3forms.com/submit"
+                method="POST">
+                <input
+                  type="hidden"
+                  name="access_key"
+                  value="b425eae4-14d0-43ec-abec-40e85b13220f" />
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
                     <input
                       type="text"
                       name="name"
                       id="name"
-                      placeholder="Enter Your Name"
-                      autocomplete="off"
+                      placeholder="John Doe"
                       required />
                   </div>
-                  <div
-                    class="input-field"
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    data-aos-delay="400">
-                    <label for="email">Your e-mail</label>
+                  <div class="form-group">
+                    <label for="email">Email Address</label>
                     <input
                       type="email"
                       name="email"
                       id="email"
-                      placeholder="name@mail.com"
-                      autocomplete="off"
+                      placeholder="john@company.com"
                       required />
                   </div>
-                  <div
-                    class="input-field"
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    data-aos-delay="500">
-                    <label for="message">Your message</label>
-                    <textarea
-                      name="message"
-                      id="message"
-                      cols="30"
-                      rows="6"
-                      placeholder="Leave a comment...*"
-                      autocomplete="off"
-                      required></textarea>
-                  </div>
-                  <button
-                    type="submit"
-                    class="btn flex"
-                    data-aos="fade-left"
-                    data-aos-duration="500"
-                    data-aos-delay="600"
-                    data-aos-offset="20">
-                    Send <i class="fa-solid fa-paper-plane"></i>
-                  </button>
-                </form>
-              </div>
-              <div class="c-right flex flex-c">
-                <div
-                  class="c-link flex flex-c"
-                  data-aos="fade-right"
-                  data-aos-duration="500"
-                  data-aos-delay="300">
-                  <div class="c-link-icone">
-                    <i class="fa-solid fa-envelope"></i>
-                  </div>
-                  <div class="c-link-name">E-mail</div>
-                  <div class="c-link-address">vyom1912@gmail.com</div>
                 </div>
-                <div
-                  class="c-link flex flex-c"
-                  data-aos="fade-right"
-                  data-aos-duration="500"
-                  data-aos-delay="400">
-                  <div class="c-link-icone">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                  </div>
-                  <div class="c-link-name">LinkedIn</div>
-                  <div class="c-link-address">@vyom1912</div>
+                <div class="form-group full">
+                  <label for="subject">Subject</label>
+                  <input
+                    type="text"
+                    name="subject"
+                    id="subject"
+                    placeholder="Job Opportunity / Project Inquiry" />
                 </div>
-                <div
-                  class="c-link flex flex-c"
-                  data-aos="fade-right"
-                  data-aos-duration="500"
-                  data-aos-delay="500">
-                  <div class="c-link-icone">
-                    <i class="fa-brands fa-github"></i>
-                  </div>
-                  <div class="c-link-name">Github</div>
-                  <div class="c-link-address">@Vyom1912</div>
+                <div class="form-group full">
+                  <label for="message">Message</label>
+                  <textarea
+                    name="message"
+                    id="message"
+                    rows="5"
+                    placeholder="Tell me about the opportunity..."
+                    required></textarea>
                 </div>
-              </div>
+                <button type="submit" class="form-submit" id="submitBtn">
+                  Send Message <i class="fa-solid fa-paper-plane"></i>
+                </button>
+                <p id="form-msg" aria-live="polite"></p>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-      <!-- ----------------------------- -->
-      <!-- footer -->
-      <footer class="footer flex">
-        <h3>copy right owned by VYOM PATEL</h3>
-      </footer>
-      <!-- --------------------------------------- -->
-      <!-- scroll button  -->
-      <!-- --------------------------------------- -->
-      <button onclick="topFunction()" id="myBtn" title="Go to top">
-        <i class="fa-solid fa-arrow-up"></i>
-      </button>
-    </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     FOOTER
+============================================================ -->
+    <footer>
+      <div class="footer-inner">
+        <div class="footer-copy">
+          © 2025 Vyom Patel. Built with passion &amp; coffee ☕
+        </div>
+        <div class="footer-socials">
+          <a href="https://github.com/Vyom1912" target="_blank" rel="noopener"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/vyom1912/"
+            target="_blank"
+            rel="noopener"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a
+            href="https://www.instagram.com/vyom_1912/"
+            target="_blank"
+            rel="noopener"
+            ><i class="fa-brands fa-instagram"></i
+          ></a>
+          <a href="mailto:vyom1912@gmail.com"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scroll to top -->
+    <button id="scrollTop" aria-label="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- AOS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-      function loader() {
-        setTimeout(showPage, 2500);
-      }
 
-      function showPage() {
-        const loaderBox = document.getElementById("loader-box");
-        const myDiv = document.getElementById("myDiv");
-
-        loaderBox.remove();
-        myDiv.style.visibility = "visible";
-
-        if (window.AOS) {
-          AOS.init({
-            once: true,
-            duration: 800,
-            disableMutationObserver: true,
-          });
-          AOS.refreshHard();
-        }
-      }
-
-      window.addEventListener("load", loader);
-    </script>
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="/script.js"></script>
   </body>
 </html>
