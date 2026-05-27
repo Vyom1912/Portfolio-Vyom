@@ -75,7 +75,10 @@
 
 @media (max-width: 768px) {
   section {
-    padding: 70px 5%;
+    padding: 91px 5%;
+  }
+  .hero-container {
+    gap: 2rem;
   }
   .toggleBtn {
     display: flex !important;
@@ -113,6 +116,10 @@
 @media (max-width: 576px) {
   .projects-grid {
     grid-template-columns: 1fr;
+  }
+  .exp-points {
+    padding-left: 0rem !important;
+    margin-left: -70px;
   }
 }
 

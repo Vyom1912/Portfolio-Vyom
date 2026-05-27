@@ -239,10 +239,28 @@ burger.addEventListener("click", () => {
 });
 
 // Close when a nav link is clicked
+// mobileNav.querySelectorAll("a").forEach((a) => {
+//   a.addEventListener("click", () => {
+//     burger.classList.remove("open");
+//     mobileNav.classList.remove("open");
+//   });
+// });
+
 mobileNav.querySelectorAll("a").forEach((a) => {
-  a.addEventListener("click", () => {
+  a.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const target = document.querySelector(a.getAttribute("href"));
+
     burger.classList.remove("open");
     mobileNav.classList.remove("open");
+
+    setTimeout(() => {
+      target.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }, 300); // wait for menu close animation
   });
 });
 
