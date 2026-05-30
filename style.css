@@ -1326,7 +1326,7 @@ section {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 7px;
   background: linear-gradient(to bottom, var(--accent), var(--accent2));
   border-radius: 99px 0 0 99px;
 }
