@@ -55,10 +55,10 @@ const skills = [
         // img: "https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg",
         img: "https://raw.githubusercontent.com/devicons/devicon/master/icons/firebase/firebase-plain.svg",
       },
-      {
-        name: "Appwrite",
-        img: "https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg",
-      },
+      // {
+      //   name: "Appwrite",
+      //   img: "https://www.vectorlogo.zone/logos/appwriteio/appwriteio-icon.svg",
+      // },
     ],
   },
   {
@@ -121,6 +121,35 @@ const skills = [
 
 const projects = [
   {
+    title: "PublishPro- A Blogging Platform",
+    type: "fullstack",
+    label: "Full Stack",
+    img: "image/PublishPro.png",
+    tools: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT",
+      "Axios",
+      "Cloudinary",
+      "TinyMCE",
+    ],
+    desc: "A production-ready MERN blogging platform featuring secure JWT authentication, rich text editing, Cloudinary image uploads, search, and interactive features like likes, bookmarks, comments, and user dashboards.",
+    github: "https://github.com/Vyom1912/PublishPro-A-Blogging-Platform.git",
+    live: "https://publishpro-a-blogging-platform.onrender.com/",
+  },
+  {
+    title: "FoodZing",
+    type: "frontend",
+    label: "Frontend",
+    img: "image/FoodZing.png",
+    tools: ["React.js", "Firebase", "CSS", "Figma"],
+    desc: "Responsive food ordering web app with Firebase authentication, real-time Firestore database, cart management, and a clean category-based menu UI across all devices.",
+    github: "https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website.git",
+    live: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+  },
+  {
     title: "URL Shortener",
     type: "fullstack",
     label: "Full Stack",
@@ -130,16 +159,7 @@ const projects = [
     github: "https://github.com/Vyom1912/urlShortener.git",
     live: "https://urlshortener-1osn.onrender.com/",
   },
-  {
-    title: "FoodZing",
-    type: "fullstack",
-    label: "Full Stack",
-    img: "image/FoodZing.png",
-    tools: ["React.js", "Firebase", "CSS", "Figma"],
-    desc: "Responsive food ordering web app with Firebase authentication, real-time Firestore database, cart management, and a clean category-based menu UI across all devices.",
-    github: "https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website.git",
-    live: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
-  },
+
   {
     title: "Rakhi Store",
     type: "frontend",
