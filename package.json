@@ -1,0 +1,32 @@
+{
+  "name": "vyom-patel-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "homepage": "https://vyom1912.github.io/Portfolio-Vyom/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.js",
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist -t true",
+    "images": "node scripts/optimize-images.js",
+    "archive": "node scripts/build-archive.cjs"
+  },
+  "dependencies": {
+    "@fontsource/familjen-grotesk": "^5.3.0",
+    "@fontsource/ibm-plex-mono": "^5.3.0",
+    "@fontsource/ibm-plex-sans": "^5.3.0",
+    "motion": "^13.4.6",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "react-router": "^7.18.4",
+    "simple-icons": "^16.33.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.1.1",
+    "gh-pages": "^6.3.0",
+    "sharp": "^0.35.5",
+    "vite": "^8.3.1"
+  }
+}

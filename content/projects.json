@@ -1,0 +1,1516 @@
+{
+  "owner": {
+    "name": "Vyom Patel",
+    "github": "https://github.com/vyom1912"
+  },
+  "resumeSkillsLine": "HTML5, CSS3 (Flexbox, Grid, Animations), JavaScript (ES6+, DOM, Fetch API, async/await), REST APIs, localStorage, Web Speech API, Responsive Design, Git & GitHub",
+  "resumeCombinedPoint": "Built 25+ front-end projects in vanilla JavaScript, including games (Tic Tac Toe, Quiz), utilities (Calculator, Password Generator, Analog Clock, QR Generator) and reusable UI components (toast notifications, popups, image slider).",
+  "projects": [
+    {
+      "id": 33,
+      "slug": "publishpro-blogging-platform",
+      "title": "PublishPro",
+      "subtitle": "A Full-Stack MERN Blogging Platform",
+      "category": "Full-Stack App",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "MongoDB",
+        "Mongoose",
+        "Express 5",
+        "React 19",
+        "Node.js",
+        "React Router 7",
+        "Context API",
+        "Axios",
+        "REST API",
+        "JWT (Access + Refresh)",
+        "httpOnly Cookies",
+        "bcrypt",
+        "Cloudinary",
+        "Multer",
+        "TinyMCE",
+        "DOMPurify",
+        "Resend (Email)",
+        "Vite",
+        "CSS3 (Mobile-First)",
+        "Render"
+      ],
+      "portfolio": {
+        "shortDescription": "A full-stack blogging platform where people write, publish and discuss articles, with secure cookie-based login, a rich text editor, image uploads, likes, bookmarks and comments.",
+        "description": [
+          "PublishPro is a complete blogging platform built on the MERN stack. Anyone can browse and search articles; signed-in users can write posts in a rich text editor, upload a cover image, pick one of 42 categories and add tags. Readers can like, save and share posts, leave comments, and open an author's page to see their bio, stats and everything they have published. Each writer gets a profile dashboard with total blogs, likes, views and saves, and can edit or delete their own posts.",
+          "Security was a main focus. Login uses a short-lived JWT access token and a 7-day refresh token, both stored in httpOnly cookies so JavaScript can never read them. Every refresh token is tied to a session record in MongoDB, so sessions can be revoked: logging out, 'log out of all devices' and changing a password all invalidate them, and expired sessions are removed automatically by a TTL index. On the client, an Axios interceptor quietly refreshes an expired token and replays any requests that failed in the meantime, so users are never logged out mid-task. Passwords are hashed with bcrypt, a forgot-password flow emails a 15-minute reset link, admin routes are protected by role, and all article HTML is sanitised with DOMPurify before it is shown.",
+          "The REST API is built with Express 5 and Mongoose. Likes, bookmarks and view counts use atomic MongoDB updates so two quick clicks can't corrupt a count, and logged-in readers are only counted once per post. Author statistics are calculated with an aggregation pipeline, so like and save lists never leave the database. Search matches titles, tags, categories and author names, with user input escaped before it reaches a regex. Images are streamed from memory to Cloudinary through Multer, with a 5 MB limit and an image-only filter.",
+          "Performance and mobile use were treated as features. The home feed is paginated on the server and returns only the fields a card needs, which cut that response from 36 KB to 1.3 KB. Pages are code-split so the editor only downloads when someone writes, responses are gzip-compressed, database indexes back the common queries, and Cloudinary serves resized WebP/AVIF thumbnails instead of full-size photos. The CSS is written mobile-first, with a collapsible navbar, a profile menu that folds away on phones and a phone-friendly editor toolbar, and was checked at phone, tablet and desktop widths."
+        ],
+        "highlights": [
+          "Full CRUD for blogs with a TinyMCE rich text editor, cover images, categories and tags",
+          "JWT access + refresh tokens in httpOnly cookies with server-side sessions that can be revoked",
+          "Silent token refresh in an Axios interceptor that queues and replays failed requests",
+          "Forgot / reset password by email, change password and 'log out of all devices'",
+          "Protected and guest-only routes that send users back to where they were after login",
+          "Likes, bookmarks, view counts (each signed-in reader counted once) and comments, using atomic MongoDB updates",
+          "Optimistic UI for likes and saves, rolled back if the request fails",
+          "Author pages and a profile dashboard with stats from a MongoDB aggregation pipeline",
+          "Search across titles, tags, categories and authors, with server-side pagination",
+          "Role-based admin API for users, blogs and site-wide stats",
+          "XSS protection by sanitising article HTML with DOMPurify",
+          "Home feed response cut from 36 KB to 1.3 KB; main JS bundle cut by about 29%",
+          "Code splitting, gzip, database indexes and Cloudinary WebP/AVIF thumbnails",
+          "Mobile-first responsive design, deployed on Render"
+        ]
+      },
+      "resume": {
+        "heading": "PublishPro | MongoDB, Express, React, Node.js",
+        "points": [
+          "Built a full-stack MERN blogging platform with a REST API, rich text editing, Cloudinary image uploads, likes, bookmarks, comments, search and author dashboards.",
+          "Implemented secure authentication with JWT access and refresh tokens in httpOnly cookies, revocable server-side sessions, bcrypt, email password reset and role-based admin routes, plus an Axios interceptor for silent token refresh.",
+          "Cut the home feed response from 36 KB to 1.3 KB with server-side pagination and field projection, and reduced the main JS bundle by about 29% through route-level code splitting.",
+          "Used atomic MongoDB updates and an aggregation pipeline for likes, views and author stats, sanitised user HTML with DOMPurify, and built a mobile-first UI that works across phones, tablets and desktops."
+        ]
+      },
+      "links": {
+        "demo": "https://publishpro-a-blogging-platform.onrender.com",
+        "github": "https://github.com/Vyom1912/PublishPro-A-Blogging-Platform",
+        "screenshot": "images/from-project/publishpro.png",
+        "gallery": [
+          "images/captured/publishpro/login.png",
+          "images/captured/publishpro/mobile-home.png",
+          "images/captured/publishpro/post.png",
+          "images/captured/publishpro/search.png"
+        ]
+      }
+    },
+    {
+      "id": 34,
+      "slug": "url-shortener",
+      "title": "URL Shortener",
+      "subtitle": "A Full-Stack Link Shortener with Per-User Links and Click Tracking",
+      "category": "Full-Stack App",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "Node.js",
+        "Express 5",
+        "MongoDB",
+        "Mongoose",
+        "EJS",
+        "MVC Architecture",
+        "JWT (Access + Refresh)",
+        "httpOnly Cookies",
+        "Argon2",
+        "Zod",
+        "Resend (Email)",
+        "MJML",
+        "express-session",
+        "connect-flash",
+        "CSS3 (Mobile-First)",
+        "Dark Mode",
+        "Clipboard & Web Share API",
+        "Vercel"
+      ],
+      "portfolio": {
+        "shortDescription": "A full-stack URL shortener where every user gets their own link space, with custom short codes, click tracking, secure cookie-based login and email verification.",
+        "description": [
+          "URL Shortener turns long links into short ones that are easy to share. After signing up, users paste a URL, optionally pick a custom short code such as 'portfolio', and get a link like yoursite.com/vyom/portfolio. From a dashboard they can copy a link in one tap, share it through the phone's native share sheet, edit where it points, delete it and search their links. Every visit is counted, so each link shows its clicks and the profile page shows total clicks across all links.",
+          "Each user has their own namespace. Short links are built from a username plus a code, so two people can both own '/gh' and each one opens the right destination. Users can choose their own username from the profile page, with live validation and a warning that changing it breaks links already shared. Codes are unique per user through a compound MongoDB index, and the app moved the database from its old site-wide unique index to the per-user one automatically on startup, while links shared in the old format keep working.",
+          "Security was a main focus. Login uses a short-lived JWT access token and a 7-day refresh token, both in httpOnly cookies, and every refresh token is tied to a session record in MongoDB, so logging out really ends the session. Passwords are hashed with Argon2. New accounts verify their email with an 8-digit code or a link, and a forgot-password flow emails a single-use reset link that expires after 15 minutes. Reset tokens are stored only as SHA-256 hashes, and the reset page shows the same message whether or not an email exists, so it can't be used to find accounts. Every edit and delete checks that the link belongs to the signed-in user, only http and https URLs are accepted, and usernames and codes can't take over the app's own pages such as /login.",
+          "The server follows an MVC structure with separate routes, controllers, services, models and Zod validators, and is deployed on Vercel as a serverless Express app. The EJS views were built mobile-first, with a bottom tab bar on phones, large tap targets, 16px inputs so iPhones don't zoom, automatic dark mode, inline error and success messages, and forms that keep what the user typed after an error. Every page was checked at phone and desktop widths."
+        ],
+        "highlights": [
+          "Create, edit, delete and search short links, with custom or random short codes",
+          "Per-user namespaces (/username/code), so two users can use the same code",
+          "Custom usernames with live preview, reserved-word checks and uniqueness validation",
+          "Click tracking per link and total clicks on the profile",
+          "One-tap copy with a fallback for plain http, plus the native Web Share API on phones",
+          "JWT access + refresh tokens in httpOnly cookies, backed by revocable MongoDB sessions",
+          "Argon2 password hashing, email verification and a forgot/reset password flow",
+          "Single-use reset links stored as SHA-256 hashes, with no way to test which emails have accounts",
+          "Ownership checks on every link action, and only http/https URLs allowed",
+          "Zod validation on every form, with friendly error messages",
+          "Responsive HTML emails built with MJML and sent through Resend",
+          "Mobile-first UI with a bottom tab bar, dark mode, custom 404 and error pages",
+          "MVC structure, deployed on Vercel as a serverless Express app"
+        ]
+      },
+      "resume": {
+        "heading": "URL Shortener | Node.js, Express, MongoDB, EJS",
+        "points": [
+          "Built a full-stack URL shortener with custom or random short codes, per-link click tracking, one-tap copy and share, and a searchable dashboard, using an MVC structure with Express 5 and Mongoose.",
+          "Designed per-user link namespaces (/username/code) backed by a compound unique MongoDB index, so users can share the same short code, and migrated the live database from a site-wide unique index without breaking existing links.",
+          "Implemented secure authentication with JWT access and refresh tokens in httpOnly cookies, revocable MongoDB sessions, Argon2 hashing, email verification and single-use hashed password-reset links sent with Resend and MJML.",
+          "Protected user data with ownership checks on every link action, Zod validation on all forms and http/https-only URLs, and built a mobile-first EJS interface with dark mode, deployed on Vercel."
+        ]
+      },
+      "links": {
+        "demo": "https://urlshortener-1osn.onrender.com/",
+        "github": "https://github.com/Vyom1912/urlShortener",
+        "screenshot": "images/from-project/urlshortener.png",
+        "gallery": [
+          "images/captured/url-shortener/login.png",
+          "images/captured/url-shortener/mobile-login.png",
+          "images/captured/url-shortener/register.png"
+        ]
+      }
+    },
+    {
+      "id": 1,
+      "slug": "resume-builder",
+      "title": "Resume Builder",
+      "subtitle": "A LaTeX-Style Résumé Editor",
+      "category": "Web App",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "localStorage",
+        "FileReader",
+        "HTML Templates",
+        "Print CSS"
+      ],
+      "portfolio": {
+        "shortDescription": "A LaTeX-inspired résumé editor with a live preview, autosave and one-click PDF export.",
+        "description": [
+          "Resume Builder turns writing a résumé into something closer to writing code. The left pane is styled like a LaTeX source file, with commands such as \\name and \\title and section comments, while the right pane shows the finished, print-ready résumé updating as you type. When it looks right, one click exports it as a clean PDF.",
+          "You can add as many experience, project, education and certification entries as you need, upload an optional profile photo, and list your skills as tags. Empty sections are hidden automatically, so the final document only shows what you've filled in. Everything is saved in the browser as you go, so closing the tab never loses your work.",
+          "Under the hood, each section is defined by a small schema, and one set of generic functions creates, reads and renders every section, so adding a new section means adding one schema entry. Entry cards are cloned from HTML templates, the preview is rebuilt by a debounced compile step, and all user input is HTML-escaped before it reaches the page. The whole app runs inside a strict-mode IIFE with no dependencies."
+        ],
+        "highlights": [
+          "Live, debounced preview with a compile status indicator",
+          "Unlimited entries for experience, projects, education and certifications",
+          "Optional profile photo upload",
+          "Autosave and restore with localStorage",
+          "One-click PDF export with print-specific CSS",
+          "Input escaping to prevent HTML injection"
+        ]
+      },
+      "resume": {
+        "heading": "Resume Builder | HTML, CSS, JavaScript",
+        "points": [
+          "Built a LaTeX-style résumé editor with a live, debounced preview and one-click PDF export using print-specific CSS.",
+          "Designed a schema-driven architecture in which one set of generic functions handles every repeatable section, avoiding duplicated code.",
+          "Implemented autosave and restore with localStorage, photo upload with FileReader, and HTML escaping of all user input to prevent injection."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Resume-Builder/",
+        "github": "https://github.com/Vyom1912/Resume-Builder",
+        "screenshot": "images/from-project/resumebuilder.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 2,
+      "slug": "music-player",
+      "title": "Music Player",
+      "subtitle": "A Feature-Rich Audio Player",
+      "category": "Web App",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "HTML5 Audio",
+        "CSS3",
+        "JavaScript",
+        "localStorage",
+        "Font Awesome"
+      ],
+      "portfolio": {
+        "shortDescription": "A streaming-style music player with search, shuffle, loop, favourites and a mobile-first layout.",
+        "description": [
+          "Music Player brings the feel of a streaming app to the browser. Pick a song from the 17-track playlist and get album art, a seekable progress bar, volume control and all the familiar controls: play and pause, next and previous, shuffle and loop. You can mark favourites with a heart, download the current track, and search the library by song title or artist as you type.",
+          "The player remembers the last song you played, so it picks up where you left off. On phones the layout switches to two views, like a native app: tap a song in the list to open the full-screen player, and use the back button to return.",
+          "The playlist is driven entirely by data: an array of song objects renders both the list and the search results. Audio events keep the progress bar and timers in sync with playback, favourites are tracked in a Set, and next and previous wrap around the playlist with modular arithmetic."
+        ],
+        "highlights": [
+          "Play/pause, next/previous, seek and volume",
+          "Shuffle and loop modes",
+          "Favourites and track download",
+          "Live search by title or artist",
+          "Resumes the last played song",
+          "Two-view mobile layout"
+        ]
+      },
+      "resume": {
+        "heading": "Music Player | HTML, CSS, JavaScript",
+        "points": [
+          "Developed a music player with play/pause, seek, volume, shuffle, loop, favourites, download and live search across a 17-track playlist.",
+          "Used HTML5 Audio API events to keep the progress bar and timers in sync, and localStorage to resume the last played track.",
+          "Built a responsive two-view mobile layout (playlist and player) from a single set of markup."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Music-Player/",
+        "github": "https://github.com/Vyom1912/Music-Player",
+        "screenshot": "images/from-project/Musicplayer.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 3,
+      "slug": "codepen-clone",
+      "title": "Online Code Editor",
+      "subtitle": "CodePen-Style Playground",
+      "category": "Web App",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "iframe"
+      ],
+      "portfolio": {
+        "shortDescription": "A CodePen-style editor that runs your HTML, CSS and JavaScript live as you type.",
+        "description": [
+          "A lightweight coding playground in the style of CodePen. Write HTML, CSS and JavaScript in three separate editors and watch the result appear instantly in the output panel, updating on every keystroke.",
+          "The output runs inside an iframe: the HTML and CSS are written into the iframe's document and the JavaScript runs in its window, which keeps your code separate from the editor itself."
+        ],
+        "highlights": [
+          "HTML, CSS and JavaScript editors",
+          "Live output on every keystroke",
+          "Output isolated in an iframe"
+        ]
+      },
+      "resume": {
+        "heading": "Online Code Editor | JavaScript",
+        "points": [
+          "Built a CodePen-style editor that renders HTML, CSS and JavaScript live in a separate iframe as you type."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Code-Editor/",
+        "github": "https://github.com/Vyom1912/Code-Editor",
+        "screenshot": "images/from-project/CodeEditor.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 4,
+      "slug": "drag-and-drop",
+      "title": "Drag and Drop",
+      "subtitle": "Lists and File Preview",
+      "category": "Browser API",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5 Drag and Drop API",
+        "CSS3",
+        "JavaScript",
+        "FileReader",
+        "Blob URLs"
+      ],
+      "portfolio": {
+        "shortDescription": "Native drag-and-drop list sorting and a file drop zone with previews, with no libraries.",
+        "description": [
+          "Two drag-and-drop demos built on the browser's native API. In the first, you drag list items back and forth between two boxes. In the second, you drop any file onto the drop zone: images are previewed as images, text files show their contents, and other files show their name and type, with a link to download the file again.",
+          "The file preview uses FileReader to read images and text, and Blob URLs to offer downloads for any other file type. The drop zone highlights while you drag a file over it."
+        ],
+        "highlights": [
+          "Drag items between two lists",
+          "Drop any file type",
+          "Image and text previews",
+          "Download link for dropped files"
+        ]
+      },
+      "resume": {
+        "heading": "Drag and Drop | JavaScript, HTML5 APIs",
+        "points": [
+          "Built drag-and-drop list sorting and a file drop zone with image and text previews, using the HTML5 Drag and Drop API, FileReader and Blob URLs."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Drag-Drop/",
+        "github": "https://github.com/Vyom1912/Drag-Drop",
+        "screenshot": "images/from-project/draganddrop.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 5,
+      "slug": "qr-code-generator",
+      "title": "QR Code Generator",
+      "subtitle": null,
+      "category": "API Project",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "QR Server API"
+      ],
+      "portfolio": {
+        "shortDescription": "Turn any text, link, email or phone number into a QR code instantly.",
+        "description": [
+          "Type any text, website link, email address or phone number and get a QR code in an instant, generated by the QR Server API. The code appears with a smooth reveal animation, and if you try to generate one from an empty field, the input shakes to show the error."
+        ],
+        "highlights": [
+          "QR codes from any text or link",
+          "Animated reveal",
+          "Shake animation on empty input"
+        ]
+      },
+      "resume": {
+        "heading": "QR Code Generator | JavaScript, REST API",
+        "points": [
+          "Built a QR code generator using the QR Server API, with animated feedback for generated codes and empty input."
+        ]
+      },
+      "note": "The PNG/JPG download buttons don't work yet (qrCodeUrl is undefined in script.js), so they are left out of this text. Add them once fixed.",
+      "links": {
+        "demo": "https://vyom1912.github.io/QR-Code-Generater/",
+        "github": "https://github.com/Vyom1912/QR-Code-Generater",
+        "screenshot": "images/from-project/qr.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 6,
+      "slug": "image-search-engine",
+      "title": "Image Search Engine",
+      "subtitle": "Powered by Unsplash",
+      "category": "API Project",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Fetch API",
+        "Unsplash API"
+      ],
+      "portfolio": {
+        "shortDescription": "Search high-quality photos on any topic, with paginated results from the Unsplash API.",
+        "description": [
+          "Image Search Engine lets you search Unsplash's library of free, high-quality photos by keyword. Results appear in a clean grid, 12 at a time, and a Show more button loads the next page. Click any photo to open it on Unsplash.",
+          "The app tracks the current page between requests: a new search starts again from page one and clears the grid, while Show more appends the next set of results. Results are built with DOM methods rather than HTML strings."
+        ],
+        "highlights": [
+          "Keyword search",
+          "12 results per page",
+          "Show more pagination",
+          "Photos link to Unsplash"
+        ]
+      },
+      "resume": {
+        "heading": "Image Search Engine | JavaScript, REST API",
+        "points": [
+          "Built an image search engine on the Unsplash API with async/await, paginated results and a Show more button.",
+          "Managed search and pagination state between API requests, resetting results on each new search."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Image-Search-Engine-/",
+        "github": "https://github.com/Vyom1912/Image-Search-Engine-",
+        "screenshot": "images/from-project/imagesearchengine.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 7,
+      "slug": "weather-app",
+      "title": "Weather App",
+      "subtitle": "Live Weather by City",
+      "category": "API Project",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Fetch API",
+        "OpenWeatherMap API"
+      ],
+      "portfolio": {
+        "shortDescription": "Live temperature, humidity and wind speed for any city, from the OpenWeatherMap API.",
+        "description": [
+          "Type any city and the Weather App shows its current temperature, humidity and wind speed, with an icon that matches the conditions: clear skies, clouds, rain, drizzle, mist or snow. Search with the button or just press Enter.",
+          "The data comes live from the OpenWeatherMap REST API, requested with async/await in metric units. If a city can't be found, the app shows a clear error instead of stale results."
+        ],
+        "highlights": [
+          "Search by city name",
+          "Temperature, humidity and wind speed",
+          "Condition-based weather icons",
+          "Error message for unknown cities"
+        ]
+      },
+      "resume": {
+        "heading": "Weather App | JavaScript, REST API",
+        "points": [
+          "Integrated the OpenWeatherMap REST API with async/await to show live temperature, humidity and wind speed for any city.",
+          "Handled invalid-city errors and mapped weather conditions to matching icons."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Weather-website/",
+        "github": "https://github.com/Vyom1912/Weather-website",
+        "screenshot": "images/from-project/weather.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 8,
+      "slug": "email-subscription-google-sheet",
+      "title": "Email Subscription with Google Sheets",
+      "subtitle": "Serverless Signup Form",
+      "category": "Website",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Fetch API",
+        "Google Apps Script",
+        "Google Sheets"
+      ],
+      "portfolio": {
+        "shortDescription": "A coming-soon page whose signup form saves emails straight into Google Sheets.",
+        "description": [
+          "A coming-soon landing page with an email signup form. Every address submitted goes straight into a Google Sheet, with no server or database involved.",
+          "The form is sent in the background with the Fetch API and FormData to a Google Apps Script web app, which adds each email as a new row. Visitors see a thank-you message, and the form resets without reloading the page."
+        ],
+        "highlights": [
+          "Coming-soon hero section",
+          "Emails saved to Google Sheets",
+          "Submits without a page reload",
+          "Thank-you confirmation"
+        ]
+      },
+      "resume": {
+        "heading": "Email Subscription | JavaScript, Google Apps Script",
+        "points": [
+          "Connected an email signup form to Google Sheets through Google Apps Script, submitting asynchronously with Fetch and FormData, with no backend server."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Email-Subscription-/",
+        "github": "https://github.com/Vyom1912/Email-Subscription-",
+        "screenshot": "images/from-project/emailsubscription.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 9,
+      "slug": "form-validation",
+      "title": "Form Validation",
+      "subtitle": "Real-Time Contact Form",
+      "category": "UI Component",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Regular Expressions"
+      ],
+      "portfolio": {
+        "shortDescription": "A contact form that validates every field as you type, with password strength rules.",
+        "description": [
+          "This contact form gives instant feedback on every field. As you type, each field shows exactly what's wrong, or a green check once it's correct, and the form won't submit until everything passes.",
+          "It checks for a full name, a 10-digit phone number and a valid email address, and it enforces a strong password: at least 8 characters with an uppercase letter, a lowercase letter, a number and a special character. Password rules are checked one at a time, so you always see the next thing to fix, and an eye icon shows or hides the password. The message field counts down how many more characters are needed.",
+          "Each field has its own validator built on regular expressions, and all of them run together on submit to block invalid data."
+        ],
+        "highlights": [
+          "Live validation on every keystroke",
+          "Full name, phone and email checks",
+          "Step-by-step password strength rules",
+          "Show / hide password",
+          "Live character counter for the message"
+        ]
+      },
+      "resume": {
+        "heading": "Form Validation | JavaScript, Regex",
+        "points": [
+          "Built a contact form with real-time validation of five fields using regular expressions, including step-by-step password strength rules and a show/hide toggle.",
+          "Blocked invalid submissions and displayed field-specific error messages."
+        ]
+      },
+      "links": {
+        "demo": null,
+        "github": null,
+        "screenshot": "images/from-project/formvalidation.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 10,
+      "slug": "text-to-speech",
+      "title": "Text to Speech Converter",
+      "subtitle": null,
+      "category": "Browser API",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Web Speech API"
+      ],
+      "portfolio": {
+        "shortDescription": "Type any text, pick a voice, and hear it read aloud.",
+        "description": [
+          "Type anything, choose from every voice installed on your device, and press Listen to hear it read aloud. The app uses the browser's built-in Speech Synthesis API, so it needs no external service. The voice list is filled in as soon as the browser finishes loading its voices."
+        ],
+        "highlights": [
+          "Any text read aloud",
+          "Choose from all system voices"
+        ]
+      },
+      "resume": {
+        "heading": "Text to Speech Converter | JavaScript, Web Speech API",
+        "points": [
+          "Built a text-to-speech tool with the Web Speech API's SpeechSynthesis, including a selector for every voice available on the device."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Text-to-Speech/",
+        "github": "https://github.com/Vyom1912/Text-to-Speech",
+        "screenshot": "images/from-project/texttospeech.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 11,
+      "slug": "speech-to-text",
+      "title": "Speech to Text",
+      "subtitle": null,
+      "category": "Browser API",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Web Speech API"
+      ],
+      "portfolio": {
+        "shortDescription": "Speak, and watch your words appear on screen.",
+        "description": [
+          "Click the button, start talking, and your words appear on the screen. A Listening indicator shows while the microphone is recording. It uses the browser's built-in speech recognition, and works in Chrome and Edge."
+        ],
+        "highlights": [
+          "One-click voice input",
+          "Listening indicator",
+          "Instant transcription"
+        ]
+      },
+      "resume": {
+        "heading": "Speech to Text | JavaScript, Web Speech API",
+        "points": [
+          "Built a speech-to-text tool with the Web Speech API's SpeechRecognition, showing live listening status and the transcribed text."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Speech-to-Text/",
+        "github": "https://github.com/Vyom1912/Speech-to-Text",
+        "screenshot": "images/from-project/speechtotext.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 12,
+      "slug": "todo-list",
+      "title": "To-Do List",
+      "subtitle": "A Task Manager with Reordering",
+      "category": "Web App",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "localStorage"
+      ],
+      "portfolio": {
+        "shortDescription": "A task manager to add, complete, edit, reorder and delete tasks, saved in the browser.",
+        "description": [
+          "A to-do app that covers the full life of a task. Add a task with the button or the Enter key, tick it off when it's done, edit it, move it up or down the list, or delete it. Your list is saved in the browser, so it's still there when you come back.",
+          "The app keeps a single array of tasks as its source of truth and re-renders the list after every change. One click listener on the list handles every button through event delegation, and updates use immutable array methods: map to toggle or edit, filter to delete, and destructuring to swap positions."
+        ],
+        "highlights": [
+          "Add with the button or the Enter key",
+          "Complete, edit and delete tasks",
+          "Move tasks up or down",
+          "Saved in localStorage",
+          "Empty-input validation"
+        ]
+      },
+      "resume": {
+        "heading": "To-Do List | HTML, CSS, JavaScript",
+        "points": [
+          "Built a task manager with add, complete, edit, delete and reorder, kept in localStorage.",
+          "Used event delegation and immutable array updates (map, filter, destructuring swaps) around a single state array."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/To-Do-List/",
+        "github": "https://github.com/Vyom1912/To-Do-List",
+        "screenshot": "images/from-project/todolist.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 13,
+      "slug": "google-keep-clone",
+      "title": "PatelKeeps",
+      "subtitle": "A Google Keep–Style Notes App",
+      "category": "Web App",
+      "level": "Intermediate",
+      "featured": true,
+      "techStack": [
+        "HTML5",
+        "CSS3 Grid",
+        "CSS Animations",
+        "JavaScript",
+        "localStorage"
+      ],
+      "portfolio": {
+        "shortDescription": "A Google Keep–inspired notes app with autosave, live search and smooth animations.",
+        "description": [
+          "PatelKeeps is a quick, no-fuss notes app inspired by Google Keep. Create a note and it opens ready to type. Everything saves as you type, and each card shows when it was last edited. Click any note to edit it, and press Esc or Ctrl + Enter when you're done.",
+          "A live search bar filters your notes instantly, and friendly messages appear when you have no notes yet or nothing matches your search. Cards pop in when created, lift when you hover over them and shrink away when deleted, and all motion switches off for users who prefer reduced motion. The grid adapts from several columns on desktop to a single column on phones.",
+          "Notes are stored as structured objects in localStorage, and notes saved by an older version of the app are converted automatically, so no data is lost. Note text is rendered as plain text rather than HTML, which closes a security hole in the original version."
+        ],
+        "highlights": [
+          "Create, edit, delete and search notes",
+          "Autosave with last-edited timestamps",
+          "Keyboard shortcuts to finish editing",
+          "Pop-in, hover and delete animations",
+          "Responsive grid layout",
+          "Automatic migration of older saved notes"
+        ]
+      },
+      "resume": {
+        "heading": "PatelKeeps (Google Keep Clone) | HTML, CSS, JavaScript",
+        "points": [
+          "Built a Google Keep–style notes app with create, edit, delete, live search and autosave, storing notes in localStorage with timestamps.",
+          "Added keyframe animations for creating and deleting notes and a responsive CSS Grid layout, with reduced-motion support.",
+          "Fixed an XSS vulnerability by rendering notes with textContent, and wrote a data migration so notes saved by the old version still load."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Notes-Maker/",
+        "github": "https://github.com/Vyom1912/Notes-Maker",
+        "screenshot": "images/from-project/notesmaker.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 14,
+      "slug": "codeachieve-agency",
+      "title": "CodeAchieve",
+      "subtitle": "IT Solutions & Freelancing Agency Website",
+      "category": "Website",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap 4",
+        "Font Awesome"
+      ],
+      "portfolio": {
+        "shortDescription": "A responsive agency website with a custom infinite carousel built without libraries.",
+        "description": [
+          "CodeAchieve is a complete website for an IT solutions and freelancing agency. It walks visitors through who the agency is, the services it offers (development, web design and UI/UX), recent work, the team, and how to get in touch, and it finishes with a detailed multi-column footer.",
+          "The centrepiece is the project showcase: an infinite carousel that autoplays, pauses when you hover over it, and can be moved with the arrow buttons or by dragging with the mouse. It loops seamlessly in both directions without any carousel library.",
+          "The site is fully responsive, with a hamburger menu on smaller screens, a contact form with a captcha check, and a scroll-to-top button. The JavaScript is split into small, focused files for the navigation, the carousel and scrolling, and the styles are organised across separate stylesheets for easier maintenance."
+        ],
+        "highlights": [
+          "Infinite, auto-playing carousel with drag-to-scroll",
+          "Responsive layout with a hamburger menu",
+          "About, Services, Projects, Team and Contact sections",
+          "Contact form with a captcha check",
+          "Scroll-to-top button"
+        ]
+      },
+      "resume": {
+        "heading": "CodeAchieve Agency Website | HTML, CSS, JavaScript, Bootstrap",
+        "points": [
+          "Built a fully responsive, multi-section agency website with a hamburger navigation menu, contact form and scroll-to-top button.",
+          "Engineered an infinite, auto-playing carousel from scratch with drag-to-scroll, arrow controls and pause-on-hover, by cloning edge cards and resetting the scroll position."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Landing-Page-CodeAchieve/",
+        "github": "https://github.com/Vyom1912/Landing-Page-CodeAchieve",
+        "screenshot": "images/from-project/codeachieve.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 15,
+      "slug": "image-slider-gallery",
+      "title": "Image Slider Gallery",
+      "subtitle": null,
+      "category": "UI Component",
+      "level": "Intermediate",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "A horizontal image gallery you can scroll with your mouse wheel or arrow buttons.",
+        "description": [
+          "A horizontal image gallery that feels natural with a mouse: scrolling the wheel moves the gallery sideways. Next and previous buttons glide smoothly between groups of images and wrap around from the last group back to the first."
+        ],
+        "highlights": [
+          "Mouse-wheel horizontal scrolling",
+          "Smooth next / previous buttons",
+          "Wrap-around navigation"
+        ]
+      },
+      "resume": {
+        "heading": "Image Slider Gallery | JavaScript",
+        "points": [
+          "Built a horizontal image gallery that maps mouse-wheel movement to horizontal scrolling, with smooth, wrap-around navigation buttons."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Image-Slider/",
+        "github": "https://github.com/Vyom1912/Image-Slider",
+        "screenshot": "images/from-project/imageslider.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 16,
+      "slug": "starbucks-landing-page",
+      "title": "Starbucks Landing Page",
+      "subtitle": null,
+      "category": "Website",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "A product landing page with an interactive drink showcase.",
+        "description": [
+          "A Starbucks-inspired product landing page. Click any drink thumbnail to swap the featured drink, and the background circle changes colour to match it. The page also has a hero headline, a call-to-action button, navigation and social links. (A practice project, not affiliated with Starbucks.)"
+        ],
+        "highlights": [
+          "Thumbnail product switcher",
+          "Colour-matched background"
+        ]
+      },
+      "resume": {
+        "heading": "Starbucks Landing Page | HTML, CSS, JavaScript",
+        "points": [
+          "Designed a product landing page with a thumbnail image switcher that also changes the page's accent colour to match the selected product."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Starbuck-frontend-development/",
+        "github": "https://github.com/Vyom1912/Starbuck-frontend-development",
+        "screenshot": "images/from-project/starbucks.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 17,
+      "slug": "dad-jokes",
+      "title": "Dad Jokes Generator",
+      "subtitle": null,
+      "category": "API Project",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Fetch API"
+      ],
+      "portfolio": {
+        "shortDescription": "A fresh dad joke with every click, from the icanhazdadjoke API.",
+        "description": [
+          "Need a laugh (or a groan)? This app fetches a random dad joke from the icanhazdadjoke API when the page loads and every time you click the button. The code includes both a Promise-chain version and an async/await version of the same request, as a side-by-side learning reference."
+        ],
+        "highlights": [
+          "Random joke on every click",
+          "Promise and async/await versions"
+        ]
+      },
+      "resume": {
+        "heading": "Dad Jokes Generator | JavaScript, REST API",
+        "points": [
+          "Fetched random jokes from a public REST API using both Promise chains and async/await, with error handling."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Dad-jokes/",
+        "github": "https://github.com/Vyom1912/Dad-jokes",
+        "screenshot": "images/from-project/dadjoks.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 18,
+      "slug": "password-generator",
+      "title": "Random Password Generator",
+      "subtitle": null,
+      "category": "Web App",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "Strong random passwords in one click, with copy to clipboard.",
+        "description": [
+          "Generate a strong password with a single click. Every password is guaranteed to include at least one uppercase letter, one lowercase letter, one number and one symbol, with the remaining characters picked at random. Copy it to your clipboard with one tap."
+        ],
+        "highlights": [
+          "Guaranteed mix of character types",
+          "Copy to clipboard"
+        ]
+      },
+      "resume": {
+        "heading": "Random Password Generator | JavaScript",
+        "points": [
+          "Built a password generator that guarantees uppercase, lowercase, numeric and symbol characters, with one-click copy to clipboard."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Random-Password-Generator-/",
+        "github": "https://github.com/Vyom1912/Random-Password-Generator-",
+        "screenshot": "images/from-project/password.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 19,
+      "slug": "toast-notification",
+      "title": "Toast Notification",
+      "subtitle": null,
+      "category": "UI Component",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "Reusable success, error and warning toast notifications.",
+        "description": [
+          "A reusable toast notification component with three styles: success, error and invalid input, each with its own colour and icon. Toasts slide in, stack neatly when several appear at once, and disappear on their own after five seconds."
+        ],
+        "highlights": [
+          "Three toast types",
+          "Stacking",
+          "Auto-dismiss after 5 seconds"
+        ]
+      },
+      "resume": {
+        "heading": "Toast Notification | JavaScript, CSS",
+        "points": [
+          "Built a reusable toast notification component with success, error and warning styles, stacking and timed auto-dismiss."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Toast-Notifications-/",
+        "github": "https://github.com/Vyom1912/Toast-Notifications-",
+        "screenshot": "images/from-project/toast.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 20,
+      "slug": "popup-message",
+      "title": "Popup Message",
+      "subtitle": null,
+      "category": "UI Component",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "An animated thank-you confirmation popup.",
+        "description": [
+          "An animated confirmation popup, the kind you see after submitting a form. It scales smoothly into view with a success icon and a thank-you message, and closes with the OK button."
+        ],
+        "highlights": [
+          "Smooth open animation",
+          "Success icon and message"
+        ]
+      },
+      "resume": {
+        "heading": "Popup Message | JavaScript, CSS",
+        "points": [
+          "Built an animated confirmation popup using CSS transitions toggled with JavaScript."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/PopUp-Message/",
+        "github": "https://github.com/Vyom1912/PopUp-Message",
+        "screenshot": "images/from-project/popup.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 21,
+      "slug": "quiz-app",
+      "title": "Quiz App",
+      "subtitle": null,
+      "category": "Game",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "A multiple-choice general-knowledge quiz with scoring and results.",
+        "description": [
+          "Test your general knowledge with a multiple-choice quiz. Answer each question, submit, and move on to the next, and at the end you'll see your score with the option to play again. All questions are stored as simple data, so adding a new question means adding one object."
+        ],
+        "highlights": [
+          "Multiple-choice questions",
+          "Score tracking",
+          "Results screen and Play Again"
+        ]
+      },
+      "resume": {
+        "heading": "Quiz App | JavaScript",
+        "points": [
+          "Built a data-driven multiple-choice quiz with score tracking and a results screen, rendering questions dynamically from a JavaScript array."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Quiz--front-end-development/",
+        "github": "https://github.com/Vyom1912/Quiz--front-end-development",
+        "screenshot": "images/from-project/quiz.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 22,
+      "slug": "tic-tac-toe",
+      "title": "Tic Tac Toe",
+      "subtitle": null,
+      "category": "Game",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "The classic two-player game, with turn tracking and win detection.",
+        "description": [
+          "The classic game of noughts and crosses for two players. X and O take turns on a 3×3 board, the game shows whose turn it is, checks all eight winning lines after every move, and announces the winner. Reset to play again."
+        ],
+        "highlights": [
+          "Two-player turns",
+          "Win detection on rows, columns and diagonals",
+          "Reset button"
+        ]
+      },
+      "resume": {
+        "heading": "Tic Tac Toe | JavaScript",
+        "points": [
+          "Built a two-player Tic Tac Toe game with turn tracking and win detection across all eight winning combinations."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/TIC-TAC-TOE-GAME/",
+        "github": "https://github.com/Vyom1912/TIC-TAC-TOE-GAME",
+        "screenshot": "images/from-project/tictactoe.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 23,
+      "slug": "calculator",
+      "title": "Calculator",
+      "subtitle": null,
+      "category": "Web App",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "A clean calculator for everyday arithmetic.",
+        "description": [
+          "A clean, easy-to-use calculator for everyday maths. It handles addition, subtraction, multiplication, division and percentages, and has AC to clear everything, DEL to remove the last character, and 00 and decimal-point keys."
+        ],
+        "highlights": [
+          "Basic arithmetic and percentage",
+          "Clear and backspace keys"
+        ]
+      },
+      "resume": {
+        "heading": "Calculator | JavaScript",
+        "points": [
+          "Built a calculator supporting arithmetic, percentage, clear and backspace, using event handling on a button grid."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Calculator/",
+        "github": "https://github.com/Vyom1912/Calculator",
+        "screenshot": "images/from-project/calculator.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 24,
+      "slug": "analog-clock",
+      "title": "Analog Clock",
+      "subtitle": null,
+      "category": "Web App",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "A real-time analog clock drawn with CSS transforms.",
+        "description": [
+          "A live analog clock with colour-coded hour, minute and second hands. The current time is converted into rotation angles and applied with CSS transforms every second, and the hour hand moves gradually as the minutes pass, just like a real clock. The numbers around the face are positioned with CSS custom properties."
+        ],
+        "highlights": [
+          "Live time, updated every second",
+          "Smooth hour-hand movement",
+          "Colour-coded hands"
+        ]
+      },
+      "resume": {
+        "heading": "Analog Clock | JavaScript, CSS",
+        "points": [
+          "Built a real-time analog clock by converting the current time into rotation angles applied with CSS transforms and custom properties."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Analog-colck/",
+        "github": "https://github.com/Vyom1912/Analog-colck",
+        "screenshot": "images/from-project/analogclock.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 25,
+      "slug": "light-on-off",
+      "title": "Light On / Off",
+      "subtitle": null,
+      "category": "UI Component",
+      "level": "Beginner",
+      "featured": false,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript"
+      ],
+      "portfolio": {
+        "shortDescription": "A playful toggle switch that lights up a bulb.",
+        "description": [
+          "Can you turn the light on? A playful page with an animated ON / OFF switch that swaps the light bulb between off and on, adding a warm glow when it's lit."
+        ],
+        "highlights": [
+          "Animated toggle switch",
+          "Glow effect"
+        ]
+      },
+      "resume": {
+        "heading": "Light On / Off | JavaScript",
+        "points": [
+          "Built an animated toggle switch that updates an image and its glow effect through DOM events."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/Light-on-off/",
+        "github": "https://github.com/Vyom1912/Light-on-off",
+        "screenshot": "images/from-project/lightonoff.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 26,
+      "slug": "logo-design",
+      "title": "Logo Design",
+      "subtitle": "CodeAchieve Brand Identity",
+      "category": "UI/UX Design",
+      "level": null,
+      "featured": false,
+      "techStack": [
+        "Canva",
+        "Figma"
+      ],
+      "portfolio": {
+        "shortDescription": "A monogram logo for the CodeAchieve agency, built around the idea of hitting your goals.",
+        "description": [
+          "A logo for CodeAchieve, the IT solutions and freelancing agency featured in my CodeAchieve website project. The design joins the letters C and A into a single monogram and pairs it with an arrow, a visual shorthand for aiming at a goal and achieving it.",
+          "The final mark places the monogram at the centre of two concentric rings in teal and sky blue, turning the logo into a target with the arrow striking it. The thin, elegant letterforms contrast with the bold rings, so the logo stays recognisable at small sizes such as favicons and profile pictures."
+        ],
+        "highlights": [
+          "C and A monogram",
+          "Arrow-and-target concept for achievement",
+          "Teal and sky-blue colour palette",
+          "Works at small sizes"
+        ]
+      },
+      "resume": {
+        "heading": "Logo Design | Canva, Figma",
+        "points": [
+          "Designed a monogram logo for the CodeAchieve agency using an arrow-and-target concept, sized to work from favicons to banners."
+        ]
+      },
+      "links": {
+        "demo": "image/logo.jpg",
+        "github": null,
+        "screenshot": "images/from-project/logo design.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 27,
+      "slug": "social-media-post",
+      "title": "Social Media Post",
+      "subtitle": "Maroon Technologies Instagram Post",
+      "category": "UI/UX Design",
+      "level": null,
+      "featured": false,
+      "techStack": [
+        "Canva",
+        "Figma"
+      ],
+      "portfolio": {
+        "shortDescription": "A promotional Instagram post advertising website design and development services.",
+        "description": [
+          "A square Instagram post for Maroon Technologies, a web design and development studio. The post opens with a direct question, \"Do You Need A Cool Website?\", and follows it with the studio's services: landing page sites, e-commerce sites and custom websites.",
+          "The design uses a single deep maroon on a light grid background, which keeps it on-brand and easy to read in a busy feed. A flat illustration of a designer arranging a web layout sits alongside the text, and the website address and email are placed where they're easy to find."
+        ],
+        "highlights": [
+          "Square 1:1 Instagram format",
+          "Clear headline and call to action",
+          "Services listed at a glance",
+          "Single-colour maroon brand palette",
+          "Flat illustration"
+        ]
+      },
+      "resume": {
+        "heading": "Social Media Post | Canva, Figma",
+        "points": [
+          "Designed a promotional Instagram post for a web studio, with a clear call to action, service list and consistent brand colours."
+        ]
+      },
+      "links": {
+        "demo": "image/instagram-post.png",
+        "github": null,
+        "screenshot": "images/from-project/social media.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 28,
+      "slug": "template-design",
+      "title": "Template Design",
+      "subtitle": "Freelancing Agency Landing Page",
+      "category": "UI/UX Design",
+      "level": null,
+      "featured": false,
+      "techStack": [
+        "Canva",
+        "Figma"
+      ],
+      "portfolio": {
+        "shortDescription": "A full landing-page design for a freelancing agency, from hero section to footer.",
+        "description": [
+          "A complete one-page website design for CodeBurning, a freelancing agency that helps businesses get online. The layout runs from a bold dark hero section through About Us, Why Choose Us, Services, Our Works and a Contact form, and ends with a four-column footer.",
+          "The design uses a dark navy and blue palette with small star accents for a consistent look throughout. Service cards each carry an icon and a Build With Us button, the portfolio section shows project thumbnails with labels, and the contact form groups fields for name, email, phone and project details."
+        ],
+        "highlights": [
+          "Full one-page layout, hero to footer",
+          "Services cards with calls to action",
+          "Portfolio gallery section",
+          "Contact form layout",
+          "Consistent navy and blue palette"
+        ]
+      },
+      "resume": {
+        "heading": "Template Design | Canva, Figma",
+        "points": [
+          "Designed a complete landing page for a freelancing agency covering the hero, services, portfolio, contact form and footer."
+        ]
+      },
+      "links": {
+        "demo": "image/template.png",
+        "github": null,
+        "screenshot": "images/from-project/template design.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 29,
+      "slug": "website-design",
+      "title": "Website Design",
+      "subtitle": "BAZAAR E-Commerce Homepage",
+      "category": "UI/UX Design",
+      "level": null,
+      "featured": false,
+      "techStack": [
+        "Canva",
+        "Figma"
+      ],
+      "portfolio": {
+        "shortDescription": "A homepage design for an online marketplace, with deals, categories and product grids.",
+        "description": [
+          "A homepage design for BAZAAR, an online marketplace. The top bar has category links (clothes, appliances, electronics, furniture, grocery), a search field and quick links to orders, wish list, cart and account, followed by a product carousel and a strip of shopping offers.",
+          "Below that, the page is built from repeatable sections: recommended deals, round shortcut buttons for popular deal categories, a filterable product grid with pagination, and rows for frequently repurchased items. Every product card uses the same layout, with a price tag, sale label, rating and wish-list heart, so the page stays easy to scan."
+        ],
+        "highlights": [
+          "Full e-commerce homepage layout",
+          "Category navigation and search",
+          "Reusable product card design",
+          "Category filters and pagination",
+          "Promotional banners and deal shortcuts"
+        ]
+      },
+      "resume": {
+        "heading": "Website Design | Canva, Figma",
+        "points": [
+          "Designed an e-commerce homepage with category navigation, search, promotional banners and a reusable product-card system."
+        ]
+      },
+      "links": {
+        "demo": "image/website-design.png",
+        "github": null,
+        "screenshot": "images/from-project/web-design.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 30,
+      "slug": "the-maroons",
+      "title": "The Maroons",
+      "subtitle": "A Digital Agency Website",
+      "category": "Website",
+      "level": "Intermediate",
+      "featured": true,
+      "techStack": [
+        "HTML5",
+        "CSS3",
+        "JavaScript",
+        "Bootstrap 4",
+        "Font Awesome",
+        "IntersectionObserver",
+        "SmtpJS"
+      ],
+      "portfolio": {
+        "shortDescription": "A responsive agency website for The Maroons, with an animated hero, a filterable project gallery and a working contact form.",
+        "description": [
+          "The Maroons is the official website of a small design and development studio offering UI/UX design, website design and development, landing pages and brand design. It opens with a full-screen brand intro and a scroll indicator, followed by a rotating headline carousel and a clear call to action that leads visitors to the contact form.",
+          "Visitors can browse the studio's services, filter the project gallery by Web Development or Web Design, and open each project's live demo or full design. A sticky, blurred header highlights the current section as you scroll, and a contact form sends enquiries straight to the studio's inbox.",
+          "Services and projects are stored as JavaScript data arrays and rendered into the page, so adding a new project means adding one object. Sections fade and slide in with an IntersectionObserver and a scroll-based reveal, the gallery uses a responsive CSS grid, and the layout adapts across five breakpoints down to a mobile dropdown menu."
+        ],
+        "highlights": [
+          "Full-screen brand intro with an animated scroll indicator",
+          "Headline carousel built with Bootstrap 4",
+          "Services and projects rendered from JavaScript data",
+          "Project gallery with category filters",
+          "Scroll-reveal animations using IntersectionObserver",
+          "Sticky header with active-section highlighting and a mobile dropdown menu",
+          "Contact form that sends email with SmtpJS",
+          "Fully responsive layout with SEO and Open Graph meta tags"
+        ]
+      },
+      "resume": {
+        "heading": "The Maroons | HTML, CSS, JavaScript, Bootstrap",
+        "points": [
+          "Designed and built a responsive agency website with an animated hero, a Bootstrap carousel and scroll-reveal animations using IntersectionObserver.",
+          "Rendered the services and project sections from JavaScript data arrays and added category filtering, so new work can be added without editing HTML.",
+          "Implemented a sticky navigation bar with scroll-based active-link highlighting, a mobile dropdown menu and an email contact form with SmtpJS."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/TheMaroons/",
+        "github": "",
+        "screenshot": "images/from-project/themaroons.png",
+        "gallery": []
+      }
+    },
+    {
+      "id": 31,
+      "slug": "foodzing",
+      "title": "FoodZing",
+      "subtitle": "A Responsive Food Ordering Website",
+      "category": "Web App",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "React 19",
+        "React Router",
+        "Context API",
+        "Firebase Authentication",
+        "Firebase Realtime Database",
+        "CSS3",
+        "Responsive Design",
+        "GitHub Pages"
+      ],
+      "portfolio": {
+        "shortDescription": "A responsive React food ordering site with Firebase sign-in, a category-filtered menu, a live cart and a full checkout flow.",
+        "description": [
+          "FoodZing is a food ordering website built with React. Visitors can browse 36 dishes across 8 categories, such as Salad, Rolls, Desserts and Pasta, and filter the menu with one tap on a category. Dishes are added to the cart straight from the menu card, with plus and minus controls that update the quantity and the running total instantly.",
+          "Users create an account or sign in through Firebase Authentication. After signing in, the navbar greets them by name. From the cart they see an itemised bill with subtotal, delivery fee and total, then fill in a validated delivery form to place the order. The site also includes About, Why FoodZing and Contact sections, and the contact form sends messages to a Firebase Realtime Database.",
+          "Under the hood, cart state lives in a React Context, so every component reads and updates it from one place. Auth state is tracked once at the app level and passed down. The site uses HashRouter so it runs on GitHub Pages without server rewrites, and a custom hook handles smooth scrolling to page sections from any route. The layout is fully responsive, from a hamburger menu and stacked hero on phones to a multi-column grid on desktops."
+        ],
+        "highlights": [
+          "Category filter across 36 dishes in 8 categories",
+          "Add to cart with live quantity controls and running total",
+          "Sign up and login with Firebase Authentication",
+          "Personalised navbar greeting for signed-in users",
+          "Itemised cart and validated checkout form",
+          "Fully responsive layout with a mobile hamburger menu",
+          "Deployed on GitHub Pages using HashRouter"
+        ]
+      },
+      "resume": {
+        "heading": "FoodZing | React, Firebase, CSS",
+        "points": [
+          "Built a responsive food ordering web app in React with a category-filtered menu of 36 dishes, a live cart and a validated checkout flow.",
+          "Managed global cart state with the Context API and integrated Firebase Authentication for sign-up, login and personalised user sessions.",
+          "Deployed to GitHub Pages using HashRouter and a custom smooth-scroll hook, with a mobile-first layout that adapts from phones to desktops."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+        "github": "https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website",
+        "screenshot": "images/from-project/foodzing.png",
+        "gallery": [
+          "images/captured/foodzing/cart.png",
+          "images/captured/foodzing/dishes.png",
+          "images/captured/foodzing/menu.png",
+          "images/captured/foodzing/mobile-home.png"
+        ]
+      }
+    },
+    {
+      "id": 32,
+      "slug": "rakhi-store",
+      "title": "The Maroons: A Rakhi Store",
+      "subtitle": "A WhatsApp Ordering Store for a Home Business",
+      "category": "Web App",
+      "level": "Advanced",
+      "featured": true,
+      "techStack": [
+        "React 19",
+        "React Router 7",
+        "Context API",
+        "localStorage",
+        "WhatsApp Click-to-Chat",
+        "CSS3 (Mobile-First)",
+        "Jest",
+        "React Testing Library",
+        "GitHub Pages"
+      ],
+      "portfolio": {
+        "shortDescription": "A mobile-first online store for a real home business selling handmade rakhis, with custom name rakhis and one-tap ordering on WhatsApp.",
+        "description": [
+          "The Maroons is a real online store for a small home business in Himatnagar that makes handmade Jeco Moti rakhis. Customers browse 69 designs in four types, add them to a cart, and send the whole order to the owner on WhatsApp in one tap. There is no server or online payment: the order arrives as a ready-written WhatsApp message, which is how the business already works.",
+          "Customers can also design a custom name rakhi. They add as many names as they need, see each name drawn letter by letter as beads on the maroon thread, and choose a Moti colour from close-up photos of the real beads, so there are no surprises about colour. Custom rakhis go into the same cart as ready-made ones and are sent in the same message, with every name spelled out letter by letter.",
+          "The site is built to protect the business as well as to sell. An Order Terms page covers making time, cancellations, pickup deadlines and spelling responsibility, and customers must agree to the terms before the order is sent. The agreement is written into the WhatsApp message itself. A 'How to Order' timeline with example chat bubbles explains the whole flow, from sending the order to the 'ready for pickup' message.",
+          "Under the hood, the cart and customer details are kept in React Context and saved to localStorage, and one function builds the WhatsApp order message so it can be unit tested. The site uses clean URLs on GitHub Pages through a 404 redirect, and the CSS is written mobile-first, with a slide-in menu, a sticky type slider and a sticky buy bar on phones. Product photos were auto-cropped around each rakhi and compressed from about 180 MB to about 2 MB."
+        ],
+        "highlights": [
+          "One-tap ordering: the whole cart is sent as a ready-written WhatsApp message",
+          "Custom name rakhis with a live bead preview and real bead-colour photos",
+          "Ready-made and custom rakhis in one cart, saved in the browser",
+          "Order Terms page and required agreement, recorded in every order",
+          "English-only name check and a required spelling confirmation for custom orders",
+          "'How to Order' timeline with WhatsApp-style chat bubbles",
+          "Mobile-first design with a slide-in menu, sticky type slider and sticky buy bar",
+          "Same-type product recommendations, tap-to-zoom photos and price sorting",
+          "Images cut from about 180 MB to about 2 MB, and clean URLs on GitHub Pages",
+          "Unit tests for the cart, required terms and the WhatsApp order message"
+        ]
+      },
+      "resume": {
+        "heading": "The Maroons Rakhi Store | React, React Router, Context API",
+        "points": [
+          "Built and launched a mobile-first React store for a real home business, where customers send their whole cart as a pre-written WhatsApp order, with no server or payment gateway.",
+          "Developed a custom name rakhi builder with a live bead preview, real bead-colour photos and spelling checks, feeding into the same cart and order message as ready-made products.",
+          "Protected the business with an Order Terms page and a required agreement recorded in every order, and cut page weight by about 99% (180 MB to 2 MB) by auto-cropping and compressing 69 product photos."
+        ]
+      },
+      "links": {
+        "demo": "https://vyom1912.github.io/A-Rakhi-Store/",
+        "github": "https://github.com/Vyom1912/A-Rakhi-Store",
+        "screenshot": "images/from-project/rakhistore.png",
+        "gallery": [
+          "images/captured/rakhi-store/custom-rakhi.png",
+          "images/captured/rakhi-store/home.png",
+          "images/captured/rakhi-store/how-to-order.png",
+          "images/captured/rakhi-store/mobile-custom-rakhi.png",
+          "images/captured/rakhi-store/mobile-home.png",
+          "images/captured/rakhi-store/product.png"
+        ]
+      }
+    },
+    {
+      "id": 35,
+      "slug": "makewell-agri-equipments",
+      "title": "Makewell Agri Equipments",
+      "subtitle": "A Multi-Page Marketing Website for an Agricultural Equipment Company",
+      "category": "Client Website",
+      "level": "Advanced",
+      "featured": false,
+      "techStack": [
+        "React",
+        "React Router",
+        "JavaScript",
+        "CSS3",
+        "Web3Forms",
+        "Vercel",
+        "Figma"
+      ],
+      "portfolio": {
+        "shortDescription": "A multi-page React website for Makewell Agri Equipments with a filterable product catalogue, product details, quotation requests and a contact form.",
+        "description": [
+          "A multi-page React marketing website with React Router, featuring a filterable product catalogue, a contact form with async email validation, Web3Forms API integration and a responsive mobile-first layout with a slide-in navigation drawer.",
+          "Purchased and configured a custom domain, deployed the production site on Vercel with GitHub integration for continuous deployment, and added SEO metadata."
+        ],
+        "highlights": [
+          "Filterable product catalogue and product detail pages",
+          "Quotation request and contact form through Web3Forms, with async email validation",
+          "Mobile-first layout with a slide-in navigation drawer",
+          "Custom domain on Vercel with continuous deployment from GitHub",
+          "SEO metadata"
+        ]
+      },
+      "resume": {
+        "heading": "Makewell Agri Equipments - Website | React.js, JavaScript",
+        "points": [
+          "Developed a multi-page React marketing website with React Router, featuring a filterable product catalogue, contact form with async email validation, Web3Forms API integration and responsive mobile-first layout with a slide-in navigation drawer.",
+          "Purchased and configured a custom domain, deployed the production website on Vercel with GitHub integration for continuous deployment, and implemented SEO metadata."
+        ]
+      },
+      "links": {
+        "demo": "",
+        "github": "",
+        "screenshot": "images/from-03/MakeWell.png",
+        "gallery": []
+      }
+    }
+  ]
+}
