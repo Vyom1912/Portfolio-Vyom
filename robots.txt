@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vyom1912.github.io/Portfolio-Vyom/sitemap.xml

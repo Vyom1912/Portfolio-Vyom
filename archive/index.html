@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)" />
+    <meta name="author" content="Vyom Patel" />
+    <link rel="icon" type="image/svg+xml" href="/Portfolio-Vyom/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Portfolio-Vyom/favicon-32.png" />
+    <link rel="apple-touch-icon" href="/Portfolio-Vyom/apple-touch-icon.png" />
+    <script>
+      // Runs before the page paints, so there is no flash of the wrong theme.
+      // A saved choice wins; otherwise follow the device setting.
+      (function () {
+        var d = document.documentElement, t;
+        d.classList.add("js");
+        try { t = localStorage.getItem("theme"); } catch (e) {}
+        if (t !== "light" && t !== "dark") t = matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+        d.dataset.theme = t;
+      })();
+    </script>
+    <title>All projects (archive) | Vyom Patel</title>
+    <meta name="description" content="Every project by Vyom Patel, including small JavaScript exercises and design work." />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vyom Patel" />
+    <meta property="og:title" content="All projects (archive) | Vyom Patel" />
+    <meta property="og:description" content="Every project by Vyom Patel, including small JavaScript exercises and design work." />
+    <meta property="og:url" content="https://vyom1912.github.io/Portfolio-Vyom/archive/" />
+    <meta property="og:image" content="https://vyom1912.github.io/Portfolio-Vyom/images/og-card.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="All projects (archive) | Vyom Patel" />
+    <meta name="twitter:description" content="Every project by Vyom Patel, including small JavaScript exercises and design work." />
+    <meta name="twitter:image" content="https://vyom1912.github.io/Portfolio-Vyom/images/og-card.jpg" />
+    <link rel="me" href="https://github.com/Vyom1912" />
+    
+    <script type="module" crossorigin src="/Portfolio-Vyom/assets/index-ruy5dIcr.js"></script>
+    <link rel="stylesheet" crossorigin href="/Portfolio-Vyom/assets/index-Be_NRSys.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
