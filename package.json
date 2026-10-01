@@ -9,7 +9,7 @@
     "build": "vite build && vite build --ssr src/entry-server.jsx --outDir dist-ssr && node scripts/prerender.js",
     "preview": "vite preview",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -t true",
+    "deploy": "gh-pages -d dist -t",
     "images": "node scripts/optimize-images.js",
     "archive": "node scripts/build-archive.cjs"
   },
