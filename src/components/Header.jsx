@@ -17,9 +17,9 @@ export function toTopIfCurrent(e, to, pathname) {
 
 const links = [
   { to: "/", label: "Home", end: true },
-  { to: "/work", label: "Work" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/work/", label: "Work" },
+  { to: "/about/", label: "About" },
+  { to: "/contact/", label: "Contact" },
 ];
 
 export default function Header() {
@@ -75,40 +75,64 @@ export default function Header() {
   }, [open]);
 
   return (
-    <header className={`site-header ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
-      <div className="wrap header-inner">
-        <Link to="/" className="brand" aria-label="Vyom Patel, home" onClick={(e) => toTopIfCurrent(e, "/", pathname)}>
-          <img className="brand-avatar" src={asset("images/avatar.webp")} alt="" width="36" height="36" />
-          <span className="brand-name">{person.name}</span>
+    <header
+      className={`site-header ${scrolled ? "scrolled" : ""} ${open ? "menu-open" : ""}`}>
+      <div className='wrap header-inner'>
+        <Link
+          to='/'
+          className='brand'
+          aria-label='Vyom Patel, home'
+          onClick={(e) => toTopIfCurrent(e, "/", pathname)}>
+          <img
+            className='brand-avatar'
+            src={asset("images/portrait-outdoor.jpg")}
+            alt=''
+            width='36'
+            height='36'
+          />
+          <span className='brand-name'>{person.name}</span>
         </Link>
 
-        <nav className="site-nav" aria-label="Main">
+        <nav className='site-nav' aria-label='Main'>
           {links.map((l) => (
-            <NavLink key={l.to} to={l.to} end={l.end} className="nav-link" onClick={(e) => toTopIfCurrent(e, l.to, pathname)}>
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.end}
+              className='nav-link'
+              onClick={(e) => toTopIfCurrent(e, l.to, pathname)}>
               {({ isActive }) => (
                 <>
                   {l.label}
-                  {isActive && <motion.span layoutId="nav-underline" className="nav-underline" />}
+                  {isActive && (
+                    <motion.span
+                      layoutId='nav-underline'
+                      className='nav-underline'
+                    />
+                  )}
                 </>
               )}
             </NavLink>
           ))}
-          <a className="nav-link nav-resume" href={asset(person.resume)} target="_blank" rel="noopener">
-            Resume <span aria-hidden="true">(PDF)</span>
+          <a
+            className='nav-link nav-resume'
+            href={asset(person.resume)}
+            target='_blank'
+            rel='noopener'>
+            Resume <span aria-hidden='true'>(PDF)</span>
           </a>
         </nav>
 
-        <div className="header-tools">
+        <div className='header-tools'>
           <ThemeToggle />
           <button
             ref={toggleRef}
-            type="button"
+            type='button'
             className={`burger ${open ? "is-open" : ""}`}
             aria-expanded={open}
-            aria-controls="mobile-menu"
+            aria-controls='mobile-menu'
             aria-label={open ? "Close menu" : "Open menu"}
-            onClick={() => setOpen((o) => !o)}
-          >
+            onClick={() => setOpen((o) => !o)}>
             <span />
             <span />
             <span />
@@ -122,7 +146,7 @@ export default function Header() {
             {open && (
               <>
                 <motion.div
-                  className="drawer-backdrop"
+                  className='drawer-backdrop'
                   onClick={() => setOpen(false)}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
@@ -130,50 +154,82 @@ export default function Header() {
                   transition={{ duration: 0.25 }}
                 />
                 <motion.div
-                  id="mobile-menu"
+                  id='mobile-menu'
                   ref={drawerRef}
-                  className="drawer"
-                  role="dialog"
-                  aria-modal="true"
-                  aria-label="Menu"
+                  className='drawer'
+                  role='dialog'
+                  aria-modal='true'
+                  aria-label='Menu'
                   initial={{ x: "100%" }}
                   animate={{ x: 0 }}
                   exit={{ x: "100%" }}
-                  transition={{ type: "tween", duration: 0.35, ease: [0.2, 0.7, 0.2, 1] }}
-                >
-                  <nav aria-label="Mobile">
-                    <ul className="drawer-links">
+                  transition={{
+                    type: "tween",
+                    duration: 0.35,
+                    ease: [0.2, 0.7, 0.2, 1],
+                  }}>
+                  <nav aria-label='Mobile'>
+                    <ul className='drawer-links'>
                       {links.map((l, i) => (
                         <motion.li
                           key={l.to}
                           initial={{ opacity: 0, x: 24 }}
                           animate={{ opacity: 1, x: 0 }}
-                          transition={{ delay: 0.08 + i * 0.05, duration: 0.3 }}
-                        >
-                          <NavLink to={l.to} end={l.end} className="drawer-link" onClick={(e) => { toTopIfCurrent(e, l.to, pathname); setOpen(false); }}>
-                            <span className="drawer-num">{String(i + 1).padStart(2, "0")}</span>
+                          transition={{
+                            delay: 0.08 + i * 0.05,
+                            duration: 0.3,
+                          }}>
+                          <NavLink
+                            to={l.to}
+                            end={l.end}
+                            className='drawer-link'
+                            onClick={(e) => {
+                              toTopIfCurrent(e, l.to, pathname);
+                              setOpen(false);
+                            }}>
+                            <span className='drawer-num'>
+                              {String(i + 1).padStart(2, "0")}
+                            </span>
                             {l.label}
                           </NavLink>
                         </motion.li>
                       ))}
                     </ul>
                   </nav>
-                  <div className="drawer-foot">
-                    <a className="btn btn-solid" href={asset(person.resume)} target="_blank" rel="noopener">
+                  <div className='drawer-foot'>
+                    <a
+                      className='btn btn-solid'
+                      href={asset(person.resume)}
+                      target='_blank'
+                      rel='noopener'>
                       Download resume
                     </a>
-                    <a className="drawer-mail" href={`mailto:${person.email}`}>{person.email}</a>
-                    <div className="drawer-social">
-                      <a href={person.github} target="_blank" rel="noopener me">GitHub</a>
-                      <a href={person.linkedin} target="_blank" rel="noopener me">LinkedIn</a>
-                      <a href={person.instagram} target="_blank" rel="noopener me">Instagram</a>
+                    <a className='drawer-mail' href={`mailto:${person.email}`}>
+                      {person.email}
+                    </a>
+                    <div className='drawer-social'>
+                      <a href={person.github} target='_blank' rel='noopener me'>
+                        GitHub
+                      </a>
+                      <a
+                        href={person.linkedin}
+                        target='_blank'
+                        rel='noopener me'>
+                        LinkedIn
+                      </a>
+                      <a
+                        href={person.instagram}
+                        target='_blank'
+                        rel='noopener me'>
+                        Instagram
+                      </a>
                     </div>
                   </div>
                 </motion.div>
               </>
             )}
           </AnimatePresence>,
-          document.body
+          document.body,
         )}
     </header>
   );

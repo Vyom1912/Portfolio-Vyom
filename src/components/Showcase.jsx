@@ -142,22 +142,43 @@ function LiveFrame({ url, device, slow, reload }) {
   );
 }
 
-// "See it in action": steps next to a device frame. The frame switches between a
+// "See it in action": a project's screens, listed on the left under a heading for
+// each feature. Each feature has as many screens as it needs. The list sits next to a device frame that switches between a
 // browser window and a phone, and between screenshots and the live site.
 export default function Showcase({ project }) {
-  const steps = project.screens;
+  const groups = project.showcase;
+  // One flat list, so previous and next walk through every screen in order.
+  const steps = groups.flatMap((g, group) => g.screens.map((s) => ({ ...s, group })));
   const [index, setIndex] = useState(0);
   const [device, setDevice] = useState("desktop");
   const [mode, setMode] = useState("screens");
   const [reload, setReload] = useState(0);
+  const list = useRef(null);
+
+  // Keep the selected screen in view inside the list. The list scrolls down on
+  // desktops and sideways on smaller screens; only the list moves, never the page.
+  useEffect(() => {
+    const box = list.current;
+    const el = box && box.querySelector(".step.on");
+    if (!el) return;
+    const b = box.getBoundingClientRect();
+    const r = el.getBoundingClientRect();
+    const sideways = box.scrollWidth > box.clientWidth;
+    box.scrollBy({
+      left: sideways ? r.left - b.left - (b.width - r.width) / 2 : 0,
+      top: sideways ? 0 : r.top - b.top - 40,
+      behavior: "smooth",
+    });
+  }, [index]);
 
   // Phones start on the phone view.
   useEffect(() => {
     if (window.matchMedia("(max-width: 720px)").matches) setDevice("mobile");
   }, []);
 
-  if (!steps || steps.length === 0) return null;
+  if (steps.length === 0) return null;
   const step = steps[index];
+  const group = step.group;
   const live = mode === "live";
   const go = (d) => setIndex((i) => (i + d + steps.length) % steps.length);
   const changeMode = (next) => {
@@ -195,10 +216,24 @@ export default function Showcase({ project }) {
       </div>
 
       <div className="showcase-body">
-        <ol className={`steps ${live ? "is-locked" : ""}`} role="tablist" aria-label={`${project.title} screens`}>
-          {steps.map((s, i) => (
+        <div className="step-list">
+        <div ref={list} className={`step-groups ${live ? "is-locked" : ""}`}>
+          {groups.map((g, gi) => {
+            const first = steps.findIndex((st) => st.group === gi);
+            return (
+              <section key={g.feature} className={`step-group ${gi === group ? "on" : ""}`} aria-labelledby={`feature-${gi}`}>
+                {groups.length > 1 && (
+                  <h3 className="step-group-title" id={`feature-${gi}`}>
+                    <span className="step-group-name">{g.feature}</span>
+                    <span className="step-group-count">{g.screens.length}</span>
+                  </h3>
+                )}
+                <ol className="steps" start={first + 1}>
+          {g.screens.map((s, j) => {
+            const i = first + j;
+            return (
             <li key={s.title}>
-              <button type="button" role="tab" aria-selected={i === index} className={`step ${i === index ? "on" : ""}`} onClick={() => setIndex(i)} disabled={live} aria-disabled={live}>
+              <button type="button" aria-pressed={i === index} className={`step ${i === index ? "on" : ""}`} onClick={() => setIndex(i)} disabled={live} aria-disabled={live}>
                 <span className="step-thumb" aria-hidden="true">
                   <img src={asset(device === "desktop" ? s.desktop : s.mobile)} alt="" loading="lazy" decoding="async" />
                 </span>
@@ -221,8 +256,14 @@ export default function Showcase({ project }) {
                 </AnimatePresence>
               </button>
             </li>
-          ))}
-        </ol>
+            );
+          })}
+                </ol>
+              </section>
+            );
+          })}
+        </div>
+        </div>
 
         <div className="stage">
           <div className="stage-surface">
@@ -275,16 +316,30 @@ export default function Showcase({ project }) {
             </LayoutGroup>
           </div>
 
+          {/* On smaller screens the list only shows titles, so the description goes here. */}
+          <p className="stage-caption">
+            <strong>{step.title}</strong> {step.text}
+          </p>
+
           <div className="stage-foot">
             <div className="stage-nav">
               <button type="button" onClick={() => go(-1)} aria-label="Previous screen" disabled={live}>
                 <Icon name="prev" size={18} />
               </button>
               <div className={`dots ${live ? "is-locked" : ""}`} role="group" aria-label="Choose a screen">
-                {steps.map((s, i) => (
-                  <button key={s.title} type="button" className={i === index ? "on" : ""} aria-label={`Screen ${i + 1}: ${s.title}`} aria-current={i === index} onClick={() => setIndex(i)} disabled={live} />
+                {groups.map((g, gi) => (
+                  <span key={g.feature} className={`dot-group ${gi === group ? "on" : ""}`}>
+                    {steps.map((s, i) =>
+                      s.group === gi ? (
+                        <button key={i} type="button" className={i === index ? "on" : ""} aria-label={`Screen ${i + 1}: ${s.title} (${g.feature})`} aria-current={i === index} onClick={() => setIndex(i)} disabled={live} />
+                      ) : null
+                    )}
+                  </span>
                 ))}
               </div>
+              <span className="stage-count" aria-hidden="true">
+                {String(index + 1).padStart(2, "0")} / {String(steps.length).padStart(2, "0")}
+              </span>
               <button type="button" onClick={() => go(1)} aria-label="Next screen" disabled={live}>
                 <Icon name="next" size={18} />
               </button>

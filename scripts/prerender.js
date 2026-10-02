@@ -21,7 +21,7 @@ const personLd = {
   "@id": `${SITE_URL}/#person`,
   name: person.name,
   url: `${SITE_URL}/`,
-  image: `${SITE_URL}/images/portrait-studio.webp`,
+  image: `${SITE_URL}/images/portrait-outdoor.webp`,
   jobTitle: "Full Stack Developer",
   email: `mailto:${person.email}`,
   address: { "@type": "PostalAddress", addressLocality: "Himatnagar", addressRegion: "Gujarat", addressCountry: "IN" },

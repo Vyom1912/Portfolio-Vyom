@@ -2,12 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { asset } from "./util.js";
-import { person } from "../data/site.js";
-
-const photos = [
-  { src: "images/portrait-outdoor.webp", alt: "Vyom Patel outdoors, arms crossed", width: 1000, height: 1250 },
-  { src: "images/portrait-studio.webp", alt: "Vyom Patel against a plain blue background", width: 756, height: 945 },
-];
+import { person, photos } from "../data/site.js";
 
 const facts = [
   ["Now", "Web developer intern at Blue Nova Tech"],
@@ -30,8 +25,7 @@ export default function Hero() {
       <div className="hero-copy">
         <p className="label hero-kicker">Full stack developer · Gujarat, India</p>
         <h1 className="hero-name">
-          <span className="line"><span>Vyom</span></span>
-          <span className="line"><span>Patel</span></span>
+          <span className="line"><span>Vyom Patel</span></span>
         </h1>
         <p className="hero-role">I build full stack web apps with React, Node.js, Express and MongoDB.</p>
         <p className="hero-text">
@@ -39,7 +33,7 @@ export default function Hero() {
           what a page needs, and layouts that still hold up on a small phone.
         </p>
         <div className="actions">
-          <Link className="btn btn-solid" to="/work">See my work</Link>
+          <Link className="btn btn-solid" to="/work/">See my work</Link>
           <a className="btn" href={asset(person.resume)} target="_blank" rel="noopener">Resume (PDF)</a>
         </div>
         <ul className="hero-links">
@@ -85,7 +79,7 @@ export default function Hero() {
               </span>
             ))}
           </div>
-          <button type="button" className="hero-photo-hit" onClick={next} aria-label="Show the other photo" />
+          <button type="button" className="hero-photo-hit" onClick={next} aria-label="Show the next photo" />
         </figure>
 
         <dl className="hero-card">

@@ -10,7 +10,7 @@ export default function NotFound() {
         <p className="lede">The link may be old, or the address might have a typo.</p>
         <div className="actions">
           <Link className="btn btn-solid" to="/">Go to the home page</Link>
-          <Link className="btn" to="/work">See my work</Link>
+          <Link className="btn" to="/work/">See my work</Link>
         </div>
       </section>
     </Page>

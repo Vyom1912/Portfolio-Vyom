@@ -62,13 +62,23 @@ async function rectPortrait(file, name, outWidth) {
     .toFile(`${outDir}/${name}.webp`);
 }
 await rectPortrait("from-03/hero-img.png", "portrait-outdoor", 1000);
-await rectPortrait("from-03/nav-img.png", "portrait-studio", 1000);
 
-// Small round avatar for the header logo (head and shoulders from the studio portrait).
-await sharp(`${outDir}/portrait-studio.webp`).extract({ left: 118, top: 0, width: 520, height: 520 }).resize(96, 96).webp({ quality: 86 }).toFile(`${outDir}/avatar.webp`);
+// Phone photos in content/images/photos, cropped to 4:5 around me. The boxes are
+// in pixels of the upright photo (after applying the camera's rotation).
+const photos = [
+  ["vyom-3.jpg", "portrait-sunset", { left: 1173, top: 0, width: 1837, height: 2296 }],
+  ["vyom-4.jpg", "portrait-wall", { left: 115, top: 1290, width: 1952, height: 2440 }],
+];
+for (const [file, name, box] of photos) {
+  const upright = await sharp(src(`photos/${file}`)).rotate().toBuffer();
+  await sharp(upright).extract(box).resize({ width: 1000 }).webp({ quality: 82 }).toFile(`${outDir}/${name}.webp`);
+}
+
+// Small round avatar for the header logo (head and shoulders from the outdoor portrait).
+await sharp(`${outDir}/portrait-outdoor.webp`).extract({ left: 230, top: 110, width: 600, height: 600 }).resize(96, 96).webp({ quality: 86 }).toFile(`${outDir}/avatar.webp`);
 
 // Social preview card (1200x630).
-const face = await sharp(src("from-03/nav-img.png")).resize(470, 470).png().toBuffer();
+const face = await sharp(src("from-03/hero-img.png")).resize(470, 470).png().toBuffer();
 const text = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#ffffff"/>
   <rect x="0" y="0" width="14" height="630" fill="#7a1f1f"/>
@@ -86,6 +96,8 @@ await sharp(mark).resize(32, 32).png().toFile("public/favicon-32.png");
 console.log("images done");
 
 // Trimmed project list for the unlisted /archive page (loaded on demand, not in the main bundle).
+// Client websites: show the live site, never a code link.
+const clientSites = { "rakhi-store": "https://vyom1912.github.io/A-Rakhi-Store/", "makewell-agri-equipments": "https://www.makewellagriequipments.com/" };
 const onSite = { "publishpro-blogging-platform": "publishpro", "url-shortener": "url-shortener", foodzing: "foodzing", "rakhi-store": "rakhi-store", "makewell-agri-equipments": "makewell" };
 const slim = archive.projects.map((p) => ({
   slug: p.slug,
@@ -95,8 +107,8 @@ const slim = archive.projects.map((p) => ({
   level: p.level,
   summary: p.portfolio.shortDescription,
   stack: p.techStack,
-  demo: p.links.demo || "",
-  github: p.links.github || "",
+  demo: p.links.demo || clientSites[p.slug] || "",
+  github: clientSites[p.slug] ? "" : p.links.github || "",
   thumb: p.links.screenshot ? `images/archive/${p.slug}.webp` : "",
   page: onSite[p.slug] ? `/work/${onSite[p.slug]}` : "",
 }));

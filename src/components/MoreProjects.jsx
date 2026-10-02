@@ -45,14 +45,14 @@ export default function MoreProjects({ current }) {
       <div className="more-head">
         <h2 id="more-title">More projects</h2>
         <nav className="pager" aria-label="Previous and next project">
-          <Link to={`/work/${prev.slug}`} className="pager-link prev">
+          <Link to={`/work/${prev.slug}/`} className="pager-link prev">
             {arrow("prev")}
             <span>
               <span className="pager-dir">Previous</span>
               <span className="pager-name">{prev.title}</span>
             </span>
           </Link>
-          <Link to={`/work/${next.slug}`} className="pager-link next">
+          <Link to={`/work/${next.slug}/`} className="pager-link next">
             <span>
               <span className="pager-dir">Next</span>
               <span className="pager-name">{next.title}</span>
@@ -65,7 +65,7 @@ export default function MoreProjects({ current }) {
       <ul className="more-rail" ref={rail}>
         {others.map((p, i) => (
           <li key={p.slug}>
-            <Link to={`/work/${p.slug}`} className={`more-card ${i === 0 ? "is-next" : ""}`}>
+            <Link to={`/work/${p.slug}/`} className={`more-card ${i === 0 ? "is-next" : ""}`}>
               <span className={`more-thumb ${p.cover === "logo" ? "is-logo" : ""}`}>
                 <img src={asset(p.image)} alt="" loading="lazy" decoding="async" />
                 {i === 0 && <span className="more-tag">Up next</span>}
@@ -90,7 +90,7 @@ export default function MoreProjects({ current }) {
       </div>
 
       <p className="more-all">
-        <Link className="link" to="/work">See all work</Link>
+        <Link className="link" to="/work/">See all work</Link>
       </p>
     </section>
   );

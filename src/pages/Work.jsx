@@ -12,26 +12,26 @@ export default function Work() {
         <p className="label">Work</p>
         <h1>Selected projects</h1>
         <p className="lede">
-          A short list on purpose: full stack apps where I built both the interface and the data behind it, and websites
-          I made for real businesses.
+          A short list on purpose: websites I made for real businesses, and full stack apps where I built both the
+          interface and the data behind it.
         </p>
       </section>
 
       <section className="wrap section tight">
         <div className="section-head">
-          <h2>Full stack projects</h2>
+          <h2>Client websites</h2>
         </div>
-        {fullstack.map((p, i) => (
+        {client.map((p, i) => (
           <ProjectRow key={p.slug} project={p} number={i + 1} flip={i % 2 === 1} />
         ))}
       </section>
 
       <section className="wrap section">
         <div className="section-head">
-          <h2>Client websites</h2>
+          <h2>Full stack projects</h2>
         </div>
-        {client.map((p, i) => (
-          <ProjectRow key={p.slug} project={p} number={fullstack.length + i + 1} flip={i % 2 === 1} />
+        {fullstack.map((p, i) => (
+          <ProjectRow key={p.slug} project={p} number={client.length + i + 1} flip={i % 2 === 1} />
         ))}
       </section>
 

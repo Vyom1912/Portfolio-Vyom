@@ -107,6 +107,20 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* no blue flash on phones when a link or button is tapped */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Focus rings only for keyboard use, never after a tap or click. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+button,
+.btn,
+.step,
+.print {
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 body {
@@ -341,7 +355,9 @@ a {
 }
 
 .hero-name {
-  font-size: clamp(3.2rem, 1.8rem + 4.6vw, 5.4rem);
+  /* One line at every width: the size follows the viewport down to small phones. */
+  font-size: clamp(2.6rem, 1.2rem + 8vw, 5.4rem);
+  white-space: nowrap;
   font-weight: 600;
   line-height: 0.96;
   letter-spacing: -0.035em;
@@ -1087,7 +1103,10 @@ a {
     grid-template-columns: repeat(2, 1fr);
   }
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .footer-grid > div:first-child {
+    grid-column: 1 / -1;
   }
   .tl-item {
     grid-template-columns: minmax(0, 1fr);
@@ -1475,11 +1494,73 @@ body.no-scroll {
   gap: 7px;
 }
 
+/* Screen list: one group per feature, each under a small heading. On desktops
+   it is as tall as the device frame and scrolls down; on smaller screens it is
+   a strip under the controls that scrolls sideways. */
+.step-list {
+  position: relative;
+  min-height: 360px;
+}
+.step-groups {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: start;
+  gap: 22px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  /* room for the selected card's offset shadow, and a fade at the bottom edge */
+  padding: 0 10px 32px 0;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line-strong) transparent;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
+}
+.stage-caption {
+  display: none;
+}
+.step-group-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 10px;
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  transition: color 0.25s;
+}
+.step-group-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+.step-group.on .step-group-title {
+  color: var(--accent);
+}
+.step-group-count {
+  order: 2;
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0;
+}
+
 .showcase-body {
   display: grid;
   grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.7fr);
   gap: 40px;
-  align-items: start;
+  align-items: stretch;
 }
 
 /* Step cards */
@@ -1585,8 +1666,7 @@ body.no-scroll {
 
 /* Stage and device frames */
 .stage {
-  position: sticky;
-  top: 88px;
+  align-self: start;
 }
 .stage-surface {
   position: relative;
@@ -1892,7 +1972,23 @@ body.no-scroll {
 .dots {
   display: flex;
   align-items: center;
+  gap: 14px;
+}
+/* One cluster of dots per feature; the other features' dots are dimmed. */
+.dot-group {
+  display: flex;
+  align-items: center;
   gap: 6px;
+}
+.dot-group:not(.on) button:not(:hover) {
+  opacity: 0.5;
+}
+.stage-count {
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
 }
 .dots button {
   width: 8px;
@@ -1962,11 +2058,63 @@ body.no-scroll {
 @media (max-width: 900px) {
   .showcase-body {
     grid-template-columns: minmax(0, 1fr);
-    gap: 24px;
+    gap: 20px;
   }
-  .stage {
+  .step-list {
+    min-height: 0;
+  }
+  .step-groups {
     position: static;
-    order: -1;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0 8px 12px 0;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .step-group {
+    flex: none;
+  }
+  /* the feature name stays at the left edge while its screens scroll past */
+  .step-group-name {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    padding-right: 10px;
+    background: var(--stage-1);
+  }
+  .step-group-title {
+    gap: 0;
+  }
+  .step-group-count {
+    margin-left: 10px;
+  }
+  .step-group .steps {
+    grid-auto-flow: column;
+    grid-auto-columns: 220px;
+  }
+  .step {
+    scroll-snap-align: start;
+  }
+  .step:hover {
+    transform: none;
+  }
+  .step-text {
+    display: none;
+  }
+  .stage-caption {
+    display: block;
+    margin: 0 0 14px;
+    font-size: 0.9rem;
+    line-height: 1.55;
+    color: var(--ink-2);
+    text-align: center;
+  }
+  .stage-caption strong {
+    color: var(--ink);
+    font-family: var(--f-head);
   }
 }
 @media (max-width: 720px) {
@@ -1976,6 +2124,19 @@ body.no-scroll {
     border-radius: 0;
     border-left: 0;
     border-right: 0;
+  }
+  .step-groups {
+    margin: 0 -16px;
+    padding: 2px 16px 12px;
+    scroll-padding: 0 16px;
+  }
+  .step-group .steps {
+    grid-auto-columns: 200px;
+  }
+  .step-group-name {
+    left: -16px;
+    padding-left: 16px;
+    margin-left: -16px;
   }
   .showcase-top {
     padding-bottom: 16px;
@@ -2035,6 +2196,17 @@ body.no-scroll {
     transform: none;
   }
 }
+@media (max-width: 400px) {
+  .stage-nav {
+    gap: 8px;
+  }
+  .dots {
+    gap: 10px;
+  }
+  .stage-count {
+    display: none;
+  }
+}
 
 /* Client websites on the home page */
 .client-grid {
@@ -2042,7 +2214,7 @@ body.no-scroll {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 32px;
 }
-.client-card a {
+.client-main {
   display: grid;
   gap: 8px;
   text-decoration: none;
@@ -2075,11 +2247,11 @@ body.no-scroll {
   object-fit: contain;
   object-position: center;
 }
-.client-card a:hover .client-media {
+.client-main:hover .client-media {
   transform: translateY(-5px);
   box-shadow: 0 24px 40px -28px rgba(0, 0, 0, 0.5);
 }
-.client-card a:hover .client-media img {
+.client-main:hover .client-media img {
   transform: scale(1.04);
 }
 .client-card .label {
@@ -2092,12 +2264,28 @@ body.no-scroll {
   line-height: 1.2;
   transition: color 0.2s;
 }
-.client-card a:hover .client-title {
+.client-main:hover .client-title {
   color: var(--accent);
 }
 .client-summary {
   color: var(--ink-2);
   font-size: 0.95rem;
+}
+.client-host {
+  margin: 14px 0 0;
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.client-host span {
+  color: var(--ink);
+}
+.client-card .row-links {
+  margin-top: 14px;
+}
+.section-intro {
+  margin: -26px 0 32px;
+  color: var(--ink-2);
 }
 
 /* Unlisted archive page */
@@ -2243,11 +2431,16 @@ body.no-scroll {
 }
 @media (max-width: 420px) {
   .footer-grid {
-    grid-template-columns: 1fr 1fr;
-    gap: 24px;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
   }
   .footer-grid > div:first-child {
     grid-column: 1 / -1;
+    margin-bottom: 14px;
+  }
+  .site-footer li {
+    font-size: 0.875rem;
+    line-height: 1.4;
   }
 }
 
@@ -2710,18 +2903,18 @@ body.no-scroll {
 }
 
 /* Showcase: step list and slide controls are paused while the live demo runs */
-.steps.is-locked .step {
+.step-groups.is-locked .step {
   cursor: not-allowed;
 }
-.steps.is-locked .step:not(.on) {
+.step-groups.is-locked .step:not(.on) {
   opacity: 0.45;
 }
-.steps.is-locked .step:hover {
+.step-groups.is-locked .step:hover {
   transform: none;
   background: var(--step-bg);
   border-color: var(--line);
 }
-.steps.is-locked .step.on:hover {
+.step-groups.is-locked .step.on:hover {
   background: var(--surface);
   border-color: var(--ink);
 }
@@ -2761,4 +2954,79 @@ body.no-scroll {
   padding-left: 6px;
   padding-right: 6px;
   margin: 0 -6px;
+}
+
+/* Phones: a tighter vertical rhythm and slightly smaller type, so pages are
+   shorter and more fits on one screen. Kept last so it wins over the rules above. */
+@media (max-width: 600px) {
+  .section-intro {
+    margin: -14px 0 22px;
+  }
+  .client-grid {
+    gap: 44px;
+  }
+  .page-head {
+    padding-top: 40px;
+    padding-bottom: 24px;
+  }
+  .section {
+    padding-top: 52px;
+  }
+  .section-head {
+    margin-bottom: 28px;
+    padding-top: 12px;
+  }
+  .lede {
+    font-size: 1.03rem;
+  }
+  .case {
+    padding-top: 36px;
+    gap: 32px;
+  }
+  .case-body > p {
+    font-size: 1rem;
+  }
+  .project-row {
+    gap: 18px;
+    margin-bottom: 48px;
+  }
+  .hero {
+    gap: 36px;
+    padding-top: 28px;
+  }
+  .hero-role {
+    font-size: 1.12rem;
+  }
+  .hero-visual {
+    justify-self: center;
+  }
+  /* a little less tall than 4:5, so the photo and the facts card fit together */
+  .hero-photo {
+    aspect-ratio: 5 / 5.6;
+  }
+  /* skills: one group per row, its items in two columns, so no half-empty rows */
+  .skills {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+  .skill-group ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 20px;
+  }
+  .skill-group li {
+    padding-top: 6px;
+    padding-bottom: 6px;
+    font-size: 0.92rem;
+  }
+  .closing {
+    padding: 28px 20px;
+  }
+  .site-footer {
+    margin-top: 56px;
+    padding-top: 32px;
+  }
+  .footer-base {
+    margin-top: 28px;
+  }
 }

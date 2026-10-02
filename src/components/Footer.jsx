@@ -17,9 +17,9 @@ export default function Footer() {
           <p className="label">Pages</p>
           <ul className="plain">
             <li><Link to="/" onClick={go("/")}>Home</Link></li>
-            <li><Link to="/work" onClick={go("/work")}>Work</Link></li>
-            <li><Link to="/about" onClick={go("/about")}>About</Link></li>
-            <li><Link to="/contact" onClick={go("/contact")}>Contact</Link></li>
+            <li><Link to="/work/" onClick={go("/work/")}>Work</Link></li>
+            <li><Link to="/about/" onClick={go("/about/")}>About</Link></li>
+            <li><Link to="/contact/" onClick={go("/contact/")}>Contact</Link></li>
           </ul>
         </nav>
         <div>
@@ -33,8 +33,8 @@ export default function Footer() {
         <div>
           <p className="label">Legal</p>
           <ul className="plain">
-            <li><Link to="/privacy" onClick={go("/privacy")}>Privacy policy</Link></li>
-            <li><Link to="/terms" onClick={go("/terms")}>Terms and conditions</Link></li>
+            <li><Link to="/privacy/" onClick={go("/privacy/")}>Privacy policy</Link></li>
+            <li><Link to="/terms/" onClick={go("/terms/")}>Terms and conditions</Link></li>
           </ul>
         </div>
       </div>

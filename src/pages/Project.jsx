@@ -19,7 +19,7 @@ export default function Project() {
     <Page key={p.slug} path={`/work/${p.slug}`}>
       <section className="wrap page-head">
         <nav className="crumbs" aria-label="Breadcrumb">
-          <Link to="/work">Work</Link> <span aria-hidden="true">/</span> <span>{p.title}</span>
+          <Link to="/work/">Work</Link> <span aria-hidden="true">/</span> <span>{p.title}</span>
         </nav>
         <h1>{p.title}</h1>
         <p className="lede">{p.summary}</p>
@@ -67,7 +67,7 @@ export default function Project() {
         </aside>
       </section>
 
-      {p.screens.length > 0 && (
+      {p.showcase.length > 0 && (
         <section className="wrap section">
           <div className="section-head">
             <h2>See it in action</h2>

@@ -1,37 +1,41 @@
 import { useState } from "react";
 import { motion } from "motion/react";
 import { asset } from "./util.js";
-
-const photos = [
-  { src: "images/portrait-outdoor.webp", alt: "Vyom Patel outdoors, arms crossed" },
-  { src: "images/portrait-studio.webp", alt: "Vyom Patel against a plain blue background" },
-];
+import { photos } from "../data/site.js";
 
 const spring = { type: "spring", stiffness: 180, damping: 22 };
 
-// Two photos laid on top of each other like prints on a desk.
-// Clicking brings the one at the back to the front.
+// Where each print sits, from the front of the pile to the back.
+const spots = [
+  { x: "0%", y: 0, rotate: -3, scale: 1 },
+  { x: "20%", y: 14, rotate: 6, scale: 0.9 },
+  { x: "-14%", y: 24, rotate: -9, scale: 0.84 },
+  { x: "32%", y: 34, rotate: 11, scale: 0.78 },
+];
+
+// Photos laid on top of each other like prints on a desk. Clicking the front one
+// sends it to the back of the pile; clicking one at the back brings it forward.
 export default function PhotoStack() {
-  const [front, setFront] = useState(0);
+  const [order, setOrder] = useState(() => photos.map((_, i) => i));
+  const toFront = (i) => setOrder((o) => [i, ...o.filter((j) => j !== i)]);
+  const toBack = (i) => setOrder((o) => [...o.filter((j) => j !== i), i]);
 
   return (
     <div className="photo-stack">
       {photos.map((photo, i) => {
-        const isFront = i === front;
+        const depth = order.indexOf(i);
+        const spot = spots[Math.min(depth, spots.length - 1)];
+        const isFront = depth === 0;
         return (
           <motion.button
             key={photo.src}
             type="button"
             className="print"
-            aria-label={isFront ? photo.alt : `Bring forward: ${photo.alt}`}
-            onClick={() => setFront(i)}
+            aria-label={isFront ? `${photo.alt}. Show the next photo` : `Bring forward: ${photo.alt}`}
+            onClick={() => (isFront ? toBack(i) : toFront(i))}
             initial={false}
-            animate={
-              isFront
-                ? { x: "0%", y: 0, rotate: -3, scale: 1, zIndex: 2 }
-                : { x: "18%", y: 14, rotate: 5, scale: 0.88, zIndex: 1 }
-            }
-            whileHover={isFront ? { rotate: -1.5 } : { x: "24%", rotate: 7 }}
+            animate={{ ...spot, zIndex: photos.length - depth }}
+            whileHover={isFront ? { rotate: -1.5 } : { rotate: spot.rotate * 1.3, y: spot.y - 6 }}
             transition={spring}
           >
             <span className="print-img">
@@ -40,7 +44,7 @@ export default function PhotoStack() {
           </motion.button>
         );
       })}
-      <p className="photo-note">Tap the photo at the back to swap.</p>
+      <p className="photo-note">Tap the photo to shuffle the pile.</p>
     </div>
   );
 }

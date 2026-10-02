@@ -14,20 +14,10 @@ export default function Home() {
 
       <section className="wrap section">
         <div className="section-head">
-          <h2>Selected work</h2>
-          <Link className="link" to="/work">All projects</Link>
-        </div>
-        {projects
-          .filter((p) => p.type === "fullstack")
-          .map((p, i) => (
-            <ProjectRow key={p.slug} project={p} number={i + 1} flip={i % 2 === 1} />
-          ))}
-      </section>
-
-      <section className="wrap section">
-        <div className="section-head">
           <h2>Client websites</h2>
+          <Link className="link" to="/work/">All projects</Link>
         </div>
+        <p className="section-intro">Live websites I built and host for real businesses.</p>
         <div className="client-grid">
           {projects
             .filter((p) => p.type === "client")
@@ -35,6 +25,17 @@ export default function Home() {
               <ClientCard key={p.slug} project={p} delay={i * 90} />
             ))}
         </div>
+      </section>
+
+      <section className="wrap section">
+        <div className="section-head">
+          <h2>Full stack projects</h2>
+        </div>
+        {projects
+          .filter((p) => p.type === "fullstack")
+          .map((p, i) => (
+            <ProjectRow key={p.slug} project={p} number={i + 1} flip={i % 2 === 1} />
+          ))}
       </section>
 
       <section className="wrap section">
@@ -52,7 +53,7 @@ export default function Home() {
           </p>
           <div className="actions">
             <a className="btn btn-solid" href={`mailto:${person.email}`}>{person.email}</a>
-            <Link className="btn" to="/contact">Contact page</Link>
+            <Link className="btn" to="/contact/">Contact page</Link>
           </div>
         </Reveal>
       </section>

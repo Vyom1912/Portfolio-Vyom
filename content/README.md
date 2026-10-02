@@ -10,6 +10,7 @@ This folder is **not** deployed. Only `public/` and the built pages go to GitHub
 - `images/`: every unique image from the old folders, one copy each.
   - `from-project/`: newest screenshots (from `project/image`)
   - `from-03/`: portraits and older screenshots (from `03/image`)
+  - `photos/`: my newer photos (originals from the phone)
   - `from-01/`: older screenshots and design work (from `01/image`)
   - `index.json`: where each file came from, and which files were duplicates
 - `PROJECTS-PORTFOLIO-RESUME.md`: long write-ups and resume bullets for the smaller projects.
@@ -17,26 +18,37 @@ This folder is **not** deployed. Only `public/` and the built pages go to GitHub
 
 ## Adding screens to a project page
 
-Each project page has a "See it in action" block: a list of steps next to a device frame that switches between desktop and phone, and between screenshots and the live site. Every step needs one desktop and one phone screenshot.
+Each project page has a "See it in action" block. Screens are grouped by feature (for example "Reading and search" and "Accounts"): the features show as tabs, each tab lists its screens next to a device frame, and the frame switches between desktop and phone, and between screenshots and the live site. There is no limit on features or screens, so add a screen for every page or feature worth showing. Every screen needs one desktop and one phone screenshot.
 
 1. Save two PNGs in `content/images/captured/<folder>/`:
    - `<name>.png`: desktop, 1440×900
    - `mobile-<name>.png`: phone, 390×844 (or 780×1688 at 2x)
    Folders: `publishpro`, `url-shortener`, `foodzing`, `rakhi-store`, `makewell`.
 2. Run `npm run images`. It creates `public/images/gallery/<folder>-<name>.webp` and `<folder>-mobile-<name>.webp`.
-3. Add a step to that project's `screens` list in `src/data/site.js`:
+3. Add the screen to a feature in that project's `showcase` list in `src/data/site.js` (or add a new feature):
    ```js
-   {
-     title: "Product catalogue",
-     text: "One sentence on what this screen shows or how it works.",
-     desktop: "images/gallery/makewell-catalogue.webp",
-     mobile: "images/gallery/makewell-mobile-catalogue.webp",
-     url: "https://<live site>/products", // the page the Live demo opens for this step
-   },
+   showcase: [
+     {
+       feature: "Products",
+       screens: [
+         {
+           title: "Product catalogue",
+           text: "One sentence on what this screen shows or how it works.",
+           desktop: "images/gallery/makewell-catalogue.webp",
+           mobile: "images/gallery/makewell-mobile-catalogue.webp",
+           url: "https://<live site>/products", // the page the Live demo opens for this screen
+         },
+       ],
+     },
+   ],
    ```
 4. Run `npm run archive` too if you want `projects.json` to list the new files.
 
-Up to four steps per project reads best. Makewell has none yet: its old GitHub Pages address is gone, so capture the screens from the live domain and the block appears on its own.
+Two to five screens per feature reads best; split a bigger feature in two. Makewell has none yet: its old GitHub Pages address is gone, so capture the screens from the live domain and the block appears on its own.
+
+## Photos
+
+The originals of my photos are in `content/images/photos/`. `npm run images` crops them to 4:5 and writes `public/images/portrait-*.webp`; the list the site shows (home hero and About page) is `photos` in `src/data/site.js`. The header avatar is cut from `portrait-outdoor.webp`.
 
 ## The unlisted archive page
 

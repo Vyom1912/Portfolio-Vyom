@@ -216,7 +216,7 @@ export default function Contact() {
               <>Something went wrong. Please email me at <a className="link" href={`mailto:${person.email}`}>{person.email}</a>.</>
             )}
             {(status === "idle" || status === "sending") && (
-              <>Messages are delivered through Web3Forms. See the <Link className="link" to="/privacy">privacy policy</Link>.</>
+              <>Messages are delivered through Web3Forms. See the <Link className="link" to="/privacy/">privacy policy</Link>.</>
             )}
           </p>
         </form>

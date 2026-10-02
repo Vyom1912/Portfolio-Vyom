@@ -48,7 +48,7 @@ export default function Terms() {
         <h2>Contact form</h2>
         <p>
           Please do not send spam, abusive messages or sensitive personal information through the form. How form data is
-          handled is described in the <Link className="link" to="/privacy">privacy policy</Link>.
+          handled is described in the <Link className="link" to="/privacy/">privacy policy</Link>.
         </p>
 
         <h2>Governing law</h2>

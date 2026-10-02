@@ -75,7 +75,7 @@ export default function Archive() {
                 <p className="small muted">{p.summary}</p>
                 <StackChips items={p.stack} limit={3} icons={false} />
                 <div className="row-links">
-                  {p.page && <Link className="link" to={p.page}>Case study</Link>}
+                  {p.page && <Link className="link" to={`${p.page}/`}>Case study</Link>}
                   {p.demo && <a className="link" href={p.demo} target="_blank" rel="noopener">Live</a>}
                   {p.github && <a className="link" href={p.github} target="_blank" rel="noopener">Code</a>}
                 </div>

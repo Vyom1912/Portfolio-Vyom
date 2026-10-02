@@ -41,7 +41,7 @@ export default function Privacy() {
 
         <h2>Contact form</h2>
         <p>
-          When you submit the <Link className="link" to="/contact">contact form</Link>, the details you enter (name, email
+          When you submit the <Link className="link" to="/contact/">contact form</Link>, the details you enter (name, email
           address and message) are sent through{" "}
           <a className="link" href="https://web3forms.com/privacy" target="_blank" rel="noopener">Web3Forms</a>, which
           forwards them to my email inbox. I use this information only to reply to you. I do not sell it, share it or add

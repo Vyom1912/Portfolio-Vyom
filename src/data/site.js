@@ -11,41 +11,280 @@ export const person = {
   resume: "files/Vyom-Patel-Resume.pdf",
 };
 
+// Photos of me, shown in the home hero and on the About page (all 4:5).
+export const photos = [
+  { src: "images/portrait-outdoor.webp", alt: "Vyom Patel outdoors, arms crossed", width: 1000, height: 1250 },
+  { src: "images/portrait-sunset.webp", alt: "Vyom Patel at sunset in a striped polo, arms crossed", width: 1000, height: 1250 },
+  { src: "images/portrait-wall.webp", alt: "Vyom Patel in a beige t-shirt, arms crossed", width: 1000, height: 1250 },
+];
+
 export const projects = [
+  {
+    slug: "makewell",
+    title: "Makewell Agri Equipments",
+    kind: "Company website (React)",
+    type: "client",
+    image: "images/gallery/makewell-home.webp",
+    showcase: [
+      {
+        feature: "Company",
+        screens: [
+          {
+            title: "Home",
+            text: "A slider of forged tools, the company's key numbers, and quick routes to the products, dealer enquiries and the PDF catalogue.",
+            desktop: "images/gallery/makewell-home.webp",
+            mobile: "images/gallery/makewell-mobile-home.webp",
+            url: "https://www.makewellagriequipments.com/",
+          },
+          {
+            title: "About",
+            text: "The company's story, next to a carousel of the tools it forges.",
+            desktop: "images/gallery/makewell-about.webp",
+            mobile: "images/gallery/makewell-mobile-about.webp",
+            url: "https://www.makewellagriequipments.com/about",
+          },
+          {
+            title: "Export",
+            text: "Countries served, grouped by region, and the export documents and shipping options the company handles.",
+            desktop: "images/gallery/makewell-export.webp",
+            mobile: "images/gallery/makewell-mobile-export.webp",
+            url: "https://www.makewellagriequipments.com/export",
+          },
+        ],
+      },
+      {
+        feature: "Products and quotes",
+        screens: [
+          {
+            title: "Product catalogue",
+            text: "Filter chips for every tool type, each with a count, and a card for every product.",
+            desktop: "images/gallery/makewell-products.webp",
+            mobile: "images/gallery/makewell-mobile-products.webp",
+            url: "https://www.makewellagriequipments.com/products",
+          },
+          {
+            title: "Category pages",
+            text: "Each tool family has its own page with a description, key specs and its full range.",
+            desktop: "images/gallery/makewell-category.webp",
+            mobile: "images/gallery/makewell-mobile-category.webp",
+            url: "https://www.makewellagriequipments.com/products/shovels-spades",
+          },
+          {
+            title: "Product details",
+            text: "Specs and a model reference, with buttons to get a quote or ask on WhatsApp.",
+            desktop: "images/gallery/makewell-product.webp",
+            mobile: "images/gallery/makewell-mobile-product.webp",
+            url: "https://www.makewellagriequipments.com/products/axes-hatchets/forged-hatchet-p17",
+          },
+          {
+            title: "Quote form",
+            text: "Name, company, email, phone with country code, country, product and message, sent through Web3Forms.",
+            desktop: "images/gallery/makewell-contact.webp",
+            mobile: "images/gallery/makewell-mobile-contact.webp",
+            url: "https://www.makewellagriequipments.com/contact",
+          },
+        ],
+      },
+    ],
+    summary:
+      "A multi-page website for an agricultural equipment company, with a filterable product catalogue, product details and a contact form.",
+    body: [
+      "Makewell Agri Equipments needed a website to show its products and take enquiries. I built a multi-page React site with React Router, a product catalogue that can be filtered by type, product detail pages and a contact form connected to Web3Forms, with async email validation before anything is sent.",
+      "The layout is mobile-first, with a slide-in navigation drawer on phones. I also bought and set up the company's domain, deployed the site on Vercel with GitHub integration so every push goes live, and added SEO metadata to every page.",
+    ],
+    features: [
+      "Filterable product catalogue and product detail pages",
+      "Contact and quotation form through Web3Forms, with async email validation",
+      "Mobile-first layout with a slide-in navigation drawer",
+      "Custom domain on Vercel with continuous deployment from GitHub",
+      "SEO metadata for search engines",
+    ],
+    stack: ["React", "React Router", "JavaScript", "CSS3", "Web3Forms", "Vercel"],
+    github: "",
+    live: "https://www.makewellagriequipments.com/",
+    host: "Vercel (custom domain)",
+    note: "Client project, so the source code is private.",
+  },
+  {
+    slug: "rakhi-store",
+    title: "The Maroons: A Rakhi Store",
+    kind: "Store for a home business (React)",
+    type: "client",
+    image: "images/rakhi-store.webp",
+    showcase: [
+      {
+        feature: "Shop",
+        screens: [
+          {
+            title: "Shop",
+            text: "69 handmade designs in four types, with a sticky type slider and buy bar on phones.",
+            desktop: "images/gallery/rakhi-store-home.webp",
+            mobile: "images/gallery/rakhi-store-mobile-home.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/",
+          },
+          {
+            title: "Shop by type",
+            text: "Each type has its own page, sortable by price, with add to cart right on the card.",
+            desktop: "images/gallery/rakhi-store-category.webp",
+            mobile: "images/gallery/rakhi-store-mobile-category.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/swastik-design",
+          },
+          {
+            title: "Product page",
+            text: "Tap-to-zoom photo, quantity, and a shortcut to order the same design with a name.",
+            desktop: "images/gallery/rakhi-store-product.webp",
+            mobile: "images/gallery/rakhi-store-mobile-product.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/product/1",
+          },
+        ],
+      },
+      {
+        feature: "Custom name rakhi",
+        screens: [
+          {
+            title: "Names to weave",
+            text: "Add as many names as you need, each with an optional spelling note and its own quantity.",
+            desktop: "images/gallery/rakhi-store-custom-rakhi.webp",
+            mobile: "images/gallery/rakhi-store-mobile-custom-rakhi.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/custom-rakhi",
+          },
+          {
+            title: "Live bead preview",
+            text: "Each name is drawn letter by letter as beads on the maroon thread while you type, then you pick a bead colour from photos of the real beads.",
+            desktop: "images/gallery/rakhi-store-custom-preview.webp",
+            mobile: "images/gallery/rakhi-store-mobile-custom-preview.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/custom-rakhi",
+          },
+        ],
+      },
+      {
+        feature: "Ordering",
+        screens: [
+          {
+            title: "Cart",
+            text: "Ready-made and custom rakhis share one cart, saved in localStorage, next to the order summary and pickup details.",
+            desktop: "images/gallery/rakhi-store-cart.webp",
+            mobile: "images/gallery/rakhi-store-mobile-cart.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/cart",
+          },
+          {
+            title: "How to order",
+            text: "The WhatsApp ordering flow, explained with chat bubbles from sending the order to pickup.",
+            desktop: "images/gallery/rakhi-store-how-to-order.webp",
+            mobile: "images/gallery/rakhi-store-mobile-how-to-order.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/how-to-order",
+          },
+          {
+            title: "Order terms",
+            text: "Making time, cancellations, pickup and spelling. Customers agree before the order is sent, and the agreement goes into the WhatsApp message.",
+            desktop: "images/gallery/rakhi-store-terms.webp",
+            mobile: "images/gallery/rakhi-store-mobile-terms.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/terms",
+          },
+          {
+            title: "Contact",
+            text: "The contact form also sends its message on WhatsApp, where the business already answers.",
+            desktop: "images/gallery/rakhi-store-contact.webp",
+            mobile: "images/gallery/rakhi-store-mobile-contact.webp",
+            url: "https://vyom1912.github.io/A-Rakhi-Store/contact",
+          },
+        ],
+      },
+    ],
+    summary:
+      "A mobile-first online store for a real home business selling handmade rakhis, with custom name rakhis and one-tap ordering on WhatsApp.",
+    body: [
+      "This is a live store for a small home business in Himatnagar that makes handmade Jeco Moti rakhis. Customers browse 69 designs in four types, add them to a cart and send the whole order to the owner on WhatsApp in one tap. There is no server and no online payment: the order arrives as a ready-written WhatsApp message, which is how the business already works.",
+      "Customers can also design a custom name rakhi. They add as many names as they need, see each name drawn letter by letter as beads on the maroon thread, and pick a bead colour from close-up photos of the real beads. Custom and ready-made rakhis share one cart and one order message.",
+      "The site also protects the business. An Order Terms page covers making time, cancellations, pickup and spelling, and customers have to agree before the order is sent; the agreement is written into the WhatsApp message itself. The cart is kept in React Context and saved to localStorage, the order message is built by one function that has unit tests, and the 69 product photos were cropped and compressed from about 180 MB to about 2 MB.",
+    ],
+    features: [
+      "Whole cart sent as a ready-written WhatsApp order in one tap",
+      "Custom name rakhis with a live bead preview and real bead-colour photos",
+      "Order Terms page, with the customer's agreement recorded in every order",
+      "Spelling confirmation and an English-only check for custom names",
+      "Mobile-first layout with a slide-in menu and a sticky buy bar",
+      "Clean URLs on GitHub Pages through a 404 redirect",
+      "Unit tests for the cart, the terms check and the order message (Jest + React Testing Library)",
+    ],
+    stack: ["React 19", "React Router 7", "Context API", "localStorage", "WhatsApp click-to-chat", "CSS3", "Jest", "React Testing Library"],
+    github: "",
+    live: "https://vyom1912.github.io/A-Rakhi-Store/",
+    host: "GitHub Pages",
+    note: "Client project, so the source code is private.",
+  },
   {
     slug: "publishpro",
     title: "PublishPro",
     kind: "MERN blogging platform",
     image: "images/publishpro.webp",
     type: "fullstack",
-    screens: [
+    showcase: [
       {
-        title: "The feed",
-        text: "Paginated on the server and trimmed to the fields a card needs, which took the response from 36 KB to 1.3 KB.",
-        desktop: "images/gallery/publishpro-home.webp",
-        mobile: "images/gallery/publishpro-mobile-home.webp",
-        url: "https://publishpro-a-blogging-platform.onrender.com/",
+        feature: "Reading and search",
+        screens: [
+          {
+            title: "The feed",
+            text: "Paginated on the server and trimmed to the fields a card needs, which took the response from 36 KB to 1.3 KB.",
+            desktop: "images/gallery/publishpro-home.webp",
+            mobile: "images/gallery/publishpro-mobile-home.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/",
+          },
+          {
+            title: "Reading a post",
+            text: "Author, tags, likes, saves, shares and a view count that counts each signed-in reader once. Article HTML is sanitised with DOMPurify first.",
+            desktop: "images/gallery/publishpro-post.webp",
+            mobile: "images/gallery/publishpro-mobile-post.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/blog/6a4143fee4e032aa7031f3d6",
+          },
+          {
+            title: "Comments",
+            text: "Signed-in readers comment under every post. Visitors can read the thread and get a prompt to log in to join it.",
+            desktop: "images/gallery/publishpro-comments.webp",
+            mobile: "images/gallery/publishpro-mobile-comments.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/blog/6a4143fee4e032aa7031f3d6",
+          },
+          {
+            title: "Author pages",
+            text: "Every writer has a page with their bio, latest posts and totals for blogs, likes, views and saves, worked out by an aggregation pipeline.",
+            desktop: "images/gallery/publishpro-author.webp",
+            mobile: "images/gallery/publishpro-mobile-author.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/author/6a23c0a7c292066495e7ea77",
+          },
+          {
+            title: "Search",
+            text: "Matches titles, tags, categories and author names, with the input escaped before it reaches a regex.",
+            desktop: "images/gallery/publishpro-search.webp",
+            mobile: "images/gallery/publishpro-mobile-search.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/",
+          },
+        ],
       },
       {
-        title: "Reading a post",
-        text: "Author, tags, likes, saves, shares and a view count that counts each signed-in reader once. Article HTML is sanitised with DOMPurify first.",
-        desktop: "images/gallery/publishpro-post.webp",
-        mobile: "images/gallery/publishpro-mobile-post.webp",
-        url: "https://publishpro-a-blogging-platform.onrender.com/blog/6a4143fee4e032aa7031f3d6",
-      },
-      {
-        title: "Search",
-        text: "Matches titles, tags, categories and author names, with the input escaped before it reaches a regex.",
-        desktop: "images/gallery/publishpro-search.webp",
-        mobile: "images/gallery/publishpro-mobile-search.webp",
-        url: "https://publishpro-a-blogging-platform.onrender.com/",
-      },
-      {
-        title: "Sign in",
-        text: "JWT access and refresh tokens in httpOnly cookies, and a forgot-password flow that emails a 15-minute reset link.",
-        desktop: "images/gallery/publishpro-login.webp",
-        mobile: "images/gallery/publishpro-mobile-login.webp",
-        url: "https://publishpro-a-blogging-platform.onrender.com/login",
+        feature: "Accounts",
+        screens: [
+          {
+            title: "Sign up",
+            text: "Name, email and a password of at least 8 characters, hashed with bcrypt before it is stored.",
+            desktop: "images/gallery/publishpro-signup.webp",
+            mobile: "images/gallery/publishpro-mobile-signup.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/signup",
+          },
+          {
+            title: "Log in",
+            text: "JWT access and refresh tokens in httpOnly cookies, each tied to a session that can be revoked, including from every device at once.",
+            desktop: "images/gallery/publishpro-login.webp",
+            mobile: "images/gallery/publishpro-mobile-login.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/login",
+          },
+          {
+            title: "Forgot password",
+            text: "Emails a reset link through Resend. The link works once and expires after 15 minutes.",
+            desktop: "images/gallery/publishpro-forgot-password.webp",
+            mobile: "images/gallery/publishpro-mobile-forgot-password.webp",
+            url: "https://publishpro-a-blogging-platform.onrender.com/forgot-password",
+          },
+        ],
       },
     ],
     summary:
@@ -77,27 +316,51 @@ export const projects = [
     kind: "Node.js and MongoDB web app",
     image: "images/url-shortener.webp",
     type: "fullstack",
-    screens: [
+    showcase: [
       {
-        title: "Your links",
-        text: "Create links with a custom or random code, then copy, share, edit, delete and search them. Every link shows its clicks.",
-        desktop: "images/gallery/url-shortener-dashboard.webp",
-        mobile: "images/gallery/url-shortener-mobile-dashboard.webp",
-        url: "https://urlshortener-1osn.onrender.com/login",
+        feature: "Links",
+        screens: [
+          {
+            title: "Your links",
+            text: "Create links with a custom or random code, then copy, share, edit, delete and search them. Every link shows its clicks.",
+            desktop: "images/gallery/url-shortener-dashboard.webp",
+            mobile: "images/gallery/url-shortener-mobile-dashboard.webp",
+            url: "https://urlshortener-1osn.onrender.com/login",
+          },
+          {
+            title: "Missing links",
+            text: "A short code that does not exist, or a link that was deleted, opens a clear 404 page instead of an error.",
+            desktop: "images/gallery/url-shortener-not-found.webp",
+            mobile: "images/gallery/url-shortener-mobile-not-found.webp",
+            url: "https://urlshortener-1osn.onrender.com/vyom/this-link-does-not-exist",
+          },
+        ],
       },
       {
-        title: "Create an account",
-        text: "New accounts verify their email with an 8-digit code or a link before they can log in.",
-        desktop: "images/gallery/url-shortener-register.webp",
-        mobile: "images/gallery/url-shortener-mobile-register.webp",
-        url: "https://urlshortener-1osn.onrender.com/register",
-      },
-      {
-        title: "Log in",
-        text: "Passwords are hashed with Argon2 and sessions live in MongoDB, so logging out really ends them.",
-        desktop: "images/gallery/url-shortener-login.webp",
-        mobile: "images/gallery/url-shortener-mobile-login.webp",
-        url: "https://urlshortener-1osn.onrender.com/login",
+        feature: "Accounts",
+        screens: [
+          {
+            title: "Create an account",
+            text: "New accounts verify their email with an 8-digit code or a link before they can log in.",
+            desktop: "images/gallery/url-shortener-register.webp",
+            mobile: "images/gallery/url-shortener-mobile-register.webp",
+            url: "https://urlshortener-1osn.onrender.com/register",
+          },
+          {
+            title: "Log in",
+            text: "Passwords are hashed with Argon2 and sessions live in MongoDB, so logging out really ends them.",
+            desktop: "images/gallery/url-shortener-login.webp",
+            mobile: "images/gallery/url-shortener-mobile-login.webp",
+            url: "https://urlshortener-1osn.onrender.com/login",
+          },
+          {
+            title: "Forgot password",
+            text: "Sends a single-use reset link that expires after 15 minutes and is stored only as a SHA-256 hash.",
+            desktop: "images/gallery/url-shortener-reset-password.webp",
+            mobile: "images/gallery/url-shortener-mobile-reset-password.webp",
+            url: "https://urlshortener-1osn.onrender.com/reset-password",
+          },
+        ],
       },
     ],
     summary:
@@ -129,34 +392,58 @@ export const projects = [
     kind: "React and Firebase food ordering app",
     image: "images/foodzing.webp",
     type: "fullstack",
-    screens: [
+    showcase: [
       {
-        title: "Home",
-        text: "A hero with a call to action, and a navbar that greets you by name once you sign in.",
-        desktop: "images/gallery/foodzing-home.webp",
-        mobile: "images/gallery/foodzing-mobile-home.webp",
-        url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+        feature: "Browse",
+        screens: [
+          {
+            title: "Home",
+            text: "A hero with a call to action, and a navbar that greets you by name once you sign in.",
+            desktop: "images/gallery/foodzing-home.webp",
+            mobile: "images/gallery/foodzing-mobile-home.webp",
+            url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+          },
+          {
+            title: "Why FoodZing",
+            text: "Ordering, delivery and quality at a glance, followed by a short story about the restaurant.",
+            desktop: "images/gallery/foodzing-why.webp",
+            mobile: "images/gallery/foodzing-mobile-why.webp",
+            url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+          },
+          {
+            title: "Menu categories",
+            text: "One tap on a category filters the 36 dishes.",
+            desktop: "images/gallery/foodzing-menu.webp",
+            mobile: "images/gallery/foodzing-mobile-menu.webp",
+            url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+          },
+          {
+            title: "Dishes",
+            text: "Add to cart straight from a dish card, with plus and minus controls for the quantity.",
+            desktop: "images/gallery/foodzing-dishes.webp",
+            mobile: "images/gallery/foodzing-mobile-dishes.webp",
+            url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+          },
+        ],
       },
       {
-        title: "Menu categories",
-        text: "One tap on a category filters the 36 dishes.",
-        desktop: "images/gallery/foodzing-menu.webp",
-        mobile: "images/gallery/foodzing-mobile-menu.webp",
-        url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
-      },
-      {
-        title: "Dishes",
-        text: "Add to cart straight from a dish card, with plus and minus controls for the quantity.",
-        desktop: "images/gallery/foodzing-dishes.webp",
-        mobile: "images/gallery/foodzing-mobile-dishes.webp",
-        url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
-      },
-      {
-        title: "Cart",
-        text: "An itemised bill with subtotal, delivery fee and total, followed by a validated delivery form.",
-        desktop: "images/gallery/foodzing-cart.webp",
-        mobile: "images/gallery/foodzing-mobile-cart.webp",
-        url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/#/cart",
+        feature: "Order and contact",
+        screens: [
+          {
+            title: "Cart",
+            text: "An itemised bill with subtotal, delivery fee and total, followed by a validated delivery form.",
+            desktop: "images/gallery/foodzing-cart.webp",
+            mobile: "images/gallery/foodzing-mobile-cart.webp",
+            url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/#/cart",
+          },
+          {
+            title: "Contact form",
+            text: "Messages from this form are saved to Firebase Realtime Database.",
+            desktop: "images/gallery/foodzing-contact.webp",
+            mobile: "images/gallery/foodzing-mobile-contact.webp",
+            url: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
+          },
+        ],
       },
     ],
     summary:
@@ -178,93 +465,6 @@ export const projects = [
     github: "https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website",
     live: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
     host: "GitHub Pages",
-  },
-
-  {
-    slug: "rakhi-store",
-    title: "The Maroons: A Rakhi Store",
-    kind: "Store for a home business (React)",
-    type: "client",
-    image: "images/rakhi-store.webp",
-    screens: [
-      {
-        title: "Shop",
-        text: "69 handmade designs in four types, with a sticky type slider and buy bar on phones.",
-        desktop: "images/gallery/rakhi-store-home.webp",
-        mobile: "images/gallery/rakhi-store-mobile-home.webp",
-        url: "https://vyom1912.github.io/A-Rakhi-Store/",
-      },
-      {
-        title: "Custom name rakhi",
-        text: "Each name is drawn letter by letter as beads on the thread while you type.",
-        desktop: "images/gallery/rakhi-store-custom-rakhi.webp",
-        mobile: "images/gallery/rakhi-store-mobile-custom-rakhi.webp",
-        url: "https://vyom1912.github.io/A-Rakhi-Store/custom-rakhi",
-      },
-      {
-        title: "Product page",
-        text: "Tap-to-zoom photo, quantity, and a shortcut to order the same design with a name.",
-        desktop: "images/gallery/rakhi-store-product.webp",
-        mobile: "images/gallery/rakhi-store-mobile-product.webp",
-        url: "https://vyom1912.github.io/A-Rakhi-Store/product/1",
-      },
-      {
-        title: "How to order",
-        text: "The WhatsApp ordering flow, explained with chat bubbles from sending the order to pickup.",
-        desktop: "images/gallery/rakhi-store-how-to-order.webp",
-        mobile: "images/gallery/rakhi-store-mobile-how-to-order.webp",
-        url: "https://vyom1912.github.io/A-Rakhi-Store/how-to-order",
-      },
-    ],
-    summary:
-      "A mobile-first online store for a real home business selling handmade rakhis, with custom name rakhis and one-tap ordering on WhatsApp.",
-    body: [
-      "This is a live store for a small home business in Himatnagar that makes handmade Jeco Moti rakhis. Customers browse 69 designs in four types, add them to a cart and send the whole order to the owner on WhatsApp in one tap. There is no server and no online payment: the order arrives as a ready-written WhatsApp message, which is how the business already works.",
-      "Customers can also design a custom name rakhi. They add as many names as they need, see each name drawn letter by letter as beads on the maroon thread, and pick a bead colour from close-up photos of the real beads. Custom and ready-made rakhis share one cart and one order message.",
-      "The site also protects the business. An Order Terms page covers making time, cancellations, pickup and spelling, and customers have to agree before the order is sent; the agreement is written into the WhatsApp message itself. The cart is kept in React Context and saved to localStorage, the order message is built by one function that has unit tests, and the 69 product photos were cropped and compressed from about 180 MB to about 2 MB.",
-    ],
-    features: [
-      "Whole cart sent as a ready-written WhatsApp order in one tap",
-      "Custom name rakhis with a live bead preview and real bead-colour photos",
-      "Order Terms page, with the customer's agreement recorded in every order",
-      "Spelling confirmation and an English-only check for custom names",
-      "Mobile-first layout with a slide-in menu and a sticky buy bar",
-      "Clean URLs on GitHub Pages through a 404 redirect",
-      "Unit tests for the cart, the terms check and the order message (Jest + React Testing Library)",
-    ],
-    stack: ["React 19", "React Router 7", "Context API", "localStorage", "WhatsApp click-to-chat", "CSS3", "Jest", "React Testing Library"],
-    github: "https://github.com/Vyom1912/A-Rakhi-Store",
-    live: "https://vyom1912.github.io/A-Rakhi-Store/",
-    host: "GitHub Pages",
-  },
-  {
-    slug: "makewell",
-    title: "Makewell Agri Equipments",
-    kind: "Company website (React)",
-    type: "client",
-    image: "images/makewell.webp",
-    cover: "logo",
-    // Room for screens once the live address is known: home, product catalogue,
-    // product details and the contact form.
-    screens: [],
-    summary:
-      "A multi-page website for an agricultural equipment company, with a filterable product catalogue, product details and a contact form.",
-    body: [
-      "Makewell Agri Equipments needed a website to show its products and take enquiries. I built a multi-page React site with React Router, a product catalogue that can be filtered by type, product detail pages and a contact form connected to Web3Forms, with async email validation before anything is sent.",
-      "The layout is mobile-first, with a slide-in navigation drawer on phones. I also bought and set up the company's domain, deployed the site on Vercel with GitHub integration so every push goes live, and added SEO metadata to every page.",
-    ],
-    features: [
-      "Filterable product catalogue and product detail pages",
-      "Contact and quotation form through Web3Forms, with async email validation",
-      "Mobile-first layout with a slide-in navigation drawer",
-      "Custom domain on Vercel with continuous deployment from GitHub",
-      "SEO metadata for search engines",
-    ],
-    stack: ["React", "React Router", "JavaScript", "CSS3", "Web3Forms", "Vercel"],
-    github: "",
-    live: "",
-    host: "Vercel (custom domain)",
-    note: "Client project, so the source code is private.",
   },
 ];
 
