@@ -74,11 +74,20 @@ for (const [file, name, box] of photos) {
   await sharp(upright).extract(box).resize({ width: 1000 }).webp({ quality: 82 }).toFile(`${outDir}/${name}.webp`);
 }
 
-// Small round avatar for the header logo (head and shoulders from the outdoor portrait).
-await sharp(`${outDir}/portrait-outdoor.webp`).extract({ left: 230, top: 110, width: 600, height: 600 }).resize(96, 96).webp({ quality: 86 }).toFile(`${outDir}/avatar.webp`);
+// Header avatar and site icons, all cut from the same close-up of my face.
+const face = { left: 250, top: 90, width: 580, height: 580 };
+const faceSrc = src("photos/portrait-outdoor.jpg");
+await sharp(faceSrc).extract(face).resize(96, 96).webp({ quality: 86 }).toFile(`${outDir}/avatar.webp`);
+// Browser tab icons are round (transparent corners); the home-screen icon stays
+// square because iOS and Android round it themselves.
+const round = (size) => Buffer.from(`<svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}"/></svg>`);
+for (const size of [32, 192]) {
+  await sharp(faceSrc).extract(face).resize(size, size).composite([{ input: round(size), blend: "dest-in" }]).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile(`public/favicon-${size}.png`);
+}
+await sharp(faceSrc).extract(face).resize(180, 180).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile("public/apple-touch-icon.png");
 
 // Social preview card (1200x630).
-const face = await sharp(src("from-03/hero-img.png")).resize(470, 470).png().toBuffer();
+const ogFace = await sharp(src("from-03/hero-img.png")).resize(470, 470).png().toBuffer();
 const text = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
   <rect width="1200" height="630" fill="#ffffff"/>
   <rect x="0" y="0" width="14" height="630" fill="#7a1f1f"/>
@@ -87,12 +96,8 @@ const text = Buffer.from(`<svg width="1200" height="630" xmlns="http://www.w3.or
   <text x="600" y="370" font-family="Arial, Helvetica, sans-serif" font-size="28" fill="#7a1f1f">React, Node.js, Express, MongoDB</text>
   <text x="600" y="470" font-family="Courier New, monospace" font-size="24" fill="#666">github.com/Vyom1912</text>
 </svg>`);
-await sharp(text).composite([{ input: face, left: 80, top: 80 }]).jpeg({ quality: 88 }).toFile(`${outDir}/og-card.jpg`);
+await sharp(text).composite([{ input: ogFace, left: 80, top: 80 }]).jpeg({ quality: 88 }).toFile(`${outDir}/og-card.jpg`);
 
-// Icons from the favicon mark.
-const mark = Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="180" height="180"><rect width="180" height="180" fill="#7a1f1f"/><text x="90" y="118" text-anchor="middle" font-family="Georgia, serif" font-size="92" font-weight="700" fill="#fff">vp</text></svg>`);
-await sharp(mark).png().toFile("public/apple-touch-icon.png");
-await sharp(mark).resize(32, 32).png().toFile("public/favicon-32.png");
 console.log("images done");
 
 // Trimmed project list for the unlisted /archive page (loaded on demand, not in the main bundle).

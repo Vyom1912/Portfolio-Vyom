@@ -85,7 +85,7 @@ export default function Header() {
           onClick={(e) => toTopIfCurrent(e, "/", pathname)}>
           <img
             className='brand-avatar'
-            src={asset("images/portrait-outdoor.jpg")}
+            src={asset("images/avatar.webp")}
             alt=''
             width='36'
             height='36'
