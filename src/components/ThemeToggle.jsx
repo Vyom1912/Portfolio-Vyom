@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { AnimatePresence, motion } from "motion/react";
 
 const KEY = "theme";
 const query = () => window.matchMedia("(prefers-color-scheme: dark)");
@@ -26,8 +25,10 @@ const apply = (theme) => {
 // Light/dark switch. By default the site follows the device setting and keeps
 // following it live. Picking the other theme saves that choice; picking the one
 // that matches the device clears it, so the site goes back to following the device.
-export default function ThemeToggle({ className = "" }) {
+export default function ThemeToggle({ className = "", label: text, style }) {
   const [theme, setTheme] = useState(null);
+  // The icon only spins after a click, not when the page loads.
+  const [spun, setSpun] = useState(false);
 
   useEffect(() => {
     setTheme(document.documentElement.dataset.theme || deviceTheme());
@@ -61,25 +62,15 @@ export default function ThemeToggle({ className = "" }) {
     save(next === deviceTheme() ? null : next);
     apply(next);
     setTheme(next);
+    setSpun(true);
   };
 
   const isDark = theme === "dark";
   const label = isDark ? "Switch to light theme" : "Switch to dark theme";
 
   return (
-    <button type="button" className={`theme-toggle ${className}`} onClick={toggle} aria-label={label} title={label}>
-      <AnimatePresence mode="wait" initial={false}>
-        <motion.svg
-          key={isDark ? "moon" : "sun"}
-          viewBox="0 0 24 24"
-          width="18"
-          height="18"
-          aria-hidden="true"
-          initial={{ rotate: -60, opacity: 0, scale: 0.6 }}
-          animate={{ rotate: 0, opacity: 1, scale: 1 }}
-          exit={{ rotate: 60, opacity: 0, scale: 0.6 }}
-          transition={{ duration: 0.25 }}
-        >
+    <button type="button" className={`theme-toggle ${className}`} onClick={toggle} aria-label={label} title={label} style={style}>
+      <svg key={isDark ? "moon" : "sun"} className={spun ? "theme-icon" : undefined} viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
           {isDark ? (
             <path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5Z" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
           ) : (
@@ -88,8 +79,8 @@ export default function ThemeToggle({ className = "" }) {
               <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4" />
             </g>
           )}
-        </motion.svg>
-      </AnimatePresence>
+        </svg>
+      {text && <span>{text}</span>}
     </button>
   );
 }

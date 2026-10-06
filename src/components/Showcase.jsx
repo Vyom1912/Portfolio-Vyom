@@ -1,10 +1,8 @@
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { AnimatePresence, LayoutGroup, motion } from "motion/react";
-import { asset, hostOf } from "./util.js";
+import { hostOf, responsive } from "./util.js";
 
 // Viewport sizes the live demo is rendered at, before being scaled to fit the frame.
 const VIEWPORTS = { desktop: [1280, 800], mobile: [390, 844] };
-const ease = [0.2, 0.7, 0.2, 1];
 const useIsoLayoutEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 const icons = {
@@ -31,7 +29,7 @@ function Segmented({ label, value, options, onChange }) {
     <div className="seg" role="group" aria-label={label}>
       {options.map(([key, text, icon]) => (
         <button key={key} type="button" className={value === key ? "on" : ""} aria-pressed={value === key} onClick={() => onChange(key)}>
-          {value === key && <motion.span layoutId={`seg-${label}`} className="seg-bg" transition={{ duration: 0.3, ease }} />}
+          {value === key && <span className="seg-bg" />}
           <span className="seg-text">
             <Icon name={icon} size={15} />
             {text}
@@ -119,9 +117,7 @@ function LiveFrame({ url, device, slow, reload }) {
           referrerPolicy="no-referrer"
         />
       )}
-      <AnimatePresence>
-        {!loaded && (
-          <motion.div className="live-loading" initial={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.4 }}>
+      <div className={`live-loading ${loaded ? "is-done" : ""}`} aria-hidden={loaded}>
             <div className="skeleton" aria-hidden="true">
               <i className="sk-bar" />
               <i className="sk-hero" />
@@ -135,9 +131,7 @@ function LiveFrame({ url, device, slow, reload }) {
               Loading the live site
               {slow && <span>Render's free plan can take up to a minute to wake up.</span>}
             </p>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      </div>
     </div>
   );
 }
@@ -235,25 +229,17 @@ export default function Showcase({ project }) {
             <li key={s.title}>
               <button type="button" aria-pressed={i === index} className={`step ${i === index ? "on" : ""}`} onClick={() => setIndex(i)} disabled={live} aria-disabled={live}>
                 <span className="step-thumb" aria-hidden="true">
-                  <img src={asset(device === "desktop" ? s.desktop : s.mobile)} alt="" loading="lazy" decoding="async" />
+                  <img {...responsive(device === "desktop" ? s.desktop : s.mobile, "64px")} alt="" loading="lazy" decoding="async" />
                 </span>
                 <span className="step-head">
                   <span className="step-num">{String(i + 1).padStart(2, "0")}</span>
                   <span className="step-title">{s.title}</span>
                 </span>
-                <AnimatePresence initial={false}>
-                  {i === index && (
-                    <motion.span
-                      className="step-text"
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease }}
-                    >
-                      <span>{s.text}</span>
-                    </motion.span>
-                  )}
-                </AnimatePresence>
+                {i === index && (
+                  <span className="step-text">
+                    <span>{s.text}</span>
+                  </span>
+                )}
               </button>
             </li>
             );
@@ -267,11 +253,10 @@ export default function Showcase({ project }) {
 
         <div className="stage">
           <div className="stage-surface">
-            <LayoutGroup>
-              <motion.div layout className={`device-shell device-${device}`} transition={{ duration: 0.55, ease }}>
+            <div key={device} className={`device-shell device-${device}`}>
                 <div className="device">
                   {device === "desktop" ? (
-                    <motion.div layout="position" className="device-bar">
+                    <div className="device-bar">
                       <span className="lights" aria-hidden="true">
                         <i />
                         <i />
@@ -288,32 +273,26 @@ export default function Showcase({ project }) {
                       ) : (
                         <span className="bar-spacer" />
                       )}
-                    </motion.div>
+                    </div>
                   ) : (
-                    <motion.div layout="position" className="device-notch" aria-hidden="true" />
+                    <div className="device-notch" aria-hidden="true" />
                   )}
-                  <motion.div layout className="device-screen">
+                  <div className="device-screen">
                     {live ? (
                       <LiveFrame url={step.url} device={device} slow={project.host === "Render"} reload={reload} />
                     ) : (
-                      <AnimatePresence initial={false} mode="popLayout">
-                        <motion.img
+                      <img
                           key={`${device}-${index}`}
-                          src={asset(device === "desktop" ? step.desktop : step.mobile)}
+                          className="screen-img"
+                          {...responsive(device === "desktop" ? step.desktop : step.mobile, device === "desktop" ? "(max-width: 900px) calc(100vw - 32px), 700px" : "340px")}
                           alt={`${project.title}: ${step.title} (${device === "desktop" ? "desktop" : "phone"} view)`}
-                          initial={{ opacity: 0, scale: 1.03 }}
-                          animate={{ opacity: 1, scale: 1 }}
-                          exit={{ opacity: 0 }}
-                          transition={{ duration: 0.5, ease }}
                           decoding="async"
                         />
-                      </AnimatePresence>
                     )}
-                  </motion.div>
+                  </div>
                 </div>
                 {live && <span className="live-badge">Live</span>}
-              </motion.div>
-            </LayoutGroup>
+            </div>
           </div>
 
           {/* On smaller screens the list only shows titles, so the description goes here. */}

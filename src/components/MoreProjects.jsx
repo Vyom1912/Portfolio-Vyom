@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router";
-import { asset } from "./util.js";
+import { responsive } from "./util.js";
 import { projects } from "../data/site.js";
 
 const arrow = (d) => (
@@ -67,7 +67,7 @@ export default function MoreProjects({ current }) {
           <li key={p.slug}>
             <Link to={`/work/${p.slug}/`} className={`more-card ${i === 0 ? "is-next" : ""}`}>
               <span className={`more-thumb ${p.cover === "logo" ? "is-logo" : ""}`}>
-                <img src={asset(p.image)} alt="" loading="lazy" decoding="async" />
+                <img {...responsive(p.image, "320px")} alt="" loading="lazy" decoding="async" />
                 {i === 0 && <span className="more-tag">Up next</span>}
               </span>
               <span className="more-meta">

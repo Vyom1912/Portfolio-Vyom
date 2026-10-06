@@ -74,17 +74,20 @@ for (const [file, name, box] of photos) {
   await sharp(upright).extract(box).resize({ width: 1000 }).webp({ quality: 82 }).toFile(`${outDir}/${name}.webp`);
 }
 
-// Header avatar and site icons, all cut from the same close-up of my face.
-const face = { left: 250, top: 90, width: 580, height: 580 };
+// Header avatar and site icons, all cut from the same photo of me.
 const faceSrc = src("photos/portrait-outdoor.jpg");
-await sharp(faceSrc).extract(face).resize(96, 96).webp({ quality: 86 }).toFile(`${outDir}/avatar.webp`);
-// Browser tab icons are round (transparent corners); the home-screen icon stays
-// square because iOS and Android round it themselves.
+
+// Site icons show more than the face: head, shoulders, chest and a little of the
+// background. Browser tab icons are round (transparent corners); the home-screen
+// icon stays square because iOS and Android round it themselves.
+const iconCrop = { left: 60, top: 40, width: 920, height: 920 };
+// The header and dock photo uses the same crop as the icons.
+await sharp(faceSrc).extract(iconCrop).resize(128, 128).webp({ quality: 84 }).toFile(`${outDir}/avatar.webp`);
 const round = (size) => Buffer.from(`<svg width="${size}" height="${size}"><circle cx="${size / 2}" cy="${size / 2}" r="${size / 2}"/></svg>`);
 for (const size of [32, 192]) {
-  await sharp(faceSrc).extract(face).resize(size, size).composite([{ input: round(size), blend: "dest-in" }]).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile(`public/favicon-${size}.png`);
+  await sharp(faceSrc).extract(iconCrop).resize(size, size).composite([{ input: round(size), blend: "dest-in" }]).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile(`public/favicon-${size}.png`);
 }
-await sharp(faceSrc).extract(face).resize(180, 180).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile("public/apple-touch-icon.png");
+await sharp(faceSrc).extract(iconCrop).resize(180, 180).png({ palette: true, quality: 90, compressionLevel: 9 }).toFile("public/apple-touch-icon.png");
 
 // Social preview card (1200x630).
 const ogFace = await sharp(src("from-03/hero-img.png")).resize(470, 470).png().toBuffer();
@@ -119,3 +122,30 @@ const slim = archive.projects.map((p) => ({
 }));
 fs.writeFileSync("src/data/archive.json", JSON.stringify(slim, null, 1) + "\n");
 console.log(`archive data: ${slim.length} projects`);
+
+// Smaller copies of the site's photos and screenshots, so phones don't download
+// desktop-sized files: "-sm" (720px wide) and, for screenshots, "-xs" (240px, used
+// for thumbnails). The widths of every file go into src/data/images.json, which
+// the components turn into srcset lists.
+const variants = { sm: 720, xs: 240 };
+const manifest = {};
+const isVariant = (f) => /-(sm|xs)\.webp$/.test(f);
+const sources = [
+  ...fs.readdirSync(outDir).filter((f) => f.endsWith(".webp") && f !== "avatar.webp").map((f) => `images/${f}`),
+  ...fs.readdirSync(`${outDir}/gallery`).filter((f) => f.endsWith(".webp")).map((f) => `images/gallery/${f}`),
+].filter((p) => !isVariant(p));
+for (const rel of sources) {
+  const file = `public/${rel}`;
+  const { width, height } = await sharp(file).metadata();
+  const entry = { w: width, h: height, v: [] };
+  for (const [key, w] of Object.entries(variants)) {
+    if (key === "xs" && !rel.includes("/gallery/")) continue;
+    if (width < w * 1.25) continue; // the original is already small enough
+    const out = rel.replace(/\.webp$/, `-${key}.webp`);
+    await sharp(file).resize({ width: w }).webp({ quality: 78 }).toFile(`public/${out}`);
+    entry.v.push([out, w]);
+  }
+  manifest[rel] = entry;
+}
+fs.writeFileSync("src/data/images.json", JSON.stringify(manifest) + "\n");
+console.log(`responsive images: ${Object.keys(manifest).length} files`);

@@ -9,6 +9,8 @@ export const person = {
   linkedin: "https://www.linkedin.com/in/vyom1912/",
   instagram: "https://www.instagram.com/vyom_1912/",
   resume: "files/Vyom-Patel-Resume.pdf",
+  // Username on GitHub and LinkedIn; shown on the site and given to Google as another name.
+  handle: "Vyom1912",
 };
 
 // Photos of me, shown in the home hero and on the About page (all 4:5).
@@ -17,6 +19,13 @@ export const photos = [
   { src: "images/portrait-sunset.webp", alt: "Vyom Patel at sunset in a striped polo, arms crossed", width: 1000, height: 1250 },
   { src: "images/portrait-wall.webp", alt: "Vyom Patel in a beige t-shirt, arms crossed", width: 1000, height: 1250 },
 ];
+
+// Verification codes from Google Search Console and Bing Webmaster Tools.
+// Paste only the content value of the meta tag they give you, then rebuild.
+export const verification = {
+  google: "",
+  bing: "",
+};
 
 export const projects = [
   {
@@ -523,23 +532,23 @@ export const skills = [
 // Title and description for every prerendered page. Keep descriptions under ~160 characters.
 export const pages = {
   "/": {
-    title: "Vyom Patel | Full Stack Developer (React, Node.js, MongoDB)",
+    title: "Vyom Patel (Vyom1912) | Full Stack Developer, Himatnagar",
     description:
-      "Vyom Patel is a full stack developer from Gujarat, India, building web apps with React, Node.js, Express and MongoDB. Projects, resume and GitHub.",
+      "Vyom Patel is a full stack developer from Himatnagar, Gujarat, building websites and web apps with React, Node.js and MongoDB. Projects, resume, contact.",
   },
   "/work": {
-    title: "Work | Vyom Patel",
+    title: "Work by Vyom Patel | Client Websites and Full Stack Projects",
     description:
-      "Full stack projects by Vyom Patel: PublishPro (MERN blogging platform), a Node.js URL shortener and FoodZing (React + Firebase).",
+      "Websites Vyom Patel built for businesses in Himatnagar (Makewell Agri Equipments, The Maroons) and full stack apps: PublishPro, URL Shortener, FoodZing.",
   },
   "/about": {
-    title: "About | Vyom Patel",
+    title: "About Vyom Patel | Web Developer from Himatnagar, Gujarat",
     description:
-      "About Vyom Patel: web developer intern at Blue Nova Tech, M.E. Computer Engineering student at LDRP-ITR, React and Node.js developer.",
+      "About Vyom Patel from Himatnagar, Gujarat: web developer intern at Blue Nova Tech, M.E. Computer Engineering student at LDRP-ITR, React and Node.js.",
   },
   "/contact": {
-    title: "Contact | Vyom Patel",
-    description: "Get in touch with Vyom Patel about full stack developer roles or freelance web projects. Email, LinkedIn and GitHub.",
+    title: "Contact Vyom Patel | Web Developer in Himatnagar, Gujarat",
+    description: "Contact Vyom Patel, a web developer in Himatnagar, Gujarat, about full stack roles or a website for your business. Email, LinkedIn, GitHub.",
   },
   "/privacy": {
     title: "Privacy Policy | Vyom Patel",
@@ -551,10 +560,13 @@ export const pages = {
   },
 };
 
+// Search results show about 155 characters, so longer text is cut at a word.
+const clip = (t, max = 155) => (t.length <= max ? t : t.slice(0, t.lastIndexOf(" ", max - 1)).replace(/[,.;:]$/, "") + "…");
+
 for (const p of projects) {
   pages[`/work/${p.slug}`] = {
     title: `${p.title}, ${p.kind} | Vyom Patel`,
-    description: `${p.summary} Built by Vyom Patel with ${p.stack.slice(0, 4).join(", ")}.`.slice(0, 200),
+    description: clip(p.summary.length <= 140 ? `${p.summary} By Vyom Patel.` : p.summary),
     image: p.image,
   };
 }

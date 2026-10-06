@@ -36,7 +36,7 @@ export default function Project() {
       </section>
 
       <section className="wrap">
-        <Shot src={p.image} alt={`${p.title} running in the browser`} url={p.live} bare={p.cover === "logo"} logo={p.cover === "logo"} parallax eager />
+        <Shot src={p.image} alt={`${p.title} running in the browser`} url={p.live} bare={p.cover === "logo"} logo={p.cover === "logo"} parallax eager sizes="(max-width: 1120px) calc(100vw - 32px), 1072px" />
       </section>
 
       <section className="wrap section case">

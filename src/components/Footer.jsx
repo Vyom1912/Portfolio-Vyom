@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router";
-import { toTopIfCurrent } from "./Header.jsx";
+import { toTopIfCurrent } from "./nav.js";
 import { person } from "../data/site.js";
 
 export default function Footer() {
@@ -25,7 +25,7 @@ export default function Footer() {
         <div>
           <p className="label">Elsewhere</p>
           <ul className="plain">
-            <li><a href={person.github} target="_blank" rel="noopener me">GitHub</a></li>
+            <li><a href={person.github} target="_blank" rel="noopener me">GitHub @{person.handle}</a></li>
             <li><a href={person.linkedin} target="_blank" rel="noopener me">LinkedIn</a></li>
             <li><a href={person.instagram} target="_blank" rel="noopener me">Instagram</a></li>
           </ul>

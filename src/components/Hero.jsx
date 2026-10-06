@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router";
-import { AnimatePresence, motion } from "motion/react";
-import { asset } from "./util.js";
+import { asset, responsive } from "./util.js";
 import { person, photos } from "../data/site.js";
 
 const facts = [
@@ -15,15 +14,15 @@ const facts = [
 // to the next photo when its progress bar fills (hover pauses, click skips).
 // Progress is a CSS animation, so reduced-motion users get a still photo.
 export default function Hero() {
-  const [index, setIndex] = useState(0);
+  // `prev` stays underneath while the new photo wipes up over it (a CSS animation).
+  const [{ index, prev }, setShown] = useState({ index: 0, prev: -1 });
   const [paused, setPaused] = useState(false);
-  const next = () => setIndex((i) => (i + 1) % photos.length);
-  const photo = photos[index];
+  const next = () => setShown(({ index: i }) => ({ index: (i + 1) % photos.length, prev: i }));
 
   return (
     <section className="wrap hero">
       <div className="hero-copy">
-        <p className="label hero-kicker">Full stack developer · Gujarat, India</p>
+        <p className="label hero-kicker">Full stack developer · Himatnagar, Gujarat</p>
         <h1 className="hero-name">
           <span className="line"><span>Vyom Patel</span></span>
         </h1>
@@ -37,7 +36,7 @@ export default function Hero() {
           <a className="btn" href={asset(person.resume)} target="_blank" rel="noopener">Resume (PDF)</a>
         </div>
         <ul className="hero-links">
-          <li><a href={person.github} target="_blank" rel="noopener me">GitHub</a></li>
+          <li><a href={person.github} target="_blank" rel="noopener me">GitHub @{person.handle}</a></li>
           <li><a href={person.linkedin} target="_blank" rel="noopener me">LinkedIn</a></li>
           <li><a href={`mailto:${person.email}`}>{person.email}</a></li>
         </ul>
@@ -49,24 +48,19 @@ export default function Hero() {
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
-          <AnimatePresence initial={false}>
-            <motion.div
-              key={photo.src}
-              className="hero-frame"
-              initial={{ clipPath: "inset(100% 0% 0% 0%)", scale: 1.12 }}
-              animate={{ clipPath: "inset(0% 0% 0% 0%)", scale: 1 }}
-              exit={{ opacity: 0, transition: { delay: 1, duration: 0.2 } }}
-              transition={{ duration: 1.1, ease: [0.65, 0, 0.35, 1] }}
-            >
-              <img
-                src={asset(photo.src)}
-                alt={photo.alt}
-                width={photo.width}
-                height={photo.height}
-                fetchPriority={index === 0 ? "high" : undefined}
-              />
-            </motion.div>
-          </AnimatePresence>
+          {photos.map((photo, i) =>
+            i === index || i === prev ? (
+              <div key={photo.src} className={`hero-frame ${i === index ? (prev === -1 ? "is-first" : "is-on") : "is-prev"}`}>
+                <img
+                  {...responsive(photo.src, "(max-width: 900px) min(400px, calc(100vw - 32px)), 420px")}
+                  alt={i === index ? photo.alt : ""}
+                  width={photo.width}
+                  height={photo.height}
+                  fetchPriority={i === 0 ? "high" : undefined}
+                />
+              </div>
+            ) : null
+          )}
 
           <div className="hero-progress" aria-hidden="true">
             {photos.map((p, i) => (

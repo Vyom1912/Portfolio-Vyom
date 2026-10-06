@@ -1,19 +1,7 @@
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { Suspense, useEffect, useRef } from "react";
 import { Routes, Route, useLocation } from "react-router";
-import { MotionConfig } from "motion/react";
 import Header from "./components/Header.jsx";
 import Footer from "./components/Footer.jsx";
-import Home from "./pages/Home.jsx";
-import Work from "./pages/Work.jsx";
-import Project from "./pages/Project.jsx";
-import About from "./pages/About.jsx";
-import Contact from "./pages/Contact.jsx";
-import Privacy from "./pages/Privacy.jsx";
-import Terms from "./pages/Terms.jsx";
-import NotFound from "./pages/NotFound.jsx";
-
-// Unlisted page, loaded only when someone opens /archive.
-const Archive = lazy(() => import("./pages/Archive.jsx"));
 
 // Every page change glides back to the top. The first load is left alone so
 // links to a spot further down a page still work.
@@ -21,6 +9,10 @@ function ScrollToTop() {
   const { pathname } = useLocation();
   const first = useRef(true);
   useEffect(() => {
+    // Links to "/" give "/Portfolio-Vyom" without the slash GitHub Pages serves
+    // the home page at; add it so a refresh doesn't redirect.
+    const base = import.meta.env.BASE_URL;
+    if (location.pathname === base.replace(/\/$/, "")) history.replaceState(history.state, "", base + location.search + location.hash);
     if (first.current) {
       first.current = false;
       return;
@@ -31,31 +23,28 @@ function ScrollToTop() {
   return null;
 }
 
-export default function App() {
+// `pages` maps each page name to its component. The prerender step passes the
+// real components; the browser passes lazy ones (see main.jsx and routes.js).
+export default function App({ pages: P }) {
   return (
-    <MotionConfig reducedMotion="user">
+    <>
       <ScrollToTop />
       <a className="skip" href="#main">Skip to content</a>
       <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/work/:slug" element={<Project />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/privacy" element={<Privacy />} />
-        <Route path="/terms" element={<Terms />} />
-        <Route
-          path="/archive"
-          element={
-            <Suspense fallback={<main id="main" className="page wrap page-head">Loading...</main>}>
-              <Archive />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Suspense fallback={<main id="main" className="page page-loading" />}>
+        <Routes>
+          <Route path="/" element={<P.home />} />
+          <Route path="/work" element={<P.work />} />
+          <Route path="/work/:slug" element={<P.project />} />
+          <Route path="/about" element={<P.about />} />
+          <Route path="/contact" element={<P.contact />} />
+          <Route path="/privacy" element={<P.privacy />} />
+          <Route path="/terms" element={<P.terms />} />
+          <Route path="/archive" element={<P.archive />} />
+          <Route path="*" element={<P.notFound />} />
+        </Routes>
+      </Suspense>
       <Footer />
-    </MotionConfig>
+    </>
   );
 }

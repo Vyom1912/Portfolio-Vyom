@@ -64,3 +64,14 @@ The originals of my photos are in `content/images/photos/`. `npm run images` cro
 ## Rebuilding this archive
 
 `npm run archive` copies everything again from `01/`, `03/` and `project/` (those folders must sit next to `04/`).
+
+## Search engines (Google, Bing)
+
+The build already gives every page a title, description, canonical link, social preview tags and structured data (Person, ProfilePage, WebSite, projects, breadcrumbs), plus `sitemap.xml` with images. What only I can do:
+
+1. **Google Search Console** (search.google.com/search-console): add a *URL prefix* property for `https://vyom1912.github.io/Portfolio-Vyom/`, choose the *HTML tag* method, and paste only the `content` value into `verification.google` in `src/data/site.js`. Deploy, then click Verify.
+2. In Search Console, submit the sitemap `https://vyom1912.github.io/Portfolio-Vyom/sitemap.xml`, then use *URL inspection* on the home page and *Request indexing*.
+3. Bing Webmaster Tools works the same way (`verification.bing`), and can import the site from Search Console.
+4. Link the site from my profiles: GitHub (profile *Website* field and the profile README), LinkedIn (*Contact info → Website* and a *Featured* link) and the Instagram bio. These links are what connect searches for my name and for "Vyom1912" to this site.
+
+`robots.txt` in this build sits under `/Portfolio-Vyom/`, where search engines don't read it (they only read one at the domain root). That's harmless, because the sitemap is submitted directly in step 2.

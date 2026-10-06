@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { motion } from "motion/react";
 import { SITE_URL, pages, hiddenPages, notFoundMeta } from "../data/site.js";
 import { asset } from "./util.js";
 
@@ -35,15 +34,9 @@ export default function Page({ path, className = "", children }) {
   useHead(path);
 
   return (
-    <motion.main
-      id="main"
-      className={`page ${className}`}
-      initial={animateIn ? { opacity: 0, y: 10 } : false}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45, ease: [0.2, 0.7, 0.2, 1] }}
-    >
+    <main id="main" className={`page ${animateIn ? "page-enter" : ""} ${className}`}>
       {children}
-    </motion.main>
+    </main>
   );
 }
 

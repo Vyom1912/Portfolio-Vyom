@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import Reveal from "./Reveal.jsx";
-import { asset, hostOf } from "./util.js";
+import { hostOf, responsive } from "./util.js";
 
 // A client website on the home page: preview, summary, and links to the live
 // site and the case study. Client code is private, so there is no code link.
@@ -9,7 +9,7 @@ export default function ClientCard({ project: p, delay = 0 }) {
     <Reveal className="client-card" delay={delay}>
       <Link to={`/work/${p.slug}/`} className="client-main">
         <span className={`client-media ${p.cover === "logo" ? "is-logo" : ""}`}>
-          <img src={asset(p.image)} alt={`${p.title} preview`} loading="lazy" decoding="async" />
+          <img {...responsive(p.image, "(max-width: 720px) calc(100vw - 32px), 540px")} alt={`${p.title} preview`} loading="lazy" decoding="async" />
         </span>
         <span className="label">{p.kind}</span>
         <span className="client-title">{p.title}</span>
@@ -23,10 +23,10 @@ export default function ClientCard({ project: p, delay = 0 }) {
       <div className="row-links">
         {p.live && (
           <a className="btn btn-solid" href={p.live} target="_blank" rel="noopener">
-            Live site
+            Live site<span className="sr-only"> of {p.title}</span>
           </a>
         )}
-        <Link className="btn" to={`/work/${p.slug}/`}>Case study</Link>
+        <Link className="btn" to={`/work/${p.slug}/`}>Case study<span className="sr-only">: {p.title}</span></Link>
       </div>
     </Reveal>
   );

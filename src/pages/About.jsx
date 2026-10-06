@@ -11,7 +11,7 @@ export default function About() {
       <section className="wrap about-top">
         <div>
           <p className="label">About</p>
-          <h1>A little about me</h1>
+          <h1>About Vyom Patel</h1>
           <div className="prose">
             <p>
               I'm Vyom Patel, a full stack JavaScript developer from {person.location}. Since September 2026 I've been a
