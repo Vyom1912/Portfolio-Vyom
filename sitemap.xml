@@ -1,34 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/</loc><lastmod>2026-10-06</lastmod><priority>1.0</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/</loc><lastmod>2026-11-17</lastmod><priority>1.0</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/portrait-outdoor.webp</image:loc><image:title>Vyom Patel outdoors, arms crossed</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/portrait-sunset.webp</image:loc><image:title>Vyom Patel at sunset in a striped polo, arms crossed</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/portrait-wall.webp</image:loc><image:title>Vyom Patel in a beige t-shirt, arms crossed</image:title></image:image>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/about/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/about/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/portrait-outdoor.webp</image:loc><image:title>Vyom Patel outdoors, arms crossed</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/portrait-sunset.webp</image:loc><image:title>Vyom Patel at sunset in a striped polo, arms crossed</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/portrait-wall.webp</image:loc><image:title>Vyom Patel in a beige t-shirt, arms crossed</image:title></image:image>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/contact/</loc><lastmod>2026-10-06</lastmod><priority>0.6</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/contact/</loc><lastmod>2026-11-17</lastmod><priority>0.6</priority>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/privacy/</loc><lastmod>2026-10-06</lastmod><priority>0.3</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/privacy/</loc><lastmod>2026-11-17</lastmod><priority>0.3</priority>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/terms/</loc><lastmod>2026-10-06</lastmod><priority>0.3</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/terms/</loc><lastmod>2026-11-17</lastmod><priority>0.3</priority>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/makewell/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/makewell/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-home.webp</image:loc><image:title>Makewell Agri Equipments by Vyom Patel</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-home.webp</image:loc><image:title>Makewell Agri Equipments: Home</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-about.webp</image:loc><image:title>Makewell Agri Equipments: About</image:title></image:image>
+    <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-company.webp</image:loc><image:title>Makewell Agri Equipments: Manufacturing</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-export.webp</image:loc><image:title>Makewell Agri Equipments: Export</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-products.webp</image:loc><image:title>Makewell Agri Equipments: Product catalogue</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-category.webp</image:loc><image:title>Makewell Agri Equipments: Category pages</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-product.webp</image:loc><image:title>Makewell Agri Equipments: Product details</image:title></image:image>
+    <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-custom-oem.webp</image:loc><image:title>Makewell Agri Equipments: Custom &amp; OEM</image:title></image:image>
+    <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-how-to-order.webp</image:loc><image:title>Makewell Agri Equipments: How to order</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/makewell-contact.webp</image:loc><image:title>Makewell Agri Equipments: Quote form</image:title></image:image>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/rakhi-store/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/rakhi-store/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/rakhi-store.webp</image:loc><image:title>The Maroons: A Rakhi Store by Vyom Patel</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/rakhi-store-home.webp</image:loc><image:title>The Maroons: A Rakhi Store: Shop</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/rakhi-store-category.webp</image:loc><image:title>The Maroons: A Rakhi Store: Shop by type</image:title></image:image>
@@ -40,7 +43,7 @@
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/rakhi-store-terms.webp</image:loc><image:title>The Maroons: A Rakhi Store: Order terms</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/rakhi-store-contact.webp</image:loc><image:title>The Maroons: A Rakhi Store: Contact</image:title></image:image>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/publishpro/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/publishpro/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/publishpro.webp</image:loc><image:title>PublishPro by Vyom Patel</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/publishpro-home.webp</image:loc><image:title>PublishPro: The feed</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/publishpro-post.webp</image:loc><image:title>PublishPro: Reading a post</image:title></image:image>
@@ -51,7 +54,7 @@
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/publishpro-login.webp</image:loc><image:title>PublishPro: Log in</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/publishpro-forgot-password.webp</image:loc><image:title>PublishPro: Forgot password</image:title></image:image>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/url-shortener/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/url-shortener/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/url-shortener.webp</image:loc><image:title>URL Shortener by Vyom Patel</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/url-shortener-dashboard.webp</image:loc><image:title>URL Shortener: Your links</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/url-shortener-not-found.webp</image:loc><image:title>URL Shortener: Missing links</image:title></image:image>
@@ -59,7 +62,7 @@
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/url-shortener-login.webp</image:loc><image:title>URL Shortener: Log in</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/url-shortener-reset-password.webp</image:loc><image:title>URL Shortener: Forgot password</image:title></image:image>
   </url>
-  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/foodzing/</loc><lastmod>2026-10-06</lastmod><priority>0.8</priority>
+  <url><loc>https://vyom1912.github.io/Portfolio-Vyom/work/foodzing/</loc><lastmod>2026-11-17</lastmod><priority>0.8</priority>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/foodzing.webp</image:loc><image:title>FoodZing by Vyom Patel</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/foodzing-home.webp</image:loc><image:title>FoodZing: Home</image:title></image:image>
     <image:image><image:loc>https://vyom1912.github.io/Portfolio-Vyom/images/gallery/foodzing-why.webp</image:loc><image:title>FoodZing: Why FoodZing</image:title></image:image>
