@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { Fragment, useRef, useState } from "react";
 import { Link } from "react-router";
 import Page from "../components/Page.jsx";
 import { checkEmail, domainAcceptsMail } from "../components/emailCheck.js";
@@ -152,8 +152,20 @@ export default function Contact() {
             <dd><a className="link" href={person.linkedin} target="_blank" rel="noopener me">linkedin.com/in/vyom1912</a></dd>
             <dt className="label">GitHub</dt>
             <dd><a className="link" href={person.github} target="_blank" rel="noopener me">github.com/Vyom1912</a></dd>
+            {person.codingProfiles.map((c) => (
+              <Fragment key={c.url}>
+                <dt className="label">{c.name}</dt>
+                <dd><a className="link" href={c.url} target="_blank" rel="noopener me">{c.url.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, "")}</a></dd>
+              </Fragment>
+            ))}
             <dt className="label">Based in</dt>
             <dd>{person.location}</dd>
+            {person.availability && (
+              <>
+                <dt className="label">Available</dt>
+                <dd>{person.availability}</dd>
+              </>
+            )}
           </dl>
         </div>
 

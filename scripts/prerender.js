@@ -57,11 +57,22 @@ const personLd = {
     "@type": "Occupation",
     name: "Full stack web developer",
     occupationLocation: { "@type": "City", name: "Himatnagar, Gujarat" },
-    skills: "React, Node.js, Express, MongoDB, JavaScript, REST APIs",
+    skills: "React, Node.js, Express, MongoDB, JavaScript, PostgreSQL, REST APIs, SEO",
   },
   alumniOf: education.map((e) => ({ "@type": "CollegeOrUniversity", name: e.school })),
   sameAs: [person.github, person.linkedin, person.instagram],
-  knowsAbout: ["React", "Node.js", "Express", "MongoDB", "JavaScript", "Firebase", "REST APIs", "Full stack web development"],
+  knowsAbout: [
+    "React",
+    "Node.js",
+    "Express",
+    "MongoDB",
+    "JavaScript",
+    "PostgreSQL",
+    "Firebase",
+    "REST APIs",
+    "Search engine optimisation",
+    "Full stack web development",
+  ],
 };
 
 function structuredData(route) {

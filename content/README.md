@@ -20,7 +20,7 @@ This folder is **not** deployed. Only `public/` and the built pages go to GitHub
 
 Each project page has a "See it in action" block. Screens are grouped by feature (for example "Reading and search" and "Accounts"): the features show as tabs, each tab lists its screens next to a device frame, and the frame switches between desktop and phone, and between screenshots and the live site. There is no limit on features or screens, so add a screen for every page or feature worth showing. Every screen needs one desktop and one phone screenshot.
 
-1. Save two PNGs in `content/images/captured/<folder>/`:
+1. Add the screen to `showcase` first (step 3), then run `npm run capture -- <folder>` to take both screenshots from the live site. Or save two PNGs by hand in `content/images/captured/<folder>/`:
    - `<name>.png`: desktop, 1440×900
    - `mobile-<name>.png`: phone, 390×844 (or 780×1688 at 2x)
    Folders: `publishpro`, `url-shortener`, `foodzing`, `rakhi-store`, `makewell`.
@@ -44,7 +44,7 @@ Each project page has a "See it in action" block. Screens are grouped by feature
    ```
 4. Run `npm run archive` too if you want `projects.json` to list the new files.
 
-Two to five screens per feature reads best; split a bigger feature in two. Makewell has none yet: its old GitHub Pages address is gone, so capture the screens from the live domain and the block appears on its own.
+Two to five screens per feature reads best; split a bigger feature in two.
 
 ## Photos
 
@@ -60,6 +60,23 @@ The originals of my photos are in `content/images/photos/`. `npm run images` cro
 2. Add an entry to `projects` in `src/data/site.js` (title, summary, body, features, stack, links).
 3. Add its screenshot to `scripts/optimize-images.js` and run `npm run images`.
 4. Run `npm run build` and check the new page under `/work/<slug>/`.
+
+## Monthly update
+
+The site has details that go stale: client sites change, and the internship keeps adding work. Once a month:
+
+1. **Client sites changed?** Look at each live site (Makewell: makewellagriequipments.com). If pages were added, renamed or removed, update that project's `showcase` in `src/data/site.js` (titles, one-line texts, `url`s), then retake every screenshot:
+   ```
+   npm run capture -- makewell
+   npm run images
+   ```
+   `npm run capture` reads the screens and URLs from `showcase`, so a new screen only needs its entry there. Check the PNGs in `content/images/captured/<folder>/` before building (no pop-ups, nothing half-loaded). If a site adds a new pop-up, add a line for it to `beforeLoad` in `scripts/capture.js`.
+2. **Same project, new features?** Update its `summary`, `body`, `features` and `stack` in `src/data/site.js`, and the matching entry in `content/projects.json` and `scripts/build-archive.cjs` (they feed the archive page and the resume bullets). Numbers like "121 models" appear in the summary, body, features and screen texts.
+3. **Internship.** Update `experience[0]` in `src/data/site.js` (summary, points, stack). Keep client and project names out (company policy): describe work by industry and by stack only. If the job title or dates change, also check the hero "Now" line (`src/components/Hero.jsx`), the first paragraph of `src/pages/About.jsx` and the `/about` description in `pages` (`src/data/site.js`).
+4. **New tools learned?** Add them to `skills` in `src/data/site.js` and, if worth it, to `knowsAbout` in `scripts/prerender.js`. Tools without a logo in `src/components/TechIcon.jsx` show a plain box; add the Simple Icons logo there.
+5. **Proof (optional, real data only).** Each project in `src/data/site.js` can take `results` (measured scores with their source and date, e.g. from pagespeed.web.dev) and `quote` (a client's own words, with their permission); `person` can take `availability` and `codingProfiles`. Empty ones stay hidden. Re-measure `results` each month and update the date, or remove them; never keep old numbers under a new date.
+6. **Resume.** Update the PDF (`public/files/Vyom-Patel-Resume.pdf`) so it matches the site.
+7. `npm run build`, check `/`, `/about/` and the changed `/work/<slug>/` pages with `npm run preview`, then `npm run deploy`.
 
 ## Rebuilding this archive
 

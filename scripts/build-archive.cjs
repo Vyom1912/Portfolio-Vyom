@@ -60,37 +60,39 @@ data.projects.push({
   id: 35,
   slug: "makewell-agri-equipments",
   title: "Makewell Agri Equipments",
-  subtitle: "A Multi-Page Marketing Website for an Agricultural Equipment Company",
+  subtitle: "A Prerendered Catalogue and Export Website for a Forged Hand Tool Manufacturer",
   category: "Client Website",
   level: "Advanced",
   featured: false,
-  techStack: ["React", "React Router", "JavaScript", "CSS3", "Web3Forms", "Vercel", "Figma"],
+  techStack: ["React","React Router","Vite","JavaScript","CSS3","Web3Forms","WhatsApp","Vercel","Figma"],
   portfolio: {
-    shortDescription:
-      "A multi-page React website for Makewell Agri Equipments with a filterable product catalogue, product details, quotation requests and a contact form.",
-    description: [
-      "A multi-page React marketing website with React Router, featuring a filterable product catalogue, a contact form with async email validation, Web3Forms API integration and a responsive mobile-first layout with a slide-in navigation drawer.",
-      "Purchased and configured a custom domain, deployed the production site on Vercel with GitHub integration for continuous deployment, and added SEO metadata.",
+    "shortDescription": "A prerendered React website for Makewell Agri Equipments with a 121-model catalogue, category and product pages, Custom & OEM ordering, and quotes by email or WhatsApp.",
+    "description": [
+      "A multi-page React website for a forged hand tool manufacturer and exporter, redesigned with a dark, product-first look: a catalogue of 121 models in seven tool families with search, filters and a PDF catalogue, a page for every family and product, and Custom & OEM and How to Order pages for importers.",
+      "Every page is prerendered at build time with its own SEO metadata, share image and structured data, pages are code-split, and the sitemap lists product images. The quote form sends through Web3Forms or opens WhatsApp with the enquiry filled in, and a cookie banner keeps analytics and maps off until allowed. Purchased and configured the custom domain and deployed on Vercel from GitHub."
     ],
-    highlights: [
-      "Filterable product catalogue and product detail pages",
-      "Quotation request and contact form through Web3Forms, with async email validation",
-      "Mobile-first layout with a slide-in navigation drawer",
-      "Custom domain on Vercel with continuous deployment from GitHub",
-      "SEO metadata",
-    ],
+    "highlights": [
+      "121-model catalogue with search, filters by tool family and a PDF catalogue",
+      "Category and product pages with quote and WhatsApp buttons",
+      "Custom & OEM and How to Order pages",
+      "Quote form by email (Web3Forms) or WhatsApp, with a spam trap",
+      "Prerendered pages with per-page SEO, share images and structured data",
+      "Cookie consent for Google Analytics and Google Maps, with Privacy and Terms pages",
+      "Custom domain on Vercel with continuous deployment from GitHub"
+    ]
   },
   resume: {
-    heading: "Makewell Agri Equipments - Website | React.js, JavaScript",
-    points: [
-      "Developed a multi-page React marketing website with React Router, featuring a filterable product catalogue, contact form with async email validation, Web3Forms API integration and responsive mobile-first layout with a slide-in navigation drawer.",
-      "Purchased and configured a custom domain, deployed the production website on Vercel with GitHub integration for continuous deployment, and implemented SEO metadata.",
-    ],
+    "heading": "Makewell Agri Equipments - Website | React.js, Vite, JavaScript",
+    "points": [
+      "Built and redesigned a multi-page React website for a forged hand tool exporter: a 121-model catalogue with search and filters, category and product pages, Custom & OEM and How to Order pages, and a quote form that sends through Web3Forms or WhatsApp.",
+      "Prerendered every page at build time with per-page SEO, Open Graph images and JSON-LD structured data, code-split routes, added cookie consent for analytics and maps, and deployed on Vercel with a custom domain and continuous deployment from GitHub."
+    ]
   },
   links: {
-    demo: "https://vyom1912.github.io/Makewell-Agri-Equipments/",
+    demo: "https://www.makewellagriequipments.com/",
     github: "",
-    screenshot: lookup("MakeWell.png"),
+    // The redesigned home page, captured from the live site.
+    screenshot: "images/captured/makewell/home.png",
   },
 });
 
@@ -101,8 +103,6 @@ for (const p of data.projects) {
   const dir = folder && path.join(out, "images", "captured", folder);
   p.links.gallery = dir && fs.existsSync(dir) ? fs.readdirSync(dir).map((f) => `images/captured/${folder}/${f}`) : [];
 }
-// The old GitHub Pages address for Makewell returns 404; the site now lives on the client's own domain.
-data.projects.find((p) => p.slug === "makewell-agri-equipments").links.demo = "";
 // The Vercel deployment of the URL shortener asks visitors to log in to Vercel; the Render one is public.
 data.projects.find((p) => p.slug === "url-shortener").links.demo = "https://urlshortener-1osn.onrender.com/";
 

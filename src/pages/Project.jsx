@@ -63,7 +63,35 @@ export default function Project() {
             </dd>
             <dt className="label">Hosting</dt>
             <dd>{p.host}</dd>
+            {p.results && (
+              <>
+                <dt className="label">Results</dt>
+                <dd>
+                  <ul className="results">
+                    {p.results.items.map(([name, value]) => (
+                      <li key={name}>
+                        <span>{name}</span> <strong>{value}</strong>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="small muted">
+                    {p.results.link ? (
+                      <a className="link" href={p.results.link} target="_blank" rel="noopener">{p.results.source}</a>
+                    ) : (
+                      p.results.source
+                    )}
+                    , measured {p.results.measured}
+                  </p>
+                </dd>
+              </>
+            )}
           </dl>
+          {p.quote && (
+            <figure className="quote">
+              <blockquote>“{p.quote.text}”</blockquote>
+              <figcaption className="small muted">{p.quote.name}, {p.quote.role}</figcaption>
+            </figure>
+          )}
         </aside>
       </section>
 

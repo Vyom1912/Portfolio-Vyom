@@ -6,8 +6,9 @@ import { person, photos } from "../data/site.js";
 const facts = [
   ["Now", "Web developer intern at Blue Nova Tech"],
   ["Studying", "M.E. Computer Engineering, LDRP-ITR"],
-  ["Stack", "React, Node.js, Express, MongoDB"],
+  ["Stack", "React, Node.js, Express, MongoDB, PostgreSQL"],
   ["Based in", "Himatnagar, Gujarat"],
+  ...(person.availability ? [["Available", person.availability]] : []),
 ];
 
 // Home page hero. The photo unveils from the bottom, zooms slowly, and moves

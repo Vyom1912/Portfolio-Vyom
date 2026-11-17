@@ -3,6 +3,7 @@ import PhotoStack from "../components/PhotoStack.jsx";
 import Reveal from "../components/Reveal.jsx";
 import { asset } from "../components/util.js";
 import Skills from "../components/Skills.jsx";
+import StackChips from "../components/StackChips.jsx";
 import { education, experience, person } from "../data/site.js";
 
 export default function About() {
@@ -15,25 +16,26 @@ export default function About() {
           <div className="prose">
             <p>
               I'm Vyom Patel, a full stack JavaScript developer from {person.location}. Since September 2026 I've been a
-              web developer intern at Blue Nova Tech, working on live projects.
+              web developer intern at Blue Nova Tech, building websites for local businesses and working on full stack
+              web apps for the company's clients.
             </p>
             <p>
               Alongside that I'm doing my M.E. in Computer Engineering at LDRP Institute of Technology and Research, after
               a B.E. from Gujarat Technological University.
             </p>
             <p>
-              My main stack is React, Node.js, Express and MongoDB, and I have also used Firebase, Prisma, Drizzle, MySQL
-              and Tailwind CSS. I like owning a feature end to end: the schema, the API, and the screen on top of it. In my
+              My main stack is React, Node.js, Express and MongoDB. At work I also use PostgreSQL with Prisma and Drizzle,
+              and I have used Firebase, MySQL and Tailwind CSS. I like owning a feature end to end: the schema, the API, and the screen on top of it. In my
               own projects I have spent the most time on authentication (access and refresh tokens, revocable sessions,
               email verification and password reset) and on keeping pages light on mobile.
             </p>
             <p>
               I have also built websites for real businesses. For{" "}
-              <a className="link" href="https://vyom1912.github.io/Makewell-Agri-Equipments/" target="_blank" rel="noopener">
+              <a className="link" href="https://www.makewellagriequipments.com/" target="_blank" rel="noopener">
                 Makewell Agri Equipments
               </a>{" "}
-              I made a multi-page React site with a filterable product catalogue and a contact form, and deployed it on
-              Vercel with a custom domain. For a home business selling handmade rakhis I built a mobile-first store where
+              I made a prerendered React site with a 121-model catalogue, custom and OEM ordering and quotes by email or
+              WhatsApp, and host it on Vercel with a custom domain. For a home business selling handmade rakhis I built a mobile-first store where
               orders go straight to WhatsApp.
             </p>
             <p>I speak English and Gujarati.</p>
@@ -66,7 +68,8 @@ export default function About() {
                     <li key={pt}>{pt}</li>
                   ))}
                 </ul>
-                {job.note && <p className="tl-note">{job.note}</p>}
+                {job.stack && <StackChips items={job.stack} limit={job.stack.length} />}
+                {job.note &&<p className="tl-note">{job.note}</p>}
               </div>
             </Reveal>
           ))}

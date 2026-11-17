@@ -11,13 +11,33 @@ export const person = {
   resume: "files/Vyom-Patel-Resume.pdf",
   // Username on GitHub and LinkedIn; shown on the site and given to Google as another name.
   handle: "Vyom1912",
+  // Optional. Fill these only with real details; anything left empty is hidden on the site.
+  // When you can start, e.g. "Full-time roles from July 2027". Shown in the home hero and on Contact.
+  availability: "",
+  // Coding practice profiles, e.g. { name: "LeetCode", url: "https://leetcode.com/u/<you>/" }. Shown on Contact.
+  codingProfiles: [],
 };
 
 // Photos of me, shown in the home hero and on the About page (all 4:5).
 export const photos = [
-  { src: "images/portrait-outdoor.webp", alt: "Vyom Patel outdoors, arms crossed", width: 1000, height: 1250 },
-  { src: "images/portrait-sunset.webp", alt: "Vyom Patel at sunset in a striped polo, arms crossed", width: 1000, height: 1250 },
-  { src: "images/portrait-wall.webp", alt: "Vyom Patel in a beige t-shirt, arms crossed", width: 1000, height: 1250 },
+  {
+    src: "images/portrait-outdoor.webp",
+    alt: "Vyom Patel outdoors, arms crossed",
+    width: 1000,
+    height: 1250,
+  },
+  {
+    src: "images/portrait-sunset.webp",
+    alt: "Vyom Patel at sunset in a striped polo, arms crossed",
+    width: 1000,
+    height: 1250,
+  },
+  {
+    src: "images/portrait-wall.webp",
+    alt: "Vyom Patel in a beige t-shirt, arms crossed",
+    width: 1000,
+    height: 1250,
+  },
 ];
 
 // Verification codes from Google Search Console and Bing Webmaster Tools.
@@ -40,21 +60,28 @@ export const projects = [
         screens: [
           {
             title: "Home",
-            text: "A slider of forged tools, the company's key numbers, and quick routes to the products, dealer enquiries and the PDF catalogue.",
+            text: "A dark hero with a forged tool, the company's key numbers and two routes in: send your own design, or browse the 121 catalogue models.",
             desktop: "images/gallery/makewell-home.webp",
             mobile: "images/gallery/makewell-mobile-home.webp",
             url: "https://www.makewellagriequipments.com/",
           },
           {
             title: "About",
-            text: "The company's story, next to a carousel of the tools it forges.",
+            text: "The family business's story since 1996, from its forge in Vaktapur, Himatnagar.",
             desktop: "images/gallery/makewell-about.webp",
             mobile: "images/gallery/makewell-mobile-about.webp",
             url: "https://www.makewellagriequipments.com/about",
           },
           {
+            title: "Manufacturing",
+            text: "The six steps every tool goes through, from steel selection and drop forging to QC and packing.",
+            desktop: "images/gallery/makewell-company.webp",
+            mobile: "images/gallery/makewell-mobile-company.webp",
+            url: "https://www.makewellagriequipments.com/company",
+          },
+          {
             title: "Export",
-            text: "Countries served, grouped by region, and the export documents and shipping options the company handles.",
+            text: "50+ countries grouped by region, and the export documents and freight options the company handles.",
             desktop: "images/gallery/makewell-export.webp",
             mobile: "images/gallery/makewell-mobile-export.webp",
             url: "https://www.makewellagriequipments.com/export",
@@ -62,11 +89,11 @@ export const projects = [
         ],
       },
       {
-        feature: "Products and quotes",
+        feature: "Catalogue",
         screens: [
           {
             title: "Product catalogue",
-            text: "Filter chips for every tool type, each with a count, and a card for every product.",
+            text: "121 models in seven tool families: search by name or MW number, filter chips with counts, and the PDF catalogue.",
             desktop: "images/gallery/makewell-products.webp",
             mobile: "images/gallery/makewell-mobile-products.webp",
             url: "https://www.makewellagriequipments.com/products",
@@ -76,18 +103,37 @@ export const projects = [
             text: "Each tool family has its own page with a description, key specs and its full range.",
             desktop: "images/gallery/makewell-category.webp",
             mobile: "images/gallery/makewell-mobile-category.webp",
-            url: "https://www.makewellagriequipments.com/products/shovels-spades",
+            url: "https://www.makewellagriequipments.com/products/shovels",
           },
           {
             title: "Product details",
-            text: "Specs and a model reference, with buttons to get a quote or ask on WhatsApp.",
+            text: "Model number, specs and a note that every detail can be changed, with buttons to get a quote or ask on WhatsApp.",
             desktop: "images/gallery/makewell-product.webp",
             mobile: "images/gallery/makewell-mobile-product.webp",
             url: "https://www.makewellagriequipments.com/products/axes-hatchets/forged-hatchet-p17",
           },
+        ],
+      },
+      {
+        feature: "Ordering",
+        screens: [
+          {
+            title: "Custom & OEM",
+            text: "What a buyer can change (shape, size, steel, handle, finish, branding), what to send, and a sample before bulk production.",
+            desktop: "images/gallery/makewell-custom-oem.webp",
+            mobile: "images/gallery/makewell-mobile-custom-oem.webp",
+            url: "https://www.makewellagriequipments.com/custom-oem",
+          },
+          {
+            title: "How to order",
+            text: "Two ways to order, from the catalogue or to your own design, and the steps and terms that follow.",
+            desktop: "images/gallery/makewell-how-to-order.webp",
+            mobile: "images/gallery/makewell-mobile-how-to-order.webp",
+            url: "https://www.makewellagriequipments.com/how-to-order",
+          },
           {
             title: "Quote form",
-            text: "Name, company, email, phone with country code, country, product and message, sent through Web3Forms.",
+            text: "Fill it in once, then send by email through Web3Forms or open WhatsApp with the whole enquiry already typed.",
             desktop: "images/gallery/makewell-contact.webp",
             mobile: "images/gallery/makewell-mobile-contact.webp",
             url: "https://www.makewellagriequipments.com/contact",
@@ -96,23 +142,43 @@ export const projects = [
       },
     ],
     summary:
-      "A multi-page website for an agricultural equipment company, with a filterable product catalogue, product details and a contact form.",
+      "A fast, prerendered website for a forged hand tool maker and exporter, with a 121-model catalogue, custom and OEM ordering, and quotes by email or WhatsApp.",
     body: [
-      "Makewell Agri Equipments needed a website to show its products and take enquiries. I built a multi-page React site with React Router, a product catalogue that can be filtered by type, product detail pages and a contact form connected to Web3Forms, with async email validation before anything is sent.",
-      "The layout is mobile-first, with a slide-in navigation drawer on phones. I also bought and set up the company's domain, deployed the site on Vercel with GitHub integration so every push goes live, and added SEO metadata to every page.",
+      "Makewell Agri Equipments forges agricultural and garden hand tools in Gujarat and exports them worldwide. I built its website in React and later redesigned it: a dark, product-first look, a catalogue of 121 models in seven tool families with a page for every family and every product, and new Custom & OEM and How to Order pages for importers and dealers.",
+      "Every page is prerendered at build time, so it loads as plain HTML and search engines see its own title, description, share image and structured data (products, FAQs, breadcrumbs, the business). Pages are split into their own chunks, product photos come in several sizes, and the sitemap lists the images. The quote form sends by email through Web3Forms or opens WhatsApp with the enquiry filled in. A cookie banner keeps analytics and the map off until the visitor allows them. I also bought and set up the company's domain and host it on Vercel, deployed from GitHub.",
     ],
     features: [
-      "Filterable product catalogue and product detail pages",
-      "Contact and quotation form through Web3Forms, with async email validation",
-      "Mobile-first layout with a slide-in navigation drawer",
+      "Catalogue of 121 models with search by name or model number, filters by tool family and a PDF catalogue",
+      "A page for each tool family and each product, with specs and quote and WhatsApp buttons",
+      "Custom & OEM and How to Order pages for importers and dealers",
+      "Quote form that sends by email (Web3Forms) or WhatsApp, picks the dialling code from the country and has a spam trap",
+      "Prerendered pages with per-page SEO, share images and structured data, plus an image sitemap",
+      "Cookie consent that keeps Google Analytics and Google Maps off until allowed, with Privacy and Terms pages",
+      "Mobile layout with a slide-in menu and a sticky WhatsApp and quote bar",
       "Custom domain on Vercel with continuous deployment from GitHub",
-      "SEO metadata for search engines",
     ],
-    stack: ["React", "React Router", "JavaScript", "CSS3", "Web3Forms", "Vercel"],
+    stack: [
+      "React",
+      "React Router",
+      "Vite",
+      "JavaScript",
+      "CSS3",
+      "Web3Forms",
+      "WhatsApp",
+      "Vercel",
+    ],
     github: "",
     live: "https://www.makewellagriequipments.com/",
     host: "Vercel (custom domain)",
     note: "Client project, so the source code is private.",
+    // Optional, hidden until filled. Use only real, measured numbers and real words:
+    // results: {
+    //   source: "PageSpeed Insights, mobile",            // where the numbers come from
+    //   link: "https://pagespeed.web.dev/analysis?url=https://www.makewellagriequipments.com/",
+    //   measured: "Dec 2026",                             // when you ran it
+    //   items: [["Performance", "–"], ["Accessibility", "–"], ["Best practices", "–"], ["SEO", "–"]],
+    // },
+    // quote: { text: "Their words, with their permission.", name: "Name", role: "Owner, Makewell Agri Equipments" },
   },
   {
     slug: "rakhi-store",
@@ -216,7 +282,16 @@ export const projects = [
       "Clean URLs on GitHub Pages through a 404 redirect",
       "Unit tests for the cart, the terms check and the order message (Jest + React Testing Library)",
     ],
-    stack: ["React 19", "React Router 7", "Context API", "localStorage", "WhatsApp click-to-chat", "CSS3", "Jest", "React Testing Library"],
+    stack: [
+      "React 19",
+      "React Router 7",
+      "Context API",
+      "localStorage",
+      "WhatsApp click-to-chat",
+      "CSS3",
+      "Jest",
+      "React Testing Library",
+    ],
     github: "",
     live: "https://vyom1912.github.io/A-Rakhi-Store/",
     host: "GitHub Pages",
@@ -300,7 +375,7 @@ export const projects = [
       "A blogging platform where people write, publish and discuss articles, with cookie-based login, a rich text editor, image uploads, likes, bookmarks and comments.",
     body: [
       "PublishPro is a complete blogging platform on the MERN stack. Anyone can browse and search articles. Signed-in users write posts in a rich text editor, upload a cover image, pick one of 42 categories and add tags. Readers can like, save and share posts, comment, and open an author's page to see their bio, stats and everything they have published.",
-      "Security was a main focus. Login uses a short-lived JWT access token and a 7-day refresh token, both in httpOnly cookies. Every refresh token is tied to a session record in MongoDB, so logging out, \"log out of all devices\" and changing a password all revoke sessions. On the client, an Axios interceptor refreshes an expired token and replays the requests that failed in the meantime, so nobody gets logged out halfway through writing.",
+      'Security was a main focus. Login uses a short-lived JWT access token and a 7-day refresh token, both in httpOnly cookies. Every refresh token is tied to a session record in MongoDB, so logging out, "log out of all devices" and changing a password all revoke sessions. On the client, an Axios interceptor refreshes an expired token and replays the requests that failed in the meantime, so nobody gets logged out halfway through writing.',
       "The REST API runs on Express 5 and Mongoose. Likes, bookmarks and view counts use atomic MongoDB updates, author stats come from an aggregation pipeline, and article HTML is sanitised with DOMPurify before it is shown. Server-side pagination and field projection cut the home feed response from 36 KB to 1.3 KB, and route-level code splitting made the main JS bundle about 29% smaller.",
     ],
     features: [
@@ -314,7 +389,22 @@ export const projects = [
       "Images streamed to Cloudinary through Multer and served as WebP/AVIF thumbnails",
       "Mobile-first layout checked at phone, tablet and desktop widths",
     ],
-    stack: ["React 19", "React Router 7", "Node.js", "Express 5", "MongoDB", "Mongoose", "JWT", "bcrypt", "Cloudinary", "Multer", "TinyMCE", "DOMPurify", "Resend", "Vite"],
+    stack: [
+      "React 19",
+      "React Router 7",
+      "Node.js",
+      "Express 5",
+      "MongoDB",
+      "Mongoose",
+      "JWT",
+      "bcrypt",
+      "Cloudinary",
+      "Multer",
+      "TinyMCE",
+      "DOMPurify",
+      "Resend",
+      "Vite",
+    ],
     github: "https://github.com/Vyom1912/PublishPro-A-Blogging-Platform",
     live: "https://publishpro-a-blogging-platform.onrender.com/",
     host: "Render",
@@ -375,7 +465,7 @@ export const projects = [
     summary:
       "A link shortener where every user gets their own link space, with custom short codes, click tracking, cookie-based login and email verification.",
     body: [
-      "Paste a long URL, optionally pick a short code like \"portfolio\", and get a link such as yoursite.com/vyom/portfolio. From the dashboard you can copy a link in one tap, share it through the phone's share sheet, edit where it points, delete it and search your links. Every visit is counted, so each link shows its clicks.",
+      'Paste a long URL, optionally pick a short code like "portfolio", and get a link such as yoursite.com/vyom/portfolio. From the dashboard you can copy a link in one tap, share it through the phone\'s share sheet, edit where it points, delete it and search your links. Every visit is counted, so each link shows its clicks.',
       "Each user has their own namespace. Links are built from a username plus a code, so two people can both own /gh and each one opens the right page. A compound MongoDB index keeps codes unique per user, and the live database was moved over from the old site-wide index on startup without breaking links that were already shared.",
       "Login uses JWT access and refresh tokens in httpOnly cookies backed by MongoDB sessions, and passwords are hashed with Argon2. New accounts verify their email with a code or a link, and password reset links are single-use, expire after 15 minutes and are stored only as SHA-256 hashes. The server follows an MVC layout with Zod validators, and it can also run on Vercel as a serverless Express app.",
     ],
@@ -390,7 +480,19 @@ export const projects = [
       "HTML emails built with MJML and sent through Resend",
       "Mobile-first EJS views with a bottom tab bar and automatic dark mode",
     ],
-    stack: ["Node.js", "Express 5", "MongoDB", "Mongoose", "EJS", "MVC", "JWT", "Argon2", "Zod", "Resend", "MJML"],
+    stack: [
+      "Node.js",
+      "Express 5",
+      "MongoDB",
+      "Mongoose",
+      "EJS",
+      "MVC",
+      "JWT",
+      "Argon2",
+      "Zod",
+      "Resend",
+      "MJML",
+    ],
     github: "https://github.com/Vyom1912/urlShortener",
     live: "https://urlshortener-1osn.onrender.com/",
     host: "Render",
@@ -470,7 +572,14 @@ export const projects = [
       "Contact form that writes to Firebase Realtime Database",
       "Responsive layout with a mobile hamburger menu",
     ],
-    stack: ["React 19", "React Router", "Context API", "Firebase Auth", "Firebase Realtime Database", "CSS3"],
+    stack: [
+      "React 19",
+      "React Router",
+      "Context API",
+      "Firebase Auth",
+      "Firebase Realtime Database",
+      "CSS3",
+    ],
     github: "https://github.com/Vyom1912/FoodZing-A-Food-Ordering-Website",
     live: "https://vyom1912.github.io/FoodZing-A-Food-Ordering-Website/",
     host: "GitHub Pages",
@@ -483,12 +592,25 @@ export const experience = [
     org: "Blue Nova Tech",
     when: "Sep 2026 to present",
     // Client and project names are left out on purpose (company policy).
-    summary: "Building and shipping live projects for the company's clients as part of the development team.",
+    summary:
+      "Building and shipping live projects for the company's clients as part of the development team: seven client websites and the company's own site so far, and full stack web apps.",
     points: [
-      "Building responsive, multi-page client websites with React, React Router and Vite, styled with Tailwind CSS.",
-      "Contributing to a full stack web app with a Next.js and TypeScript front end and a Fastify API using Drizzle ORM, PostgreSQL and Zod validation.",
-      "Turning client requirements and content into pages, then deploying preview builds for client review.",
-      "Working on page speed and SEO: compressed images, meta tags and clean, crawlable pages.",
+      "Built responsive, multi-page websites for clients in manufacturing, hardware, lighting, bathroom fittings, elevators, healthcare and agriculture, with React, React Router and Vite, some styled with Tailwind CSS.",
+      "Made those sites fast and findable: pages prerendered at build time, per-page meta tags and share images, JSON-LD structured data, sitemaps and resized WebP images, checked with Lighthouse on desktop and mobile.",
+      "Added the features the businesses asked for, such as product catalogues, enquiry forms that send to WhatsApp or email, and an appointment booking flow with its own API for a healthcare client.",
+      "Working on full stack apps: React front ends and Node.js APIs, with Prisma or Drizzle on PostgreSQL, or Express with MongoDB, and request data validated with Zod.",
+      "Built sign-in and account security in those apps: Google sign-in, email codes, two-factor authentication with authenticator apps, hashed passwords, JWT cookies and rate limiting.",
+      "Wrote API tests with Vitest, turned client requirement documents into pages, and deployed preview builds for review.",
+    ],
+    stack: [
+      "React",
+      "Node.js",
+      "Express",
+      "PostgreSQL",
+      "Prisma",
+      "MongoDB",
+      "Tailwind CSS",
+      "Vitest",
     ],
     note: "Client and project names are not shared because of company policy.",
   },
@@ -520,13 +642,73 @@ export const education = [
   },
 ];
 
-// Grouped by what the projects on this site actually use.
+// Grouped by what the projects on this site and the Blue Nova Tech internship actually use.
 export const skills = [
-  { group: "Frontend", items: ["React", "React Router", "JavaScript (ES6+)", "HTML5", "CSS", "Tailwind CSS", "Bootstrap"] },
-  { group: "Backend", items: ["Node.js", "Express", "REST APIs", "EJS", "Zod"] },
-  { group: "Auth and security", items: ["JWT", "httpOnly cookies", "bcrypt and Argon2", "DOMPurify"] },
-  { group: "Data", items: ["MongoDB", "Mongoose", "MySQL", "Prisma", "Drizzle ORM", "Firebase"] },
-  { group: "Tools and hosting", items: ["Git", "GitHub", "Postman", "Vite", "Cloudinary", "Render", "Vercel", "Figma", "Canva"] },
+  {
+    group: "Frontend",
+    items: [
+      "React",
+      "React Router",
+      "JavaScript (ES6+)",
+      "HTML5",
+      "CSS",
+      "Tailwind CSS",
+      "Bootstrap",
+    ],
+  },
+  {
+    group: "Backend",
+    items: ["Node.js", "Express", "REST APIs", "EJS", "Zod"],
+  },
+  {
+    group: "Auth and security",
+    items: [
+      "JWT",
+      "httpOnly cookies",
+      "bcrypt and Argon2",
+      "Google sign-in",
+      "Two-factor auth (TOTP)",
+      "Rate limiting",
+      "DOMPurify",
+    ],
+  },
+  {
+    group: "Data",
+    items: [
+      "MongoDB",
+      "Mongoose",
+      "PostgreSQL",
+      "MySQL",
+      "Prisma",
+      "Drizzle ORM",
+      "Firebase",
+    ],
+  },
+  {
+    group: "SEO and performance",
+    items: [
+      "Prerendering",
+      "Structured data (JSON-LD)",
+      "Sitemaps",
+      "Image optimisation",
+      "Lighthouse",
+    ],
+  },
+  {
+    group: "Testing, tools and hosting",
+    items: [
+      "Vitest",
+      "Git",
+      "GitHub",
+      "Postman",
+      "Vite",
+      "Cloudinary",
+      "Render",
+      "Vercel",
+      "Figma",
+      "Canva",
+    ],
+  },
 ];
 
 // Title and description for every prerendered page. Keep descriptions under ~160 characters.
@@ -548,25 +730,33 @@ export const pages = {
   },
   "/contact": {
     title: "Contact Vyom Patel | Web Developer in Himatnagar, Gujarat",
-    description: "Contact Vyom Patel, a web developer in Himatnagar, Gujarat, about full stack roles or a website for your business. Email, LinkedIn, GitHub.",
+    description:
+      "Contact Vyom Patel, a web developer in Himatnagar, Gujarat, about full stack roles or a website for your business. Email, LinkedIn, GitHub.",
   },
   "/privacy": {
     title: "Privacy Policy | Vyom Patel",
-    description: "How this portfolio site handles your data: no cookies, no tracking, and what happens when you use the contact form.",
+    description:
+      "How this portfolio site handles your data: no cookies, no tracking, and what happens when you use the contact form.",
   },
   "/terms": {
     title: "Terms and Conditions | Vyom Patel",
-    description: "Terms for using vyom1912.github.io/Portfolio-Vyom, the portfolio of Vyom Patel.",
+    description:
+      "Terms for using vyom1912.github.io/Portfolio-Vyom, the portfolio of Vyom Patel.",
   },
 };
 
 // Search results show about 155 characters, so longer text is cut at a word.
-const clip = (t, max = 155) => (t.length <= max ? t : t.slice(0, t.lastIndexOf(" ", max - 1)).replace(/[,.;:]$/, "") + "…");
+const clip = (t, max = 155) =>
+  t.length <= max
+    ? t
+    : t.slice(0, t.lastIndexOf(" ", max - 1)).replace(/[,.;:]$/, "") + "…";
 
 for (const p of projects) {
   pages[`/work/${p.slug}`] = {
     title: `${p.title}, ${p.kind} | Vyom Patel`,
-    description: clip(p.summary.length <= 140 ? `${p.summary} By Vyom Patel.` : p.summary),
+    description: clip(
+      p.summary.length <= 140 ? `${p.summary} By Vyom Patel.` : p.summary,
+    ),
     image: p.image,
   };
 }
@@ -575,7 +765,8 @@ for (const p of projects) {
 export const hiddenPages = {
   "/archive": {
     title: "All projects (archive) | Vyom Patel",
-    description: "Every project by Vyom Patel, including small JavaScript exercises and design work.",
+    description:
+      "Every project by Vyom Patel, including small JavaScript exercises and design work.",
   },
 };
 

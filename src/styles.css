@@ -849,8 +849,9 @@ a {
 /* Skills */
 .skills {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 28px;
+  /* Six groups: two even rows of three. */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px 40px;
 }
 .skill-group li {
   padding: 7px 0;
@@ -3324,4 +3325,28 @@ a {
 /* Shown for a moment while a page's code loads (first visit to that page only) */
 .page-loading {
   min-height: 100vh;
+}
+
+/* Optional measured results and client quote in the project sidebar */
+.results {
+  list-style: none;
+  margin: 0 0 6px;
+  padding: 0;
+}
+.results li {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--line, rgba(127, 127, 127, 0.25));
+}
+.quote {
+  margin: 28px 0 0;
+  padding-left: 16px;
+  border-left: 3px solid var(--accent, currentColor);
+}
+.quote blockquote {
+  margin: 0 0 8px;
+  font-size: 1.02rem;
+  line-height: 1.55;
 }

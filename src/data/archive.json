@@ -649,16 +649,18 @@
  {
   "slug": "makewell-agri-equipments",
   "title": "Makewell Agri Equipments",
-  "subtitle": "A Multi-Page Marketing Website for an Agricultural Equipment Company",
+  "subtitle": "A Prerendered Catalogue and Export Website for a Forged Hand Tool Manufacturer",
   "category": "Client Website",
   "level": "Advanced",
-  "summary": "A multi-page React website for Makewell Agri Equipments with a filterable product catalogue, product details, quotation requests and a contact form.",
+  "summary": "A prerendered React website for Makewell Agri Equipments with a 121-model catalogue, category and product pages, Custom & OEM ordering, and quotes by email or WhatsApp.",
   "stack": [
    "React",
    "React Router",
+   "Vite",
    "JavaScript",
    "CSS3",
    "Web3Forms",
+   "WhatsApp",
    "Vercel",
    "Figma"
   ],
